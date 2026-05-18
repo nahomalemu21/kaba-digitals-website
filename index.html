@@ -6,431 +6,327 @@
 <meta name="description" content="KABA LABS — Ethiopia's most advanced digital marketing agency. Video production, Meta & TikTok ads, web development, social media management. Addis Ababa.">
 <meta property="og:title" content="KABA LABS — We Build Empires">
 <meta property="og:description" content="Ethiopia's most advanced digital marketing agency. Video. Ads. Systems.">
-<meta property="og:image" content="/og-image.jpg">
 <title>KABA LABS — Digital Marketing & Technology</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
 <!-- ══ INTRO ══ -->
-<div id="intro" aria-hidden="true">
-  <div id="intro-noise"></div>
-  <div id="intro-glow"></div>
-  <div id="stacked">
-    <div class="s-letter" data-l="K">K</div>
-    <div class="s-letter" data-l="A">A</div>
-    <div class="s-letter" data-l="B">B</div>
-    <div class="s-letter" data-l="A">A</div>
-  </div>
-  <div id="horizontal">
-    <div id="h-kaba">
-      <span class="h-letter">K</span>
-      <span class="h-letter">A</span>
-      <span class="h-letter">B</span>
-      <span class="h-letter">A</span>
+<div id="intro">
+  <div id="intro-logo-wrap">
+
+    <!-- Full logo — shows first then glitches apart top to bottom -->
+    <div id="logo-full-wrap">
+      <svg id="logo-full" xmlns="http://www.w3.org/2000/svg" viewBox="175 405 1250 620">
+        <defs>
+          <linearGradient id="ig" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF2A8"/><stop offset="18%" stop-color="#FFD447"/>
+            <stop offset="48%" stop-color="#C88412"/><stop offset="72%" stop-color="#F7C744"/>
+            <stop offset="100%" stop-color="#8F5A06"/>
+          </linearGradient>
+          <filter id="iglow" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feFlood flood-color="#FFC928" flood-opacity="0.3"/>
+            <feComposite in2="blur" operator="in"/>
+            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#iglow)">
+          <text x="175" y="760" font-family="Montserrat,Arial,sans-serif" font-weight="900" font-size="420" letter-spacing="-8" fill="url(#ig)">K</text>
+          <g transform="translate(535 405)">
+            <path d="M160 0 L330 355 L260 355 L225 282 L95 282 L60 355 L-10 355 Z" fill="url(#ig)"/>
+            <path d="M160 183 L204 282 L116 282 Z" fill="#050505" opacity="0.96"/>
+            <g stroke="#050505" stroke-width="12" stroke-linecap="round" opacity="0.95">
+              <line x1="112" y1="77" x2="208" y2="77"/><line x1="86" y1="130" x2="234" y2="130"/>
+              <line x1="60" y1="183" x2="260" y2="183"/><line x1="35" y1="236" x2="285" y2="236"/>
+              <line x1="92" y1="130" x2="92" y2="183"/><line x1="160" y1="77" x2="160" y2="130"/>
+              <line x1="225" y1="130" x2="225" y2="183"/><line x1="65" y1="183" x2="65" y2="236"/>
+              <line x1="160" y1="183" x2="160" y2="236"/><line x1="255" y1="183" x2="255" y2="236"/>
+              <line x1="95" y1="236" x2="95" y2="290"/><line x1="215" y1="236" x2="215" y2="290"/>
+            </g>
+          </g>
+          <text x="825" y="760" font-family="Montserrat,Arial,sans-serif" font-weight="900" font-size="420" letter-spacing="-8" fill="url(#ig)">BA</text>
+        </g>
+        <g filter="url(#iglow)">
+          <line x1="190" y1="940" x2="430" y2="940" stroke="url(#ig)" stroke-width="4"/>
+          <text x="495" y="983" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="96" letter-spacing="70" fill="url(#ig)">LABS</text>
+          <line x1="1168" y1="940" x2="1380" y2="940" stroke="url(#ig)" stroke-width="4"/>
+        </g>
+      </svg>
     </div>
-    <div id="h-line"></div>
-    <div id="h-labs">LABS</div>
-    <div id="h-tagline">Addis Ababa &nbsp;·&nbsp; Digital Marketing & Technology</div>
+
+    <!-- Individual SVG letters emerge after glitch -->
+    <div id="letters-wrap">
+      <div class="svg-letter" id="sl-k">
+        <svg viewBox="175 380 260 420" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFF2A8"/><stop offset="48%" stop-color="#C88412"/><stop offset="100%" stop-color="#8F5A06"/></linearGradient></defs>
+          <text x="175" y="760" font-family="Montserrat,Arial,sans-serif" font-weight="900" font-size="420" letter-spacing="-8" fill="url(#lg1)">K</text>
+        </svg>
+      </div>
+      <div class="svg-letter" id="sl-a1">
+        <svg viewBox="520 390 345 390" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFF2A8"/><stop offset="48%" stop-color="#C88412"/><stop offset="100%" stop-color="#8F5A06"/></linearGradient></defs>
+          <g transform="translate(535 405)">
+            <path d="M160 0 L330 355 L260 355 L225 282 L95 282 L60 355 L-10 355 Z" fill="url(#lg2)"/>
+            <path d="M160 183 L204 282 L116 282 Z" fill="#050505" opacity="0.96"/>
+            <g stroke="#050505" stroke-width="14" stroke-linecap="round" opacity="0.95">
+              <line x1="112" y1="77" x2="208" y2="77"/><line x1="86" y1="130" x2="234" y2="130"/>
+              <line x1="60" y1="183" x2="260" y2="183"/><line x1="35" y1="236" x2="285" y2="236"/>
+              <line x1="92" y1="130" x2="92" y2="183"/><line x1="160" y1="77" x2="160" y2="130"/>
+              <line x1="225" y1="130" x2="225" y2="183"/><line x1="65" y1="183" x2="65" y2="236"/>
+              <line x1="160" y1="183" x2="160" y2="236"/><line x1="255" y1="183" x2="255" y2="236"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="svg-letter" id="sl-b">
+        <svg viewBox="820 380 240 420" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="lg3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFF2A8"/><stop offset="48%" stop-color="#C88412"/><stop offset="100%" stop-color="#8F5A06"/></linearGradient></defs>
+          <text x="825" y="760" font-family="Montserrat,Arial,sans-serif" font-weight="900" font-size="420" letter-spacing="-8" fill="url(#lg3)">B</text>
+        </svg>
+      </div>
+      <div class="svg-letter" id="sl-a2">
+        <svg viewBox="1010 380 240 420" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="lg4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFF2A8"/><stop offset="48%" stop-color="#C88412"/><stop offset="100%" stop-color="#8F5A06"/></linearGradient></defs>
+          <text x="1020" y="760" font-family="Montserrat,Arial,sans-serif" font-weight="900" font-size="420" letter-spacing="-8" fill="url(#lg4)">A</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Assembled logo (final state before site opens) -->
+    <div id="assembled">
+      <svg id="assembled-logo" xmlns="http://www.w3.org/2000/svg" viewBox="175 405 1250 620">
+        <defs>
+          <linearGradient id="ag" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF2A8"/><stop offset="18%" stop-color="#FFD447"/>
+            <stop offset="48%" stop-color="#C88412"/><stop offset="72%" stop-color="#F7C744"/>
+            <stop offset="100%" stop-color="#8F5A06"/>
+          </linearGradient>
+          <filter id="aglow" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feFlood flood-color="#FFC928" flood-opacity="0.3"/>
+            <feComposite in2="blur" operator="in"/>
+            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <g filter="url(#aglow)">
+          <text x="175" y="760" font-family="Montserrat,Arial,sans-serif" font-weight="900" font-size="420" letter-spacing="-8" fill="url(#ag)">K</text>
+          <g transform="translate(535 405)">
+            <path d="M160 0 L330 355 L260 355 L225 282 L95 282 L60 355 L-10 355 Z" fill="url(#ag)"/>
+            <path d="M160 183 L204 282 L116 282 Z" fill="#050505" opacity="0.96"/>
+            <g stroke="#050505" stroke-width="12" stroke-linecap="round" opacity="0.95">
+              <line x1="112" y1="77" x2="208" y2="77"/><line x1="86" y1="130" x2="234" y2="130"/>
+              <line x1="60" y1="183" x2="260" y2="183"/><line x1="35" y1="236" x2="285" y2="236"/>
+              <line x1="92" y1="130" x2="92" y2="183"/><line x1="160" y1="77" x2="160" y2="130"/>
+              <line x1="225" y1="130" x2="225" y2="183"/><line x1="65" y1="183" x2="65" y2="236"/>
+              <line x1="160" y1="183" x2="160" y2="236"/><line x1="255" y1="183" x2="255" y2="236"/>
+              <line x1="95" y1="236" x2="95" y2="290"/><line x1="215" y1="236" x2="215" y2="290"/>
+            </g>
+          </g>
+          <text x="825" y="760" font-family="Montserrat,Arial,sans-serif" font-weight="900" font-size="420" letter-spacing="-8" fill="url(#ag)">BA</text>
+        </g>
+        <g filter="url(#aglow)">
+          <line x1="190" y1="940" x2="430" y2="940" stroke="url(#ag)" stroke-width="4"/>
+          <text x="495" y="983" font-family="Montserrat,Arial,sans-serif" font-weight="600" font-size="96" letter-spacing="70" fill="url(#ag)">LABS</text>
+          <line x1="1168" y1="940" x2="1380" y2="940" stroke="url(#ag)" stroke-width="4"/>
+        </g>
+      </svg>
+      <div id="assembled-tagline">Addis Ababa &nbsp;·&nbsp; Digital Marketing & Technology</div>
+    </div>
+
   </div>
-  <button id="enter-btn" aria-label="Enter KABA LABS website">Enter Site &nbsp;→</button>
+  <button id="enter-btn">Enter Site &nbsp;→</button>
 </div>
 
-<!-- ══ SITE ══ -->
-<div id="site" aria-label="KABA LABS Website">
+<!-- ══ MAIN SITE ══ -->
+<div id="site">
 
-  <!-- NAV -->
-  <nav id="nav" role="navigation">
-    <a class="n-logo" href="#" aria-label="KABA LABS Home">
-      <img src="kaba_logo.svg" alt="KABA LABS Logo" class="n-logo-img">
-      <span class="n-logo-txt">KABA <em>LABS</em></span>
+  <nav id="nav">
+    <a class="nav-logo" href="#">
+      <img src="kaba_logo.svg" alt="KABA LABS" class="nav-logo-img">
+      <span class="nav-logo-txt">KABA <span>LABS</span></span>
     </a>
-    <ul class="n-links" role="list">
+    <ul class="nav-links">
       <li><a href="#work">Work</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#packages">Packages</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a class="n-cta" href="#contact">Start Now</a>
-    <button class="n-burger" id="burger" aria-label="Menu">
-      <span></span><span></span>
-    </button>
+    <a class="nav-cta" href="#contact">Start Now</a>
+    <button class="nav-burger" id="burger"><span></span><span></span></button>
   </nav>
 
-  <!-- MOBILE NAV -->
   <div id="mobile-nav">
-    <ul role="list">
-      <li><a href="#work" class="mn-link">Work</a></li>
-      <li><a href="#services" class="mn-link">Services</a></li>
-      <li><a href="#packages" class="mn-link">Packages</a></li>
-      <li><a href="#contact" class="mn-link">Contact</a></li>
+    <ul>
+      <li><a href="#work" class="mnl">Work</a></li>
+      <li><a href="#services" class="mnl">Services</a></li>
+      <li><a href="#packages" class="mnl">Packages</a></li>
+      <li><a href="#contact" class="mnl">Contact</a></li>
     </ul>
-    <a class="btn-g mn-cta" href="#contact">Start Now</a>
-    <div class="mn-contact">
-      <a href="tel:+251913864659">+251 913 864 659</a>
-      <a href="mailto:kabadigitals@gmail.com">kabadigitals@gmail.com</a>
-    </div>
+    <a class="mob-cta mnl" href="#contact">Start Now</a>
   </div>
 
   <!-- HERO -->
-  <section id="hero" aria-labelledby="hero-title">
-    <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
-    <div class="hero-content">
-      <div class="h-eye">
-        <span class="h-eye-line"></span>
-        Addis Ababa, Ethiopia — Est. 2024
-      </div>
-      <h1 class="h-h1" id="hero-title">
-        <span class="h-ln"><span>We Don't</span></span>
-        <span class="h-ln"><span>Make Content.</span></span>
-        <span class="h-ln gold"><span>We Build Empires.</span></span>
+  <section id="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow"><span class="eyebrow-line"></span>Addis Ababa, Ethiopia — Est. 2024</div>
+      <h1 class="hero-h1">
+        <span class="hero-line"><span>We Don't</span></span>
+        <span class="hero-line"><span>Make Content.</span></span>
+        <span class="hero-line gold-text"><span>We Build Empires.</span></span>
       </h1>
-      <p class="h-sub">
+      <p class="hero-sub">
         KABA LABS is Ethiopia's most advanced digital marketing agency.
-        Video. Ads. Systems. We operate on a different level.
+        <strong>Video. Ads. Systems.</strong> We help businesses look trusted online
+        and get more customers — every single month.
       </p>
-      <div class="h-btns">
-        <a class="btn-g" href="#services">What We Do</a>
-        <a class="btn-ghost" href="#packages">See Packages</a>
+      <div class="hero-btns">
+        <a class="btn-primary" href="#services">What We Do</a>
+        <a class="btn-outline" href="#packages">See Packages</a>
       </div>
     </div>
-    <div class="h-scroll">
-      <div class="h-scroll-line"></div>
-      <span>Scroll</span>
+    <div class="hero-right">
+      <div class="proof-panel">
+        <div class="proof-panel-title"><span class="pp-line"></span>Proven Results</div>
+        <div class="proof-stats">
+          <div class="proof-stat"><span class="proof-stat-num" data-count="60">0</span><span class="proof-stat-label">Clients Served</span></div>
+          <div class="proof-stat"><span class="proof-stat-num" data-count="10">0</span><span class="proof-stat-label">Dental Clinics</span></div>
+          <div class="proof-stat"><span class="proof-stat-num" data-count="3">0</span><span class="proof-stat-label">Service Tiers</span></div>
+          <div class="proof-stat"><span class="proof-stat-num" data-count="2">0</span><span class="proof-stat-label">Years Active</span></div>
+        </div>
+        <div class="proof-industries">
+          <div class="proof-industries-title">Industries We Serve</div>
+          <div class="proof-tags">
+            <span class="proof-tag">Dental & Medical</span>
+            <span class="proof-tag">Real Estate</span>
+            <span class="proof-tag">Automotive</span>
+            <span class="proof-tag">Hospitality</span>
+            <span class="proof-tag">Beauty & Spa</span>
+            <span class="proof-tag">Education</span>
+            <span class="proof-tag">Retail</span>
+          </div>
+        </div>
+        <div class="proof-cta-mini">
+          <div class="proof-cta-mini-text"><strong>Free consultation</strong>20 minutes. No commitment.</div>
+          <a class="proof-cta-mini-btn" href="#contact">Talk to Us</a>
+        </div>
+      </div>
     </div>
-    <div class="h-bgnum" aria-hidden="true">∞</div>
+    <div class="hero-scroll"><div class="hero-scroll-line"></div><span>Scroll</span></div>
   </section>
 
-  <!-- BAND -->
-  <div class="band" aria-hidden="true"></div>
+  <div class="band"></div>
 
   <!-- MARQUEE -->
-  <div class="mq" aria-hidden="true">
+  <div class="mq">
     <div class="mq-track">
       <div class="mq-item">VIDEO PRODUCTION <span>✦</span> META ADS <span>✦</span> TIKTOK <span>✦</span> WEB DEVELOPMENT <span>✦</span> SMS MARKETING <span>✦</span> CRM <span>✦</span> BRAND STRATEGY <span>✦</span> SOCIAL MEDIA <span>✦</span></div>
       <div class="mq-item" aria-hidden="true">VIDEO PRODUCTION <span>✦</span> META ADS <span>✦</span> TIKTOK <span>✦</span> WEB DEVELOPMENT <span>✦</span> SMS MARKETING <span>✦</span> CRM <span>✦</span> BRAND STRATEGY <span>✦</span> SOCIAL MEDIA <span>✦</span></div>
     </div>
   </div>
 
-  <!-- WORK — SCROLL CARDS -->
-  <section id="work" aria-labelledby="work-title">
-    <div id="stage">
-      <div id="stage-sticky">
-        <div class="stage-left">
-          <div id="stage-glow"></div>
-          <div class="stage-grid"></div>
-          <div class="stage-noise"></div>
-          <div id="card-wrap">
-
-            <article class="s-card" data-i="0" aria-label="Dental and Medical clients">
-              <div class="cb cb-1"></div>
-              <div class="ci ci-1"></div>
-              <div class="cgrain"></div>
-              <div class="cscan"></div>
-              <div class="cov"></div>
-              <div class="card-content">
-                <span class="card-tag">Dental & Medical</span>
-                <h3 class="card-title">10+ Clinic Clients<br>in Addis Ababa</h3>
-              </div>
-              <span class="card-num" aria-hidden="true">01 / 05</span>
-              <div class="card-prog"><div class="card-prog-fill" style="width:20%"></div></div>
-            </article>
-
-            <article class="s-card" data-i="1" aria-label="Performance advertising">
-              <div class="cb cb-2"></div>
-              <div class="ci ci-2"></div>
-              <div class="cgrain"></div>
-              <div class="cscan"></div>
-              <div class="cov"></div>
-              <div class="card-content">
-                <span class="card-tag">Performance Advertising</span>
-                <h3 class="card-title">Meta · TikTok<br>Google Ads</h3>
-              </div>
-              <span class="card-num" aria-hidden="true">02 / 05</span>
-              <div class="card-prog"><div class="card-prog-fill" style="width:40%"></div></div>
-            </article>
-
-            <article class="s-card" data-i="2" aria-label="Video production">
-              <div class="cb cb-3"></div>
-              <div class="ci ci-3"></div>
-              <div class="cgrain"></div>
-              <div class="cscan"></div>
-              <div class="cov"></div>
-              <div class="card-content">
-                <span class="card-tag">Video Production</span>
-                <h3 class="card-title">Phone · Camera<br>Cinematic</h3>
-              </div>
-              <span class="card-num" aria-hidden="true">03 / 05</span>
-              <div class="card-prog"><div class="card-prog-fill" style="width:60%"></div></div>
-            </article>
-
-            <article class="s-card" data-i="3" aria-label="Brand and growth systems">
-              <div class="cb cb-4"></div>
-              <div class="ci ci-4"></div>
-              <div class="cgrain"></div>
-              <div class="cscan"></div>
-              <div class="cov"></div>
-              <div class="card-content">
-                <span class="card-tag">Brand & Growth Systems</span>
-                <h3 class="card-title">Systems That<br>Scale Forever</h3>
-              </div>
-              <span class="card-num" aria-hidden="true">04 / 05</span>
-              <div class="card-prog"><div class="card-prog-fill" style="width:80%"></div></div>
-            </article>
-
-            <article class="s-card" data-i="4" aria-label="KABA ELITE top tier">
-              <div class="cb cb-5"></div>
-              <div class="ci ci-5"></div>
-              <div class="cgrain"></div>
-              <div class="cscan"></div>
-              <div class="cov"></div>
-              <div class="card-content">
-                <span class="card-tag">KABA ELITE — Top Tier</span>
-                <h3 class="card-title">The Level No One<br>Can Touch</h3>
-              </div>
-              <span class="card-num" aria-hidden="true">05 / 05</span>
-              <div class="card-prog"><div class="card-prog-fill" style="width:100%"></div></div>
-            </article>
-
-          </div>
-          <div class="scroll-cue" id="scue" aria-hidden="true">
-            <div class="scue-line"></div>
-            <span>Scroll</span>
-          </div>
+  <!-- WORK CARDS -->
+  <section id="work">
+    <div id="work-sticky">
+      <div class="work-left">
+        <div id="work-glow"></div>
+        <div id="card-wrap">
+          <div class="wcard" data-i="0"><div class="cb cb1"></div><div class="ci ci1"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag">Dental & Medical</span><h3 class="card-title">10+ Clinic Clients<br>in Addis Ababa</h3></div><span class="card-num">01 / 05</span><div class="card-prog"><div class="card-prog-fill" style="width:20%"></div></div></div>
+          <div class="wcard" data-i="1"><div class="cb cb2"></div><div class="ci ci2"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag">Performance Advertising</span><h3 class="card-title">Meta · TikTok<br>Google Ads</h3></div><span class="card-num">02 / 05</span><div class="card-prog"><div class="card-prog-fill" style="width:40%"></div></div></div>
+          <div class="wcard" data-i="2"><div class="cb cb3"></div><div class="ci ci3"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag">Video Production</span><h3 class="card-title">Phone · Camera<br>Cinematic</h3></div><span class="card-num">03 / 05</span><div class="card-prog"><div class="card-prog-fill" style="width:60%"></div></div></div>
+          <div class="wcard" data-i="3"><div class="cb cb4"></div><div class="ci ci4"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag">Brand & Growth Systems</span><h3 class="card-title">Systems That<br>Scale Forever</h3></div><span class="card-num">04 / 05</span><div class="card-prog"><div class="card-prog-fill" style="width:80%"></div></div></div>
+          <div class="wcard" data-i="4"><div class="cb cb5"></div><div class="ci ci5"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag">KABA ELITE — Top Tier</span><h3 class="card-title">The Level No One<br>Can Touch</h3></div><span class="card-num">05 / 05</span><div class="card-prog"><div class="card-prog-fill" style="width:100%"></div></div></div>
         </div>
-
-        <!-- Right panel -->
-        <aside class="stage-right" aria-label="Work navigation">
-          <div class="sr-num" id="sr-num" aria-live="polite">01</div>
-          <div class="sr-label" id="sr-label">Dental & Medical</div>
-          <ul class="sr-list" role="list">
-            <li class="sr-item active" data-si="0" role="button" tabindex="0"><div class="sr-dot"></div><span class="sr-idx">01</span><span class="sr-name">Dental & Medical</span><span class="sr-arrow" aria-hidden="true">→</span></li>
-            <li class="sr-item" data-si="1" role="button" tabindex="0"><div class="sr-dot"></div><span class="sr-idx">02</span><span class="sr-name">Performance Ads</span><span class="sr-arrow" aria-hidden="true">→</span></li>
-            <li class="sr-item" data-si="2" role="button" tabindex="0"><div class="sr-dot"></div><span class="sr-idx">03</span><span class="sr-name">Video Production</span><span class="sr-arrow" aria-hidden="true">→</span></li>
-            <li class="sr-item" data-si="3" role="button" tabindex="0"><div class="sr-dot"></div><span class="sr-idx">04</span><span class="sr-name">Brand Systems</span><span class="sr-arrow" aria-hidden="true">→</span></li>
-            <li class="sr-item" data-si="4" role="button" tabindex="0"><div class="sr-dot"></div><span class="sr-idx">05</span><span class="sr-name">KABA ELITE</span><span class="sr-arrow" aria-hidden="true">→</span></li>
-          </ul>
-        </aside>
+        <div class="scroll-cue" id="scue"><div class="scroll-cue-line"></div><span>Scroll</span></div>
       </div>
-    </div>
-  </section>
-
-  <!-- SECTION BLEED -->
-  <div class="section-bleed" aria-hidden="true"></div>
-
-  <!-- SERVICES / FINDER -->
-  <section id="services" aria-labelledby="services-title">
-    <div class="fi-wrap">
-      <div class="fi-left reveal-left" id="fi-left">
-        <div class="fi-eye"><span class="fi-eye-line"></span>We Listen First</div>
-        <h2 class="fi-h" id="services-title">What Are You<br><em>Looking For?</em></h2>
-        <p class="fi-p">Every business is different. Tell us your situation and we'll show you exactly what KABA LABS can do for you.</p>
-        <div class="fi-contacts">
-          <div class="fi-contact-item">
-            <div class="fi-dot"></div>
-            <span class="fi-contact-label">Phone</span>
-            <a class="fi-contact-val" href="tel:+251913864659">+251 913 864 659</a>
-            <span class="fi-contact-arrow" aria-hidden="true">→</span>
-          </div>
-          <div class="fi-contact-item">
-            <div class="fi-dot"></div>
-            <span class="fi-contact-label">Email</span>
-            <a class="fi-contact-val" href="mailto:kabadigitals@gmail.com">kabadigitals@gmail.com</a>
-            <span class="fi-contact-arrow" aria-hidden="true">→</span>
-          </div>
-          <div class="fi-contact-item">
-            <div class="fi-dot"></div>
-            <span class="fi-contact-label">Instagram</span>
-            <a class="fi-contact-val" href="https://instagram.com/kaba_digital_marketing" target="_blank" rel="noopener">@kaba_digital_marketing</a>
-            <span class="fi-contact-arrow" aria-hidden="true">→</span>
-          </div>
-          <div class="fi-contact-item">
-            <div class="fi-dot"></div>
-            <span class="fi-contact-label">Location</span>
-            <span class="fi-contact-val">Addis Ababa, Ethiopia</span>
-            <span class="fi-contact-arrow" aria-hidden="true">→</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="fi-right reveal-right" id="fi-right">
-        <ul class="fi-list" role="list">
-          <li class="fi-item">
-            <button class="fi-btn" aria-expanded="false" data-panel="fp0">
-              <div class="fi-btn-left"><span class="fi-prefix" aria-hidden="true">→</span><span class="fi-name">More Customers</span></div>
-              <span class="fi-arrow" aria-hidden="true">↗</span>
-            </button>
-            <div class="fi-panel" id="fp0" role="region">
-              <div class="fi-panel-inner">
-                <span class="fi-panel-tag">Get Customers Package</span>
-                <p>We run <strong>Meta and TikTok ads</strong> targeting your exact customer in Addis. Promo videos, SMS campaigns, monthly performance reports included.</p>
-                <span class="fi-price">From 27,999 ETB / month</span>
-              </div>
-            </div>
-          </li>
-          <li class="fi-item">
-            <button class="fi-btn" aria-expanded="false" data-panel="fp1">
-              <div class="fi-btn-left"><span class="fi-prefix" aria-hidden="true">→</span><span class="fi-name">Look Professional</span></div>
-              <span class="fi-arrow" aria-hidden="true">↗</span>
-            </button>
-            <div class="fi-panel" id="fp1" role="region">
-              <div class="fi-panel-inner">
-                <span class="fi-panel-tag">Look Trusted Package</span>
-                <p>Website, social media setup, <strong>brand intro video</strong>, and a complete professional online identity that makes clients trust you before they call.</p>
-                <span class="fi-price">One-time project</span>
-              </div>
-            </div>
-          </li>
-          <li class="fi-item">
-            <button class="fi-btn" aria-expanded="false" data-panel="fp2">
-              <div class="fi-btn-left"><span class="fi-prefix" aria-hidden="true">→</span><span class="fi-name">Dominate My Market</span></div>
-              <span class="fi-arrow" aria-hidden="true">↗</span>
-            </button>
-            <div class="fi-panel" id="fp2" role="region">
-              <div class="fi-panel-inner">
-                <span class="fi-panel-tag">Scale & Dominate — KABA ELITE</span>
-                <p><strong>Full cinematic system</strong> — influencer models, Meta + TikTok + Google ads, CRM setup, automation, and a dedicated account manager.</p>
-                <span class="fi-price">From 119,999 ETB / month</span>
-              </div>
-            </div>
-          </li>
-          <li class="fi-item">
-            <button class="fi-btn" aria-expanded="false" data-panel="fp3">
-              <div class="fi-btn-left"><span class="fi-prefix" aria-hidden="true">→</span><span class="fi-name">Just a Website</span></div>
-              <span class="fi-arrow" aria-hidden="true">↗</span>
-            </button>
-            <div class="fi-panel" id="fp3" role="region">
-              <div class="fi-panel-inner">
-                <span class="fi-panel-tag">Web Development</span>
-                <p>Fast, mobile-first websites built to <strong>convert visitors</strong> into customers. One-time fee with optional maintenance retainer.</p>
-                <span class="fi-price">Custom quote</span>
-              </div>
-            </div>
-          </li>
-          <li class="fi-item">
-            <button class="fi-btn" aria-expanded="false" data-panel="fp4">
-              <div class="fi-btn-left"><span class="fi-prefix" aria-hidden="true">→</span><span class="fi-name">Not Sure Yet</span></div>
-              <span class="fi-arrow" aria-hidden="true">↗</span>
-            </button>
-            <div class="fi-panel" id="fp4" role="region">
-              <div class="fi-panel-inner">
-                <span class="fi-panel-tag">Free Consultation</span>
-                <p>Call or DM us. We spend <strong>20 minutes</strong> understanding your business and tell you exactly what we'd recommend. Zero commitment, 100% free.</p>
-                <span class="fi-price">100% Free</span>
-              </div>
-            </div>
-          </li>
+      <div class="work-right">
+        <div class="wr-num" id="wr-num">01</div>
+        <div class="wr-label" id="wr-label">Dental & Medical</div>
+        <ul class="wr-list">
+          <li class="wr-item active" data-si="0"><div class="wr-dot"></div><span class="wr-idx">01</span><span class="wr-name">Dental & Medical</span><span class="wr-arrow">→</span></li>
+          <li class="wr-item" data-si="1"><div class="wr-dot"></div><span class="wr-idx">02</span><span class="wr-name">Performance Ads</span><span class="wr-arrow">→</span></li>
+          <li class="wr-item" data-si="2"><div class="wr-dot"></div><span class="wr-idx">03</span><span class="wr-name">Video Production</span><span class="wr-arrow">→</span></li>
+          <li class="wr-item" data-si="3"><div class="wr-dot"></div><span class="wr-idx">04</span><span class="wr-name">Brand Systems</span><span class="wr-arrow">→</span></li>
+          <li class="wr-item" data-si="4"><div class="wr-dot"></div><span class="wr-idx">05</span><span class="wr-name">KABA ELITE</span><span class="wr-arrow">→</span></li>
         </ul>
       </div>
     </div>
-    <div class="fi-bgt" aria-hidden="true">KABA</div>
   </section>
 
-  <!-- BAND -->
-  <div class="band" aria-hidden="true"></div>
+  <div class="section-bleed"></div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="fi-wrap">
+      <div class="fi-left" id="fi-left">
+        <div class="fi-eyebrow"><span class="eyebrow-line"></span>We Listen First</div>
+        <h2 class="fi-h">What Are You<br><em>Looking For?</em></h2>
+        <p class="fi-p">Every business is different. Tell us what you need and we'll build the right solution around you.</p>
+        <div class="fi-contacts">
+          <div class="fi-contact"><div class="fi-dot"></div><span class="fi-clabel">Phone</span><a class="fi-cval" href="tel:+251913864659">+251 913 864 659</a><span class="fi-carrow">→</span></div>
+          <div class="fi-contact"><div class="fi-dot"></div><span class="fi-clabel">Email</span><a class="fi-cval" href="mailto:kabadigitals@gmail.com">kabadigitals@gmail.com</a><span class="fi-carrow">→</span></div>
+          <div class="fi-contact"><div class="fi-dot"></div><span class="fi-clabel">Instagram</span><a class="fi-cval" href="https://instagram.com/kaba_digital_marketing" target="_blank">@kaba_digital_marketing</a><span class="fi-carrow">→</span></div>
+          <div class="fi-contact"><div class="fi-dot"></div><span class="fi-clabel">Location</span><span class="fi-cval">Addis Ababa, Ethiopia</span><span class="fi-carrow">→</span></div>
+        </div>
+      </div>
+      <div class="fi-right" id="fi-right">
+        <ul class="fi-list">
+          <li class="fi-item"><button class="fi-btn" data-p="fp0"><div class="fi-btn-left"><span class="fi-prefix">→</span><span class="fi-name">More Customers</span></div><span class="fi-arrow">↗</span></button><div class="fi-panel" id="fp0"><div class="fi-panel-inner"><span class="fi-panel-tag">Get Customers Package</span><p class="fi-panel-desc">We run <strong>Meta and TikTok ads</strong> targeting your exact customer in Addis. Promo videos, SMS campaigns, monthly reports.</p><span class="fi-price">From 27,999 ETB / month</span></div></div></li>
+          <li class="fi-item"><button class="fi-btn" data-p="fp1"><div class="fi-btn-left"><span class="fi-prefix">→</span><span class="fi-name">Look Professional</span></div><span class="fi-arrow">↗</span></button><div class="fi-panel" id="fp1"><div class="fi-panel-inner"><span class="fi-panel-tag">Look Trusted Package</span><p class="fi-panel-desc">Website, social media setup, <strong>brand intro video</strong>, and a complete professional online identity.</p><span class="fi-price">One-time project</span></div></div></li>
+          <li class="fi-item"><button class="fi-btn" data-p="fp2"><div class="fi-btn-left"><span class="fi-prefix">→</span><span class="fi-name">Dominate My Market</span></div><span class="fi-arrow">↗</span></button><div class="fi-panel" id="fp2"><div class="fi-panel-inner"><span class="fi-panel-tag">Scale & Dominate — KABA ELITE</span><p class="fi-panel-desc"><strong>Full cinematic system</strong> — influencer models, Meta + TikTok + Google ads, CRM, automation, dedicated manager.</p><span class="fi-price">From 119,999 ETB / month</span></div></div></li>
+          <li class="fi-item"><button class="fi-btn" data-p="fp3"><div class="fi-btn-left"><span class="fi-prefix">→</span><span class="fi-name">Just a Website</span></div><span class="fi-arrow">↗</span></button><div class="fi-panel" id="fp3"><div class="fi-panel-inner"><span class="fi-panel-tag">Web Development</span><p class="fi-panel-desc">Fast, mobile-first websites built to <strong>convert visitors</strong> into customers. One-time fee, optional retainer.</p><span class="fi-price">Custom quote</span></div></div></li>
+          <li class="fi-item"><button class="fi-btn" data-p="fp4"><div class="fi-btn-left"><span class="fi-prefix">→</span><span class="fi-name">Not Sure Yet</span></div><span class="fi-arrow">↗</span></button><div class="fi-panel" id="fp4"><div class="fi-panel-inner"><span class="fi-panel-tag">Free Consultation</span><p class="fi-panel-desc">Call or DM us. We spend <strong>20 minutes</strong> understanding your business and tell you exactly what we'd recommend. Zero commitment.</p><span class="fi-price">100% Free</span></div></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fi-bgt">KABA</div>
+  </section>
+
+  <div class="band"></div>
 
   <!-- PACKAGES -->
-  <section id="packages" aria-labelledby="packages-title">
+  <section id="packages">
     <div class="pkg-header reveal">
-      <h2 class="pkg-h" id="packages-title">Choose Your<br><em>Level.</em></h2>
-      <p class="pkg-sub">Three tiers. Nine packages. All built for businesses that refuse to be invisible.</p>
+      <h2 class="pkg-h">Choose Your<br><em>Level.</em></h2>
+      <p class="pkg-subtext">Three tiers. Nine packages. All built for businesses that refuse to be invisible.</p>
     </div>
     <div class="pkg-grid">
-
-      <div class="pkg-card reveal">
-        <span class="pkg-badge">Tier 01 — Phone Production</span>
-        <h3 class="pkg-name">KABA START</h3>
-        <p class="pkg-target">Salons · Restaurants · Boutiques · Retailers</p>
-        <div class="pkg-div"></div>
-        <ul class="pkg-list">
-          <li>10–20 videos per month</li>
-          <li>2–6 graphics per month</li>
-          <li>Full social media management</li>
-          <li>Meta ads management (Silver & Gold)</li>
-          <li>Extra video from 1,000 ETB</li>
-        </ul>
-        <div class="pkg-price">19,999 ETB</div>
-        <div class="pkg-price-sub">Starting from / month</div>
-        <a class="pkg-cta" href="#contact">Get Started</a>
-      </div>
-
-      <div class="pkg-card featured reveal rd1">
-        <span class="pkg-badge">★ Tier 02 — Camera Production</span>
-        <h3 class="pkg-name">KABA PRO</h3>
-        <p class="pkg-target">Clinics · Schools · Hotels · Real Estate</p>
-        <div class="pkg-div"></div>
-        <ul class="pkg-list">
-          <li>14–28 videos per month</li>
-          <li>4–8 graphics per month</li>
-          <li>Full social media management</li>
-          <li>Meta + TikTok ads management</li>
-          <li>Monthly performance report</li>
-          <li>Extra video from 2,500 ETB</li>
-        </ul>
-        <div class="pkg-price">44,999 ETB</div>
-        <div class="pkg-price-sub">Starting from / month</div>
-        <a class="pkg-cta" href="#contact">Get Started</a>
-      </div>
-
-      <div class="pkg-card reveal rd2">
-        <span class="pkg-badge">Tier 03 — Cinematic Production</span>
-        <h3 class="pkg-name">KABA ELITE</h3>
-        <p class="pkg-target">Corporates · Car Dealers · Large Clinics</p>
-        <div class="pkg-div"></div>
-        <ul class="pkg-list">
-          <li>24–40 videos per month</li>
-          <li>6–12 graphics per month</li>
-          <li>Full social media management</li>
-          <li>Meta + TikTok + Google ads</li>
-          <li>Influencer model included</li>
-          <li>CRM & automation setup</li>
-          <li>Dedicated account manager</li>
-        </ul>
-        <div class="pkg-price">119,999 ETB</div>
-        <div class="pkg-price-sub">Starting from / month</div>
-        <a class="pkg-cta" href="#contact">Get Started</a>
-      </div>
-
+      <div class="pkg-card reveal"><span class="pkg-badge">Tier 01 — Phone Production</span><h3 class="pkg-name">KABA START</h3><p class="pkg-target">Salons · Restaurants · Boutiques · Retailers</p><div class="pkg-div"></div><ul class="pkg-list"><li>10–20 videos per month</li><li>2–6 graphics per month</li><li>Full social media management</li><li>Meta ads (Silver & Gold)</li><li>Extra video from 1,000 ETB</li></ul><div class="pkg-price">19,999 ETB</div><div class="pkg-price-sub">Starting from / month</div><a class="pkg-cta" href="#contact">Get Started</a></div>
+      <div class="pkg-card featured reveal rd1"><span class="pkg-badge">★ Tier 02 — Camera Production</span><h3 class="pkg-name">KABA PRO</h3><p class="pkg-target">Clinics · Schools · Hotels · Real Estate</p><div class="pkg-div"></div><ul class="pkg-list"><li>14–28 videos per month</li><li>4–8 graphics per month</li><li>Full social media management</li><li>Meta + TikTok ads management</li><li>Monthly performance report</li><li>Extra video from 2,500 ETB</li></ul><div class="pkg-price">44,999 ETB</div><div class="pkg-price-sub">Starting from / month</div><a class="pkg-cta" href="#contact">Get Started</a></div>
+      <div class="pkg-card reveal rd2"><span class="pkg-badge">Tier 03 — Cinematic Production</span><h3 class="pkg-name">KABA ELITE</h3><p class="pkg-target">Corporates · Car Dealers · Large Clinics</p><div class="pkg-div"></div><ul class="pkg-list"><li>24–40 videos per month</li><li>6–12 graphics per month</li><li>Full social media management</li><li>Meta + TikTok + Google ads</li><li>Influencer model included</li><li>CRM & automation setup</li><li>Dedicated account manager</li></ul><div class="pkg-price">119,999 ETB</div><div class="pkg-price-sub">Starting from / month</div><a class="pkg-cta" href="#contact">Get Started</a></div>
     </div>
     <p class="pkg-note reveal">Ad budget is paid directly by the client to Meta, TikTok, or Google. KABA LABS manages and optimizes your campaigns — we never handle your ad spend.</p>
   </section>
 
   <!-- CTA -->
-  <section id="contact" aria-labelledby="contact-title">
-    <div class="cta-glow" aria-hidden="true"></div>
+  <section id="contact">
     <div class="cta-tag reveal">Ready to Dominate?</div>
-    <h2 class="cta-h reveal" id="contact-title">
-      Your Competitors<em>Are Already Here.</em>
-    </h2>
+    <h2 class="cta-h reveal">Your Competitors<em>Are Already Here.</em></h2>
     <p class="cta-sub reveal">Book a free consultation. We'll tell you exactly which package fits your business and what results to expect. No fluff. No commitment.</p>
     <div class="cta-btns reveal">
-      <a class="btn-g" href="tel:+251913864659">Call Now</a>
-      <a class="btn-ghost" href="mailto:kabadigitals@gmail.com">Send Email</a>
+      <a class="btn-primary" href="tel:+251913864659">Call Now</a>
+      <a class="btn-outline" href="mailto:kabadigitals@gmail.com">Send Email</a>
     </div>
-    <p class="cta-info reveal">
-      +251 913 864 659 &nbsp;·&nbsp;
-      <a href="mailto:kabadigitals@gmail.com">kabadigitals@gmail.com</a> &nbsp;·&nbsp;
-      @kaba_digital_marketing
-    </p>
+    <p class="cta-info reveal">+251 913 864 659 &nbsp;·&nbsp; <a href="mailto:kabadigitals@gmail.com">kabadigitals@gmail.com</a> &nbsp;·&nbsp; @kaba_digital_marketing</p>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-logo">KABA LABS</div>
     <p class="footer-copy">© 2026 KABA LABS · Addis Ababa, Ethiopia</p>
-    <ul class="footer-links" role="list">
-      <li><a href="https://instagram.com/kaba_digital_marketing" target="_blank" rel="noopener">Instagram</a></li>
-      <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
-      <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+    <ul class="footer-links">
+      <li><a href="https://instagram.com/kaba_digital_marketing" target="_blank">Instagram</a></li>
+      <li><a href="#" target="_blank">TikTok</a></li>
+      <li><a href="#" target="_blank">Facebook</a></li>
     </ul>
   </footer>
 
-</div><!-- /site -->
-
+</div>
 <script src="main.js"></script>
 </body>
 </html>
