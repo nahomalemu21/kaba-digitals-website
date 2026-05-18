@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1600" viewBox="0 0 1600 1600">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF2A8"/>
+      <stop offset="18%" stop-color="#FFD447"/>
+      <stop offset="48%" stop-color="#C88412"/>
+      <stop offset="72%" stop-color="#F7C744"/>
+      <stop offset="100%" stop-color="#8F5A06"/>
+    </linearGradient>
+    <linearGradient id="gold2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE76A"/>
+      <stop offset="45%" stop-color="#D79A1D"/>
+      <stop offset="100%" stop-color="#7B4600"/>
+    </linearGradient>
+    <radialGradient id="bg" cx="50%" cy="44%" r="65%">
+      <stop offset="0%" stop-color="#151515"/>
+      <stop offset="65%" stop-color="#060606"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.8"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#FFC928" flood-opacity="0.45"/>
+    </filter>
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feFlood flood-color="#FFC928" flood-opacity="0.35"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .word { font-family: Montserrat, Futura, Avenir Next, Arial, sans-serif; font-weight: 900; letter-spacing: -8px; }
+      .labs { font-family: Montserrat, Futura, Avenir Next, Arial, sans-serif; font-weight: 600; letter-spacing: 70px; }
+      .tag { font-family: Montserrat, Futura, Avenir Next, Arial, sans-serif; font-weight: 500; letter-spacing: 24px; }
+    </style>
+  </defs>
+
+  <!-- Black background. Delete this rectangle if you want a transparent SVG. -->
+  <rect width="1600" height="1600" fill="url(#bg)"/>
+
+  <g filter="url(#shadow)">
+    <!-- K -->
+    <text x="175" y="760" class="word" font-size="420" fill="url(#gold)" stroke="#FEE179" stroke-width="3">K</text>
+
+    <!-- Custom pyramid A mark -->
+    <g transform="translate(535 405)" filter="url(#softGlow)">
+      <!-- outer A/pyramid body -->
+      <path d="M160 0 L330 355 L260 355 L225 282 L95 282 L60 355 L-10 355 Z" fill="url(#gold)" stroke="#FFE680" stroke-width="3"/>
+      <!-- inner cutout to make A feel like letterform -->
+      <path d="M160 183 L204 282 L116 282 Z" fill="#050505" opacity="0.96"/>
+      <!-- brick gaps clipped visually by drawing dark separators -->
+      <g stroke="#050505" stroke-width="14" stroke-linecap="round" opacity="0.95">
+        <line x1="112" y1="77" x2="208" y2="77"/>
+        <line x1="86" y1="130" x2="234" y2="130"/>
+        <line x1="60" y1="183" x2="260" y2="183"/>
+        <line x1="35" y1="236" x2="285" y2="236"/>
+        <line x1="12" y1="290" x2="308" y2="290"/>
+        <line x1="92" y1="130" x2="92" y2="183"/>
+        <line x1="160" y1="77" x2="160" y2="130"/>
+        <line x1="225" y1="130" x2="225" y2="183"/>
+        <line x1="65" y1="183" x2="65" y2="236"/>
+        <line x1="160" y1="183" x2="160" y2="236"/>
+        <line x1="255" y1="183" x2="255" y2="236"/>
+        <line x1="95" y1="236" x2="95" y2="290"/>
+        <line x1="215" y1="236" x2="215" y2="290"/>
+        <line x1="58" y1="290" x2="58" y2="355"/>
+        <line x1="138" y1="290" x2="138" y2="355"/>
+        <line x1="242" y1="290" x2="242" y2="355"/>
+      </g>
+      <!-- subtle top highlight -->
+      <path d="M160 0 L330 355 L260 355 L160 55 L60 355 L-10 355 Z" fill="none" stroke="#FFF3A7" stroke-width="2" opacity="0.55"/>
+    </g>
+
+    <!-- B A -->
+    <text x="825" y="760" class="word" font-size="420" fill="url(#gold)" stroke="#FEE179" stroke-width="3">BA</text>
+  </g>
+
+  <!-- LABS lockup -->
+  <g filter="url(#softGlow)">
+    <line x1="190" y1="940" x2="430" y2="940" stroke="url(#gold)" stroke-width="5" stroke-linecap="round"/>
+    <text x="495" y="983" class="labs" font-size="96" fill="url(#gold)">LABS</text>
+    <line x1="1168" y1="940" x2="1410" y2="940" stroke="url(#gold)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>
