@@ -38,6 +38,72 @@ const problems = [
 
 const industries = ['Restaurants & Cafes','Gyms & Fitness Centers','Hotels & Guest Houses','Furniture Stores','Clinics & Wellness','Beauty Salons & Spas','Real Estate','Fashion Brands','E-commerce Stores','Schools & Training','Car Dealerships','Interior Design'];
 
+const t = {
+  en: {
+    heroTitle: "We Don't Make Content. We Build Empires.",
+    heroSub: "Kaba Labs combines video production, ads, websites, CRM, and growth systems to help Ethiopian businesses look trusted online and get more customers every month.",
+    heroCta: "Book 20-Min Consultation",
+    heroCtaSecondary: "See The Systems",
+    realityTitle: "Your Competitors Are Already Winning Online.",
+    r1h: "They found you first on Google Maps — and chose someone else.",
+    r1p: "If your business does not look trusted online, customers call your competitor instead.",
+    r2h: "Walk-ins and word of mouth are not enough anymore.",
+    r2p: "The fastest-growing businesses in Ethiopia are using consistent content, targeted ads, and better follow-up.",
+    r3h: "You tried marketing before and it did not work.",
+    r3p: "Boosting posts is not advertising. Random videos are not strategy. Kaba builds the full system behind growth.",
+    showcaseTitle: "Choose the system your business needs to grow.",
+    showcaseSub: "Websites, content, ads, and follow-up should work together.",
+    roadTitle: "Your Brand Does Not Need Random Content. It Needs a Growth System.",
+    roadSub: "Scroll and watch how Kaba turns an invisible business into a brand with attention, trust, leads, and sales.",
+    marketControl: "This is not marketing. This is market control.",
+    contactTitle: "WHAT ARE YOU LOOKING FOR?",
+    contactLead: "Every business is different. Book a 20-minute consultation and tell us what you need.",
+    consultBtn: "Book a 20-Minute Consultation",
+  },
+  am: {
+    heroTitle: "ኮንተንት አንሠራም። ኢምፓየር እንገነባለን።",
+    heroSub: "KABA LABS ቪዲዮ፣ ማስታወቂያ፣ ድረ-ገጽ፣ CRM እና የእድገት ስርዓቶችን በማጣመር የኢትዮጵያ ቢዝነሶች ታማኝ ሆነው እንዲታዩ እና ደንበኞች እንዲያገኙ ያግዛሉ።",
+    heroCta: "20 ደቂቃ ምክክር ያዝዙ",
+    heroCtaSecondary: "ስርዓቶቹን ይመልከቱ",
+    realityTitle: "ተወዳዳሪዎችዎ አስቀድሞ በኦንላይን እያሸነፉ ነው።",
+    r1h: "በጉግል ካርታ አገኙዎትና — ሌላ ሰው መረጡ።",
+    r1p: "ቢዝነሶ በኦንላይን አስተማማኝ ካልሆነ ደንበኞ ተወዳዳሪዎን ይደውሉለታል።",
+    r2h: "ወደ ውስጥ መምጣት እና ተሰምቶ መሰራጨት አሁን አይበቃም።",
+    r2p: "ፈጣን እያደጉ ያሉ ቢዝነሶች ወጥ ኮንተንት እና የታለሙ ማስታወቂያዎች ላይ እየኢንቨስት ናቸው።",
+    r3h: "ከዚህ ቀደም ማርኬቲንግ ሞክርዎ ውጤት አልሰጠዎትም።",
+    r3p: "ፖስት ማስተዋወቅ ማስታወቂያ አይደለም። KABA ሙሉ ስርዓቱን ይገነባል።",
+    showcaseTitle: "ቢዝነሶ ለማደግ የሚፈልጉትን ስርዓት ይምረጡ።",
+    showcaseSub: "ድረ-ገጽ፣ ኮንተንት፣ ማስታወቂያ እና ክትትል አብረው መስራት አለባቸው።",
+    roadTitle: "ብራንድዎ ተራ ኮንተንት አይደለም የሚፈልገው። የእድገት ስርዓት ያስፈልገዋል።",
+    roadSub: "ስክሮል አድርገው KABA ያልታወቀ ቢዝነስን ወደ ሚታይ ብራንድ እንዴት እንደሚቀይር ይመልከቱ።",
+    marketControl: "ይህ ማርኬቲንግ ብቻ አይደለም። የገበያ ቁጥጥር ነው።",
+    contactTitle: "ምን እየፈለጉ ነው?",
+    contactLead: "እያንዳንዱ ቢዝነስ የተለየ ነው። 20 ደቂቃ ምክክር ያዝዙ።",
+    consultBtn: "20 ደቂቃ ምክክር ያዝዙ",
+  },
+  fr: {
+    heroTitle: "Nous ne créons pas du contenu. Nous bâtissons des empires.",
+    heroSub: "Kaba Labs combine production vidéo, publicités, sites web, CRM et systèmes de croissance pour aider les entreprises éthiopiennes à paraître crédibles et attirer plus de clients.",
+    heroCta: "Réserver 20 min de consultation",
+    heroCtaSecondary: "Voir les systèmes",
+    realityTitle: "Vos concurrents gagnent déjà en ligne.",
+    r1h: "Ils vous ont trouvé sur Google Maps — et ont choisi quelqu'un d'autre.",
+    r1p: "Si votre entreprise n'est pas crédible en ligne, les clients appellent votre concurrent.",
+    r2h: "Les clients spontanés et le bouche-à-oreille ne suffisent plus.",
+    r2p: "Les entreprises qui croissent le plus vite investissent dans du contenu régulier et des publicités ciblées.",
+    r3h: "Vous avez essayé le marketing avant — sans résultat.",
+    r3p: "Booster des publications n'est pas de la publicité. Kaba construit le système complet derrière la croissance.",
+    showcaseTitle: "Choisissez le système dont votre entreprise a besoin pour croître.",
+    showcaseSub: "Sites web, contenu, publicités et suivi doivent fonctionner ensemble.",
+    roadTitle: "Votre marque n'a pas besoin de contenu aléatoire. Elle a besoin d'un système de croissance.",
+    roadSub: "Faites défiler et regardez comment Kaba transforme une entreprise invisible en marque qui attire, inspire confiance et vend.",
+    marketControl: "Ce n'est pas du marketing. C'est le contrôle du marché.",
+    contactTitle: "QUE CHERCHEZ-VOUS ?",
+    contactLead: "Chaque entreprise est différente. Réservez 20 minutes de consultation.",
+    consultBtn: "Réserver 20 min de consultation",
+  }
+};
+
 const styles = `
 html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#050505}
 .app{min-height:100vh;background:#050505;color:#f7f3e8;font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
@@ -116,7 +182,7 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 .showcase-progress button.on{background:rgba(229,185,87,.09);color:#f7f3e8;border-left-color:#e5b957;transform:translateX(-10px)}
 .showcase-progress button.on small{color:#e5b957}
 .growth-section{position:relative;padding:110px 0 0;margin:0}
-.sticky-growth{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;width:min(1180px,calc(100% - 32px));margin:0 auto;overflow:visible}
+.sticky-growth{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;width:min(1180px,calc(100% - 32px));margin:0 auto;overflow:hidden}
 .section-intro h2{font-size:clamp(30px,4.7vw,62px);line-height:.95;max-width:920px;color:#f7f3e8}
 .section-intro p:not(.eyebrow){color:#a7a096;font-size:18px;line-height:1.65;max-width:760px}
 .road-stage{display:grid;grid-template-columns:340px 1fr;gap:22px;align-items:stretch;margin-top:18px;min-height:460px}
@@ -442,11 +508,11 @@ export default function App() {
       <section className="hero section">
         <div>
           <p className="eyebrow"><Sparkles size={16}/>KABA LABS / GROWTH COMMAND CENTER</p>
-          <h1 style={{color:'#f7f3e8'}}>We Don't Make Content. We Build Empires.</h1>
-          <p className="lead">Kaba Labs combines video production, ads, websites, CRM, and growth systems to help Ethiopian businesses look trusted online and get more customers every month.</p>
+          <h1 style={{color:'#f7f3e8'}}>{t[lang].heroTitle}</h1>
+          <p className="lead">{t[lang].heroSub}</p>
           <div className="actions">
-            <a className="btn primary" href="https://wa.me/251913864659" target="_blank" rel="noreferrer">Book 20-Min Consultation <ArrowUpRight size={18}/></a>
-            <a className="btn ghost" href="#kaba-showcase"><Play size={17}/>See The Systems</a>
+            <a className="btn primary" href="https://wa.me/251913864659" target="_blank" rel="noreferrer">{t[lang].heroCta} <ArrowUpRight size={18}/></a>
+            <a className="btn ghost" href="#kaba-showcase"><Play size={17}/>{t[lang].heroCtaSecondary}</a>
           </div>
           <div className="proofbar">
             <span><Check size={15}/>60+ Clients Served</span>
@@ -466,11 +532,11 @@ export default function App() {
 
       <section className="section">
         <p className="eyebrow"><Zap size={16}/>THE REALITY</p>
-        <h2>Your Competitors Are Already Winning Online.</h2>
+        <h2>{t[lang].realityTitle}</h2>
         <div className="reality-grid">
-          <article><span>01</span><h3>They found you first on Google Maps — and chose someone else.</h3><p>If your business does not look trusted online, customers call your competitor instead.</p></article>
-          <article><span>02</span><h3>Walk-ins and word of mouth are not enough anymore.</h3><p>The fastest-growing businesses in Ethiopia are using consistent content, targeted ads, and better follow-up.</p></article>
-          <article><span>03</span><h3>You tried marketing before and it did not work.</h3><p>Boosting posts is not advertising. Random videos are not strategy. Kaba builds the full system behind growth.</p></article>
+          <article><span>01</span><h3>{t[lang].r1h}</h3><p>{t[lang].r1p}</p></article>
+          <article><span>02</span><h3>{t[lang].r2h}</h3><p>{t[lang].r2p}</p></article>
+          <article><span>03</span><h3>{t[lang].r3h}</h3><p>{t[lang].r3p}</p></article>
         </div>
       </section>
 
@@ -479,8 +545,8 @@ export default function App() {
         <div className="showcase-sticky">
           <div className="showcase-head">
             <p className="eyebrow"><Sparkles size={16}/>GROWTH SYSTEMS</p>
-            <h2>Choose the system your business needs to grow.</h2>
-            <p>Websites, content, ads, and follow-up should work together. Explore how Kaba turns attention into real customers.</p>
+            <h2>{t[lang].showcaseTitle}</h2>
+            <p>{t[lang].showcaseSub}</p>
             <a className="showcase-cta" href="https://wa.me/251913864659" target="_blank" rel="noreferrer">Book 20-Min Consultation <ArrowUpRight size={18}/></a>
           </div>
           <svg className="showcase-cord" viewBox="0 0 1200 460" preserveAspectRatio="none">
@@ -533,8 +599,8 @@ export default function App() {
         <div className="sticky-growth" style={{position: isMobile ? 'relative' : 'sticky', top: isMobile ? 'unset' : 0, height: isMobile ? 'auto' : '100vh', minHeight: isMobile ? 0 : '100vh'}}>
           <div className="section-intro">
             <p className="eyebrow"><MousePointer2 size={16}/>SCROLL TO GROW</p>
-            <h2>Your Brand Does Not Need Random Content. It Needs a Growth System.</h2>
-            <p>Scroll and watch how Kaba turns an invisible business into a brand with attention, trust, leads, and sales.</p>
+            <h2>{t[lang].roadTitle}</h2>
+            <p>{t[lang].roadSub}</p>
           </div>
           <div className="road-stage">
             <aside className="stage-panel">
@@ -567,10 +633,10 @@ export default function App() {
               <div className="float-stat stat-3"><strong>Leads</strong><span>Flow Activated</span></div>
             </div>
           </div>
-          <div className="market-footer">
-            <h2 className="market-control">This is not marketing. This is market control.</h2>
-            <div className="control-chips"><span>Strategy locked</span><span>Content engine live</span><span>Leads moving</span><span>Scale mode</span></div>
-          </div>
+        </div>
+        <div className="market-footer" style={{width:'min(1180px,calc(100% - 32px))',margin:'0 auto',padding:'40px 0 80px'}}>
+          <h2 className="market-control">{t[lang].marketControl}</h2>
+          <div className="control-chips"><span>Strategy locked</span><span>Content engine live</span><span>Leads moving</span><span>Scale mode</span></div>
         </div>
       </section>
 
@@ -615,9 +681,9 @@ export default function App() {
       <section id="contact" className="contact-section">
         <div className="contact-inner">
           <p className="contact-kicker"><span></span>WE LISTEN FIRST</p>
-          <h2>WHAT ARE YOU<br/><strong>LOOKING FOR?</strong></h2>
-          <p className="contact-lead">Every business is different. Book a 20-minute consultation and tell us what you need. We will understand your business first, then recommend the right solution.</p>
-          <a className="consult-btn" href="https://wa.me/251913864659" target="_blank" rel="noreferrer">Book a 20-Minute Consultation <ArrowUpRight size={22}/></a>
+          <h2>{t[lang].contactTitle}</h2>
+          <p className="contact-lead">{t[lang].contactLead}</p>
+          <a className="consult-btn" href="https://wa.me/251913864659" target="_blank" rel="noreferrer">{t[lang].consultBtn} <ArrowUpRight size={22}/></a>
           <div className="contact-list">
             <a href="tel:+251913864659"><i></i><span>PHONE</span><b>+251 913 864 659</b></a>
             <a href="mailto:kabadigitals@gmail.com"><i></i><span>EMAIL</span><b>kabadigitals@gmail.com</b></a>
