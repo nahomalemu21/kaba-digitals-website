@@ -84,8 +84,8 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 .intro-mark strong{display:inline-block;color:#e5b957;letter-spacing:.42em;font-size:18px;margin-left:.42em;animation:fadeUp .7s ease .9s both}
 .intro-mark p{color:#a7a096;font-weight:700;margin:18px 0 24px;animation:fadeUp .7s ease 1.15s both}
 .intro-mark button{border:1px solid rgba(229,185,87,.35);background:linear-gradient(135deg,#e5b957,#fff0a8);color:#050505;border-radius:999px;padding:14px 18px;font-weight:900;display:inline-flex;align-items:center;gap:8px;cursor:pointer;animation:fadeUp .7s ease 1.35s both}
-.showcase{height:100vh;position:relative;background:radial-gradient(circle at 18% 28%,rgba(105,75,210,.34),transparent 30%),radial-gradient(circle at 78% 18%,rgba(70,190,170,.18),transparent 34%),linear-gradient(90deg,#06070b,#080808);overflow:clip}
-.showcase-sticky{position:sticky;top:0;height:100dvh;width:100%;overflow:hidden}
+.showcase{position:relative;background:radial-gradient(circle at 18% 28%,rgba(105,75,210,.34),transparent 30%),radial-gradient(circle at 78% 18%,rgba(70,190,170,.18),transparent 34%),linear-gradient(90deg,#06070b,#080808);overflow:clip}
+.showcase-sticky{position:sticky;top:0;height:100dvh;width:100%;overflow:hidden;flex-shrink:0}
 .showcase-sticky:before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(126,72,255,.35) 1px,transparent 1px),radial-gradient(rgba(229,185,87,.26) 1px,transparent 1px);background-size:18px 18px,31px 31px;mask-image:radial-gradient(circle at 50% 50%,black,transparent 70%);opacity:.55;animation:particleDrift 7s ease-in-out infinite alternate}
 .showcase-head{position:absolute;left:5vw;top:7vh;z-index:8;max-width:760px}
 .showcase-head h2{font-size:clamp(38px,5.5vw,82px);line-height:.88;letter-spacing:-.07em;margin:16px 0}
@@ -115,7 +115,7 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 .showcase-progress button small{margin-right:12px;color:rgba(229,185,87,.36)}
 .showcase-progress button.on{background:rgba(229,185,87,.09);color:#f7f3e8;border-left-color:#e5b957;transform:translateX(-10px)}
 .showcase-progress button.on small{color:#e5b957}
-.growth-section{position:relative;padding:110px 0 0}
+.growth-section{position:relative;padding:110px 0 0;margin:0}
 .sticky-growth{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;width:min(1180px,calc(100% - 32px));margin:0 auto;overflow:visible}
 .section-intro h2{font-size:clamp(30px,4.7vw,62px);line-height:.95;max-width:920px;color:#f7f3e8}
 .section-intro p:not(.eyebrow){color:#a7a096;font-size:18px;line-height:1.65;max-width:760px}
@@ -214,7 +214,7 @@ footer{text-align:center;color:#a7a096;padding:30px}
   .section{padding:60px 20px}
   /* ── SHOWCASE CARDS ── */
   .showcase{height:auto!important}
-  .showcase-sticky{height:100vh;position:relative;touch-action:pan-y}
+  .showcase-sticky{height:100svh!important;position:relative!important;overflow:hidden}
   .showcase-head{left:20px;right:20px;top:72px;max-width:100%}
   .showcase-head h2{font-size:clamp(26px,7vw,38px);margin:8px 0 6px}
   .showcase-head p{font-size:13px;line-height:1.5;display:none}
@@ -238,7 +238,7 @@ footer{text-align:center;color:#a7a096;padding:30px}
   .mob-card-nav span{color:#f7f3e8;font-size:12px;letter-spacing:.1em;font-weight:700;min-width:40px;text-align:center}
   /* ── ROADMAP ── */
   .growth-section{height:auto!important;padding:60px 20px 40px}
-  .sticky-growth{position:relative!important;height:auto!important;min-height:auto;overflow:visible}
+  .sticky-growth{position:relative!important;height:auto!important;min-height:0!important;top:auto!important;overflow:visible!important}
   .road-stage{grid-template-columns:1fr;gap:14px;min-height:auto;margin-top:14px}
   .stage-panel{gap:8px}
   .progress-chip{padding:10px 14px}
@@ -258,7 +258,7 @@ footer{text-align:center;color:#a7a096;padding:30px}
   .traveler-label{font-size:10px}
   .float-stat{display:none}
   .finish-glow{display:none}
-  .market-footer{grid-template-columns:1fr;margin-top:20px;gap:14px}
+  .market-footer{grid-template-columns:1fr;margin-top:20px;gap:14px;margin-bottom:0;padding-bottom:0}
   .market-control{font-size:clamp(28px,8vw,44px)!important;line-height:1}
   .control-chips{grid-template-columns:1fr 1fr;gap:6px}
   .control-chips span{padding:10px 8px;font-size:11px}
@@ -529,8 +529,8 @@ export default function App() {
       </section>
 
       {/* GROWTH ROADMAP */}
-      <section id="growth-system" className="growth-section" style={{height: isMobile ? 'auto' : '500vh'}}>
-        <div className="sticky-growth" style={{position: isMobile ? 'relative' : 'sticky', top: isMobile ? 'auto' : 0, height: isMobile ? 'auto' : '100vh'}}>
+      <section id="growth-system" className="growth-section" style={{height: isMobile ? 'auto' : '500vh', paddingBottom: isMobile ? 0 : 0}}>
+        <div className="sticky-growth" style={{position: isMobile ? 'relative' : 'sticky', top: isMobile ? 'unset' : 0, height: isMobile ? 'auto' : '100vh', minHeight: isMobile ? 0 : '100vh'}}>
           <div className="section-intro">
             <p className="eyebrow"><MousePointer2 size={16}/>SCROLL TO GROW</p>
             <h2>Your Brand Does Not Need Random Content. It Needs a Growth System.</h2>
