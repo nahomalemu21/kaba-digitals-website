@@ -589,7 +589,7 @@ export default function App() {
       </section>
 
       {/* GROWTH ROADMAP */}
-      <section id="growth-system" className="growth-section" style={{height: isMobile ? 'auto' : '500vh', paddingBottom: isMobile ? 0 : 0}}>
+      <section id="growth-system" className="growth-section">
         <div className="sticky-growth">
           <div className="section-intro">
             <p className="eyebrow"><MousePointer2 size={16}/>SCROLL TO GROW</p>
