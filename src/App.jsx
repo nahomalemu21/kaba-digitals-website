@@ -181,7 +181,7 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 .showcase-progress button small{margin-right:12px;color:rgba(229,185,87,.36)}
 .showcase-progress button.on{background:rgba(229,185,87,.09);color:#f7f3e8;border-left-color:#e5b957;transform:translateX(-10px)}
 .showcase-progress button.on small{color:#e5b957}
-.growth-section{position:relative;padding:110px 0 0;margin:0}
+.growth-section{position:relative;padding:110px 0 0;margin:0;overflow:hidden}
 .sticky-growth{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;width:min(1180px,calc(100% - 32px));margin:0 auto;overflow:hidden}
 .section-intro h2{font-size:clamp(30px,4.7vw,62px);line-height:.95;max-width:920px;color:#f7f3e8}
 .section-intro p:not(.eyebrow){color:#a7a096;font-size:18px;line-height:1.65;max-width:760px}
@@ -634,7 +634,7 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div className="market-footer" style={{width:'min(1180px,calc(100% - 32px))',margin:'0 auto',padding:'40px 0 80px'}}>
+        <div style={{width:'min(1180px,calc(100% - 32px))',margin:'0 auto',padding:'40px 0 80px',position:'relative',zIndex:10}}>
           <h2 className="market-control">{t[lang].marketControl}</h2>
           <div className="control-chips"><span>Strategy locked</span><span>Content engine live</span><span>Leads moving</span><span>Scale mode</span></div>
         </div>
