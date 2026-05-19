@@ -110,12 +110,12 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
 .tag-row b{font-size:12px;border:1px solid rgba(229,185,87,.22);background:rgba(229,185,87,.08);border-radius:999px;padding:8px 10px;color:#f7f3e8}
 .showcase-explain em{display:block;font-style:normal;color:#050505;background:linear-gradient(135deg,#e5b957,#fff0a8);border-radius:16px;padding:14px;font-weight:950}
-.showcase-progress{position:absolute;right:42px;top:50%;transform:translateY(-50%);z-index:12;display:grid;gap:6px;width:230px}
+.mob-card-nav{display:none}.showcase-progress{position:absolute;right:42px;top:50%;transform:translateY(-50%);z-index:12;display:grid;gap:6px;width:230px}
 .showcase-progress button{text-align:left;border:0;border-left:1px solid rgba(255,255,255,.1);background:transparent;color:rgba(247,243,232,.36);padding:14px 18px;font-weight:950;text-transform:uppercase;letter-spacing:.02em;cursor:pointer;transition:.25s}
 .showcase-progress button small{margin-right:12px;color:rgba(229,185,87,.36)}
 .showcase-progress button.on{background:rgba(229,185,87,.09);color:#f7f3e8;border-left-color:#e5b957;transform:translateX(-10px)}
 .showcase-progress button.on small{color:#e5b957}
-.growth-section{height:500vh;position:relative;padding:110px 0 0}
+.growth-section{position:relative;padding:110px 0 0}
 .sticky-growth{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;width:min(1180px,calc(100% - 32px));margin:0 auto;overflow:visible}
 .section-intro h2{font-size:clamp(30px,4.7vw,62px);line-height:.95;max-width:920px;color:#f7f3e8}
 .section-intro p:not(.eyebrow){color:#a7a096;font-size:18px;line-height:1.65;max-width:760px}
@@ -213,7 +213,8 @@ footer{text-align:center;color:#a7a096;padding:30px}
   /* SECTION */
   .section{padding:60px 20px}
   /* ── SHOWCASE CARDS ── */
-  .showcase-sticky{touch-action:none}
+  .showcase{height:auto!important}
+  .showcase-sticky{height:100vh;position:relative;touch-action:pan-y}
   .showcase-head{left:20px;right:20px;top:72px;max-width:100%}
   .showcase-head h2{font-size:clamp(26px,7vw,38px);margin:8px 0 6px}
   .showcase-head p{font-size:13px;line-height:1.5;display:none}
@@ -231,9 +232,13 @@ footer{text-align:center;color:#a7a096;padding:30px}
   .tag-row b{font-size:9px;padding:4px 7px}
   .showcase-explain em{padding:8px 12px;font-size:12px}
   .showcase-progress{display:none}
+  .mob-card-nav{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:30;display:flex;align-items:center;gap:16px;background:rgba(5,5,5,.7);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:8px 20px;backdrop-filter:blur(12px)}
+  .mob-card-nav button{background:none;border:none;color:#e5b957;font-size:20px;cursor:pointer;padding:4px 8px;font-weight:900;opacity:.9}
+  .mob-card-nav button:disabled{opacity:.3;cursor:default}
+  .mob-card-nav span{color:#f7f3e8;font-size:12px;letter-spacing:.1em;font-weight:700;min-width:40px;text-align:center}
   /* ── ROADMAP ── */
   .growth-section{height:auto!important;padding:60px 20px 40px}
-  .sticky-growth{position:relative!important;height:auto!important;min-height:auto}
+  .sticky-growth{position:relative!important;height:auto!important;min-height:auto;overflow:visible}
   .road-stage{grid-template-columns:1fr;gap:14px;min-height:auto;margin-top:14px}
   .stage-panel{gap:8px}
   .progress-chip{padding:10px 14px}
@@ -290,6 +295,7 @@ export default function App() {
   const [showIntro, setShowIntro] = useState(true);
   const [activeProblem, setActiveProblem] = useState(0);
   const [showcaseProgress, setShowcaseProgress] = useState(0);
+  const [mobileCardIndex, setMobileCardIndex] = useState(0);
   const showcaseProgressRef = useRef(0);
   const showcaseStepRef = useRef(0);
   const wheelBufferRef = useRef(0);
@@ -298,6 +304,13 @@ export default function App() {
   const roadProgressRef = useRef(0);
   const pathRef = useRef(null);
   const [traveler, setTraveler] = useState({ x: 40, y: 380, angle: -18 });
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth <= 900);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowIntro(false), 3600);
@@ -315,6 +328,7 @@ export default function App() {
     };
 
     const onWheel = (e) => {
+      if (window.innerWidth <= 900) return;
       const show = document.getElementById('kaba-showcase');
       if (show) {
         const rect = show.getBoundingClientRect();
@@ -461,7 +475,7 @@ export default function App() {
       </section>
 
       {/* SHOWCASE — SCROLL-LOCKED CARDS */}
-      <section id="kaba-showcase" className="showcase" style={{height:'400vh'}}>
+      <section id="kaba-showcase" className="showcase" style={{height: isMobile ? 'auto' : '400vh'}}>
         <div className="showcase-sticky">
           <div className="showcase-head">
             <p className="eyebrow"><Sparkles size={16}/>GROWTH SYSTEMS</p>
@@ -505,12 +519,18 @@ export default function App() {
               </button>
             ))}
           </div>
+          {/* Mobile tap nav */}
+          <div className="mob-card-nav">
+            <button onClick={() => { const i = Math.max(0, showcaseIndex-1); jumpShowcase(i); }} disabled={showcaseIndex===0}>←</button>
+            <span>{showcaseIndex+1} / {slides.length}</span>
+            <button onClick={() => { const i = Math.min(slides.length-1, showcaseIndex+1); jumpShowcase(i); }} disabled={showcaseIndex===slides.length-1}>→</button>
+          </div>
         </div>
       </section>
 
       {/* GROWTH ROADMAP */}
-      <section id="growth-system" className="growth-section">
-        <div className="sticky-growth">
+      <section id="growth-system" className="growth-section" style={{height: isMobile ? 'auto' : '500vh'}}>
+        <div className="sticky-growth" style={{position: isMobile ? 'relative' : 'sticky', top: isMobile ? 'auto' : 0, height: isMobile ? 'auto' : '100vh'}}>
           <div className="section-intro">
             <p className="eyebrow"><MousePointer2 size={16}/>SCROLL TO GROW</p>
             <h2>Your Brand Does Not Need Random Content. It Needs a Growth System.</h2>
