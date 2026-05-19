@@ -1,4 +1,4 @@
-/* KABA LABS — main.js v4 */
+/* KABA LABS — main.js v5 */
 (function(){
 'use strict';
 
@@ -30,36 +30,23 @@ const hTag=document.getElementById('h-tag');
 const enterBtn=document.getElementById('enter-btn');
 
 function runIntro(){
-  // Step 1 — letters drop in one by one, same size
   sLetters.forEach((l,i)=>{
     if(l) setTimeout(()=>l.classList.add('drop'), 300 + i*280);
   });
-
-  // Step 2 — after all letters shown, collapse to horizontal KABA LABS
   const collapseAt = 300 + sLetters.length*280 + 500;
-
   setTimeout(()=>{
-    // Fade out stacked
     stacked.style.transition='opacity .35s, transform .35s';
     stacked.style.opacity='0';
     stacked.style.transform='scale(.97)';
-
     setTimeout(()=>{
       stacked.style.display='none';
       horizontal.style.opacity='1';
-
-      // KABA word assembles
       setTimeout(()=>hWord.classList.add('show'), 50);
-      // Line expands
       setTimeout(()=>hLine.classList.add('expand'), 350);
-      // LABS
       setTimeout(()=>hLabs.classList.add('show'), 550);
-      // Tagline
       setTimeout(()=>hTag.classList.add('show'), 800);
-      // Enter button
       setTimeout(()=>enterBtn.classList.add('show'), 1100);
     },380);
-
   }, collapseAt);
 }
 
@@ -86,11 +73,13 @@ window.addEventListener('scroll',()=>{if(nav)nav.classList.toggle('scrolled',win
 if(burger){burger.addEventListener('click',()=>{burger.classList.toggle('open');mobileNav.classList.toggle('open')})}
 document.querySelectorAll('.mnl').forEach(el=>el.addEventListener('click',()=>{if(burger)burger.classList.remove('open');if(mobileNav)mobileNav.classList.remove('open')}));
 
-// ── SCROLL CARDS ──
+// ── CARDS — CLICK NAVIGATION + SCROLL TRIGGER ──
 const cards=document.querySelectorAll('.wcard');
 const wrItems=document.querySelectorAll('.wr-item');
 const TOTAL=cards.length;
 let current=-1;
+let isTransitioning=false;
+
 const labels=['Dental & Medical','Performance Ads','Video Production','Brand Systems','KABA ELITE'];
 const glows=[
   'radial-gradient(ellipse 70% 60% at 42% 50%,rgba(100,20,200,.18) 0%,transparent 65%)',
@@ -100,9 +89,11 @@ const glows=[
   'radial-gradient(ellipse 70% 60% at 42% 50%,rgba(200,160,0,.16) 0%,transparent 65%)',
 ];
 
-function showCard(idx){
-  if(idx===current)return;
-  const prev=current;current=idx;
+function showCard(idx,force){
+  if((idx===current&&!force)||isTransitioning)return;
+  isTransitioning=true;
+  const prev=current; current=idx;
+
   if(prev>=0){
     const c=cards[prev];
     c.classList.remove('active','entering');
@@ -110,37 +101,64 @@ function showCard(idx){
     c.classList.add('leaving');
     setTimeout(()=>{c.classList.remove('leaving');c.style.cssText=''},700);
   }
+
   const nc=cards[idx];
   nc.classList.remove('prev','next','leaving');
   nc.style.cssText='';
   nc.classList.add('entering');
-  setTimeout(()=>{nc.classList.add('active');nc.classList.remove('entering')},860);
+  setTimeout(()=>{
+    nc.classList.add('active');
+    nc.classList.remove('entering');
+    isTransitioning=false;
+  },860);
+
   const wn=document.getElementById('wr-num'),wl=document.getElementById('wr-label');
   if(wn){wn.textContent=String(idx+1).padStart(2,'0');wn.classList.add('lit');setTimeout(()=>wn.classList.remove('lit'),600)}
   if(wl)wl.textContent=labels[idx];
   wrItems.forEach((it,i)=>it.classList.toggle('active',i===idx));
   const g=document.getElementById('work-glow');if(g)g.style.background=glows[idx];
   if(idx>0){const sc=document.getElementById('scue');if(sc)sc.style.opacity='0'}
+
+  // Update prev/next buttons
+  const prevBtn=document.getElementById('card-prev');
+  const nextBtn=document.getElementById('card-next');
+  if(prevBtn)prevBtn.style.opacity=idx===0?'0.3':'1';
+  if(nextBtn)nextBtn.style.opacity=idx===TOTAL-1?'0.3':'1';
 }
 
-window.addEventListener('scroll',()=>{
-  const s=document.getElementById('work');if(!s)return;
-  const scrolled=window.scrollY-s.offsetTop;
-  const total=s.offsetHeight-window.innerHeight;
-  const prog=Math.max(0,Math.min(1,scrolled/total));
-  const idx=Math.min(TOTAL-1,Math.floor(prog*TOTAL));
-  if(scrolled>-window.innerHeight/2)showCard(idx);
-},{passive:true});
-
+// Click navigation — right panel
 wrItems.forEach((it,i)=>{
-  it.addEventListener('click',()=>{
-    const s=document.getElementById('work');if(!s)return;
-    const total=s.offsetHeight-window.innerHeight;
-    window.scrollTo({top:s.offsetTop+(i/TOTAL)*total+10,behavior:'smooth'});
-  });
+  it.addEventListener('click',()=>showCard(i));
 });
 
-// Card parallax
+// Prev/Next buttons
+const prevBtn=document.getElementById('card-prev');
+const nextBtn=document.getElementById('card-next');
+if(prevBtn)prevBtn.addEventListener('click',()=>{if(current>0)showCard(current-1)});
+if(nextBtn)nextBtn.addEventListener('click',()=>{if(current<TOTAL-1)showCard(current+1)});
+
+// Scroll trigger — only fires when sticky section is in view
+// Uses a debounced approach so it's not jumpy
+let lastScrollY=0;
+let scrollTimeout=null;
+window.addEventListener('scroll',()=>{
+  const stage=document.getElementById('work');
+  if(!stage)return;
+  const rect=stage.getBoundingClientRect();
+  // Only active when cards section is sticky
+  if(rect.top>0||rect.bottom<window.innerHeight)return;
+
+  const scrolled=window.scrollY-stage.offsetTop;
+  const total=stage.offsetHeight-window.innerHeight;
+  const prog=Math.max(0,Math.min(1,scrolled/total));
+
+  // Map to card index — each card gets equal scroll zone
+  const idx=Math.min(TOTAL-1,Math.floor(prog*TOTAL));
+  if(idx!==current)showCard(idx);
+
+},{passive:true});
+
+// Card mouse parallax
 const wl2=document.querySelector('.work-left');
 if(wl2){
   wl2.addEventListener('mousemove',e=>{
@@ -148,7 +166,11 @@ if(wl2){
     const r=wl2.getBoundingClientRect();
     const cx=(e.clientX-r.left)/r.width-.5,cy=(e.clientY-r.top)/r.height-.5;
     const c=cards[current];
-    if(c&&c.classList.contains('active')){c.style.marginLeft=`${cx*14}px`;c.style.marginTop=`${cy*10}px`;c.style.transform=`rotateY(${cx*5}deg) rotateX(${-cy*3}deg)`}
+    if(c&&c.classList.contains('active')){
+      c.style.marginLeft=`${cx*14}px`;
+      c.style.marginTop=`${cy*10}px`;
+      c.style.transform=`rotateY(${cx*5}deg) rotateX(${-cy*3}deg)`;
+    }
   });
   wl2.addEventListener('mouseleave',()=>{
     if(current>=0){const c=cards[current];if(c){c.style.marginLeft='0';c.style.marginTop='0';c.style.transform=''}}
@@ -169,7 +191,6 @@ document.querySelectorAll('.fi-btn').forEach(btn=>{
 const rvObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>rvObs.observe(el));
 
-// Services reveal
 const fiObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
