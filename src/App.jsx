@@ -176,6 +176,7 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 .plan a{white-space:nowrap;color:#e5b957;font-weight:900;display:flex;gap:8px;text-decoration:none}
 .contact-section{background:#e9e2d4;color:#161616;position:relative;overflow:hidden;padding:110px 0}
 .contact-section:before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(22,22,22,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(22,22,22,.055) 1px,transparent 1px);background-size:96px 96px}
+.contact-section{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
 .contact-inner{position:relative;z-index:1;width:min(1180px,calc(100% - 32px));margin:0 auto}
 .contact-kicker{display:flex;align-items:center;gap:22px;color:#d19500;font-size:15px;letter-spacing:.32em;font-weight:900;margin:0 0 28px}
 .contact-kicker span{width:76px;height:2px;background:#d19500;display:inline-block}
@@ -198,7 +199,74 @@ footer{text-align:center;color:#a7a096;padding:30px}
 @keyframes cordMove{to{stroke-dashoffset:-185}}
 @keyframes travelerPulse{0%,100%{box-shadow:0 0 30px rgba(229,185,87,.6),0 0 60px rgba(229,185,87,.3)}50%{box-shadow:0 0 50px rgba(229,185,87,.9),0 0 100px rgba(229,185,87,.5)}}
 @keyframes dashmove{to{stroke-dashoffset:-60}}
-@media(max-width:980px){.nav-links{display:none}.hero,.split,.compare-grid,.road-stage{grid-template-columns:1fr}.cards,.industries,.reality-grid{grid-template-columns:1fr}.showcase-head{left:24px;top:78px}.showcase-head h2{font-size:44px}.showcase-card{width:82vw;height:310px;padding-top:180px}.showcase-explain{left:24px;right:24px;bottom:24px;top:auto;transform:none;width:auto}.showcase-progress{display:none}.showcase-cord{width:130vw;left:-14vw}.section{padding:80px 0}.market-footer{grid-template-columns:1fr}.control-chips{grid-template-columns:1fr 1fr}}
+@media(max-width:980px){
+  /* NAV */
+  .nav-links{display:none}
+  /* HERO */
+  .hero{grid-template-columns:1fr;padding-top:100px}
+  .hero-visual{display:none}
+  /* GRIDS */
+  .split,.compare-grid,.road-stage{grid-template-columns:1fr}
+  .cards,.industries,.reality-grid{grid-template-columns:1fr 1fr}
+  /* SECTION */
+  .section{padding:64px 16px}
+  /* ── SHOWCASE CARDS ── */
+  .showcase-sticky{overflow:hidden}
+  .showcase-head{left:16px;right:16px;top:60px;max-width:100%}
+  .showcase-head h2{font-size:clamp(28px,7vw,40px);margin:10px 0}
+  .showcase-head p{font-size:14px;line-height:1.5}
+  .showcase-cta{padding:12px 14px;font-size:13px;margin-top:14px}
+  .showcase-stage{perspective:800px}
+  .showcase-card{width:88vw;height:52vw;min-height:240px;max-height:320px;padding:160px 20px 24px;border-radius:20px}
+  .showcase-card h2{font-size:clamp(22px,5vw,32px)}
+  .showcase-cord{display:none}
+  .showcase-explain{left:12px;right:12px;bottom:16px;top:auto;transform:none;width:auto;padding:16px;border-radius:16px}
+  .showcase-explain h3{font-size:28px;margin:10px 0}
+  .showcase-explain p{font-size:12px;line-height:1.6}
+  .tag-row{gap:5px}.tag-row b{font-size:10px;padding:5px 8px}
+  .showcase-explain em{padding:10px;font-size:13px}
+  .showcase-progress{display:none}
+  /* ── ROADMAP ── */
+  .growth-section{height:auto;padding:60px 16px 60px}
+  .sticky-growth{position:relative;height:auto;justify-content:flex-start}
+  .section-intro{margin-bottom:28px}
+  .section-intro h2{font-size:clamp(28px,7vw,40px)}
+  .road-stage{grid-template-columns:1fr;gap:16px;min-height:auto;margin-top:16px}
+  .stage-panel{gap:10px}
+  .progress-chip{padding:12px 14px}
+  .stage-card{padding:18px}
+  .active-card h3{font-size:26px}
+  .stage-list{grid-template-columns:1fr 1fr;gap:6px}
+  .mini-stage{padding:8px 10px;font-size:12px}
+  .road-wrap{height:280px;border-radius:20px}
+  .road-node{padding:6px 10px;font-size:11px;gap:4px}
+  .road-node svg{width:12px;height:12px}
+  .brand-core{width:80px;height:80px}
+  .brand-core span{font-size:18px}
+  .traveler{width:48px;height:28px}
+  .float-stat{padding:8px 10px;font-size:11px}
+  .market-footer{grid-template-columns:1fr;margin-top:24px;gap:16px}
+  .market-control{font-size:clamp(28px,7vw,44px)!important}
+  .control-chips{grid-template-columns:1fr 1fr;gap:8px}
+  .control-chips span{padding:10px 8px;font-size:12px}
+  /* ── CTA / CONTACT ── */
+  .contact-section{padding:60px 16px}
+  .contact-section h2{font-size:clamp(44px,10vw,80px);letter-spacing:-.05em}
+  .contact-lead{font-size:clamp(16px,4vw,20px)}
+  .consult-btn{font-size:15px;padding:14px 18px;margin-bottom:36px}
+  .contact-list a,.contact-list div{grid-template-columns:12px 120px 1fr;gap:12px;min-height:72px}
+  .contact-list span{font-size:12px;letter-spacing:.1em}
+  .contact-list b{font-size:clamp(14px,4vw,20px)}
+  /* PLANS */
+  .plan{flex-direction:column;align-items:flex-start;gap:14px}
+  .plan h3{font-size:24px}
+}
+@media(max-width:520px){
+  .cards,.industries,.reality-grid{grid-template-columns:1fr}
+  .stage-list{grid-template-columns:1fr}
+  .control-chips{grid-template-columns:1fr}
+  .showcase-card{height:60vw;padding-top:140px}
+}
 `;
 
 export default function App() {
