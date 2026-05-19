@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="KABA LABS — Ethiopia's most advanced digital marketing agency. Video production, Meta & TikTok ads, web development. Addis Ababa.">
+<meta name="description" content="KABA LABS — Ethiopia's most advanced digital marketing agency. Video, Ads, Systems. Addis Ababa.">
 <title>KABA LABS — Digital Marketing & Technology</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
 
@@ -35,76 +34,85 @@
 <!-- SITE -->
 <div id="site">
 
+  <!-- NAV -->
   <nav id="nav">
-    <a class="nav-logo" href="#">
-      <img src="kaba_logo.svg" alt="KABA LABS" class="nav-logo-img">
-      <span class="nav-logo-txt">KABA <span>LABS</span></span>
-    </a>
+    <a class="nav-logo" href="#"><img src="kaba_logo.svg" alt="KABA LABS" class="nav-logo-img"><span class="nav-logo-txt">KABA <span>LABS</span></span></a>
     <ul class="nav-links">
-      <li><a href="#problem">The Problem</a></li>
-      <li><a href="#work">Our Work</a></li>
-      <li><a href="#process">How It Works</a></li>
-      <li><a href="#packages">Packages</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#problem" data-i18n="nav0">Problem</a></li>
+      <li><a href="#roadmap" data-i18n="nav1">System</a></li>
+      <li><a href="#work" data-i18n="nav2">Work</a></li>
+      <li><a href="#packages" data-i18n="nav3">Packages</a></li>
+      <li><a href="#contact" data-i18n="nav4">Contact</a></li>
     </ul>
-    <a class="nav-cta" href="#contact">Start Now</a>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="am">አማ</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
+      <a class="nav-cta" href="#contact" data-i18n="navCta">Start Now</a>
+    </div>
     <button class="nav-burger" id="burger"><span></span><span></span></button>
   </nav>
 
   <div id="mobile-nav">
     <ul>
-      <li><a href="#problem" class="mnl">The Problem</a></li>
-      <li><a href="#work" class="mnl">Our Work</a></li>
-      <li><a href="#process" class="mnl">How It Works</a></li>
-      <li><a href="#packages" class="mnl">Packages</a></li>
-      <li><a href="#contact" class="mnl">Contact</a></li>
+      <li><a href="#problem" class="mnl" data-i18n="nav0">Problem</a></li>
+      <li><a href="#roadmap" class="mnl" data-i18n="nav1">System</a></li>
+      <li><a href="#work" class="mnl" data-i18n="nav2">Work</a></li>
+      <li><a href="#packages" class="mnl" data-i18n="nav3">Packages</a></li>
+      <li><a href="#contact" class="mnl" data-i18n="nav4">Contact</a></li>
     </ul>
-    <a class="mob-cta mnl" href="#contact">Start Now</a>
+    <div class="mob-lang">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="am">አማ</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+    </div>
+    <a class="mob-cta mnl" href="#contact" data-i18n="navCta">Start Now</a>
   </div>
 
   <!-- 1. HERO -->
   <section id="hero">
     <div class="hero-left">
-      <div class="hero-eyebrow"><span class="eyebrow-line"></span>Addis Ababa, Ethiopia — Est. 2024</div>
+      <div class="hero-eyebrow"><span class="eyebrow-line"></span><span data-i18n="heroEyebrow">Addis Ababa, Ethiopia — Est. 2024</span></div>
       <h1 class="hero-h1">
-        <span class="hero-line"><span>We Don't</span></span>
-        <span class="hero-line"><span>Make Content.</span></span>
-        <span class="hero-line gold-text"><span>We Build Empires.</span></span>
+        <span class="hero-line"><span data-i18n="heroLine1">We Don't</span></span>
+        <span class="hero-line"><span data-i18n="heroLine2">Make Content.</span></span>
+        <span class="hero-line gold-text"><span data-i18n="heroLine3">We Build Empires.</span></span>
       </h1>
-      <p class="hero-sub">KABA LABS is Ethiopia's most advanced digital marketing agency. <strong>Video. Ads. Systems.</strong> We help businesses look trusted online and get more customers — every single month.</p>
+      <p class="hero-sub"><span data-i18n="heroSub">KABA LABS is Ethiopia's most advanced digital marketing agency. Video. Ads. Systems. We help businesses look trusted online and get more customers every single month.</span></p>
       <div class="hero-btns">
-        <a class="btn-primary" href="#problem">See The Problem</a>
-        <a class="btn-outline" href="#packages">See Packages</a>
+        <a class="btn-primary" href="#problem" data-i18n="heroPrimary">See The Problem</a>
+        <a class="btn-outline" href="#packages" data-i18n="heroSecondary">See Packages</a>
       </div>
     </div>
     <div class="hero-right">
       <div class="proof-panel">
-        <div class="proof-panel-title"><span class="pp-line"></span>Proven Results</div>
+        <div class="proof-panel-title"><span class="pp-line"></span><span data-i18n="proofTitle">Proven Results</span></div>
         <div class="proof-stats">
-          <div class="proof-stat"><span class="proof-stat-num" data-count="60">0</span><span class="proof-stat-label">Clients Served</span></div>
-          <div class="proof-stat"><span class="proof-stat-num" data-count="10">0</span><span class="proof-stat-label">Dental Clinics</span></div>
-          <div class="proof-stat"><span class="proof-stat-num" data-count="3">0</span><span class="proof-stat-label">Service Tiers</span></div>
-          <div class="proof-stat"><span class="proof-stat-num" data-count="2">0</span><span class="proof-stat-label">Years Active</span></div>
+          <div class="proof-stat"><span class="proof-stat-num" data-count="60">0</span><span class="proof-stat-label" data-i18n="stat1">Clients Served</span></div>
+          <div class="proof-stat"><span class="proof-stat-num" data-count="10">0</span><span class="proof-stat-label" data-i18n="stat2">Dental Clinics</span></div>
+          <div class="proof-stat"><span class="proof-stat-num" data-count="3">0</span><span class="proof-stat-label" data-i18n="stat3">Service Tiers</span></div>
+          <div class="proof-stat"><span class="proof-stat-num" data-count="2">0</span><span class="proof-stat-label" data-i18n="stat4">Years Active</span></div>
         </div>
         <div class="proof-industries">
-          <div class="proof-industries-title">Industries We Serve</div>
+          <div class="proof-industries-title" data-i18n="industriesTitle">Industries We Serve</div>
           <div class="proof-tags">
-            <span class="proof-tag">Dental & Medical</span>
-            <span class="proof-tag">Real Estate</span>
-            <span class="proof-tag">Automotive</span>
-            <span class="proof-tag">Hospitality</span>
-            <span class="proof-tag">Beauty & Spa</span>
-            <span class="proof-tag">Education</span>
-            <span class="proof-tag">Retail</span>
+            <span class="proof-tag" data-i18n="ind1">Dental & Medical</span>
+            <span class="proof-tag" data-i18n="ind2">Real Estate</span>
+            <span class="proof-tag" data-i18n="ind3">Automotive</span>
+            <span class="proof-tag" data-i18n="ind4">Hospitality</span>
+            <span class="proof-tag" data-i18n="ind5">Beauty & Spa</span>
+            <span class="proof-tag" data-i18n="ind6">Education</span>
           </div>
         </div>
         <div class="proof-cta-mini">
-          <div class="proof-cta-mini-text"><strong>Free consultation</strong>20 minutes. No commitment.</div>
-          <a class="proof-cta-mini-btn" href="#contact">Talk to Us</a>
+          <div class="proof-cta-mini-text"><strong data-i18n="consultTitle">Free consultation</strong><span data-i18n="consultSub">20 minutes. No commitment.</span></div>
+          <a class="proof-cta-mini-btn" href="#contact" data-i18n="consultBtn">Talk to Us</a>
         </div>
       </div>
     </div>
-    <div class="hero-scroll"><div class="hero-scroll-line"></div><span>Scroll</span></div>
+    <div class="hero-scroll"><div class="hero-scroll-line"></div><span data-i18n="scroll">Scroll</span></div>
   </section>
 
   <div class="band"></div>
@@ -114,105 +122,136 @@
   <section id="problem">
     <div class="problem-inner">
       <div class="problem-left reveal">
-        <div class="section-eyebrow"><span class="eyebrow-line"></span>The Reality</div>
-        <h2 class="problem-h">Your Competitors<br>Are Already<br><em>Winning Online.</em></h2>
+        <div class="section-eyebrow"><span class="eyebrow-line"></span><span data-i18n="problemEyebrow">The Reality</span></div>
+        <h2 class="problem-h"><span data-i18n="problemTitle">Your Competitors Are Already</span><br><em data-i18n="problemTitleEm">Winning Online.</em></h2>
       </div>
       <div class="problem-right">
         <div class="problem-item reveal">
           <div class="problem-num">01</div>
-          <div class="problem-text">
-            <h3>They found you first on Google Maps — and chose someone else.</h3>
-            <p>Every day, customers in Addis search for exactly what you offer. If your business doesn't look trusted online, they call your competitor instead. It's that simple.</p>
-          </div>
+          <div class="problem-text"><h3 data-i18n="p1h">They found you on Google — and chose someone else.</h3><p data-i18n="p1p">Every day, customers in Addis search for exactly what you offer. If your business doesn't look trusted online, they call your competitor instead. It's that simple.</p></div>
         </div>
         <div class="problem-item reveal rd1">
           <div class="problem-num">02</div>
-          <div class="problem-text">
-            <h3>Walk-ins and word of mouth aren't enough anymore.</h3>
-            <p>The businesses growing fastest in Ethiopia right now are the ones investing in consistent content and targeted ads. The ones relying on the old way are falling behind — quietly.</p>
-          </div>
+          <div class="problem-text"><h3 data-i18n="p2h">Walk-ins and word of mouth aren't enough anymore.</h3><p data-i18n="p2p">The businesses growing fastest in Ethiopia right now are investing in consistent content and targeted ads. The ones relying on the old way are falling behind — quietly.</p></div>
         </div>
         <div class="problem-item reveal rd2">
           <div class="problem-num">03</div>
-          <div class="problem-text">
-            <h3>You tried marketing before and it didn't work.</h3>
-            <p>Boosting posts is not advertising. A random video is not a strategy. Most agencies in Addis take your money and give you activity, not results. We're built differently.</p>
-          </div>
+          <div class="problem-text"><h3 data-i18n="p3h">You tried marketing before and it didn't work.</h3><p data-i18n="p3p">Boosting posts is not advertising. A random video is not a strategy. Most agencies take your money and give you activity, not results. We're built differently.</p></div>
         </div>
-        <div class="problem-cta reveal rd3">
-          <a class="btn-primary" href="#work">See How We Fix This</a>
-        </div>
+        <div class="problem-cta reveal rd3"><a class="btn-primary" href="#roadmap" data-i18n="problemCta">See How We Fix This</a></div>
       </div>
     </div>
   </section>
 
-  <!-- 3. WHO WE ARE -->
+  <!-- 3. GROWTH ROADMAP -->
+  <section id="roadmap">
+    <div class="roadmap-header reveal">
+      <div class="section-eyebrow"><span class="eyebrow-line"></span><span data-i18n="roadmapEyebrow">The Growth System</span></div>
+      <h2 class="roadmap-title"><span data-i18n="roadmapTitle">Your Brand Needs a System.</span><br><em data-i18n="roadmapTitleEm">Not Random Content.</em></h2>
+      <p class="roadmap-sub" data-i18n="roadmapSub">Scroll and watch how KABA LABS turns an invisible business into a brand that attracts, builds trust, and converts.</p>
+    </div>
+    <div id="roadmap-stage">
+      <div id="roadmap-sticky">
+        <div class="rm-panel">
+          <div class="rm-progress"><span data-i18n="growth">Growth progress</span><strong id="rm-progress-label">0%</strong></div>
+          <div class="rm-active-card">
+            <div class="rm-step-num" id="rm-step-num">01</div>
+            <h3 class="rm-step-title" id="rm-step-title">Unknown Business</h3>
+            <p class="rm-step-text" id="rm-step-text">Weak signal. Low trust. No clear reason for the market to care.</p>
+            <span class="rm-step-metric" id="rm-step-metric">0 → 1</span>
+          </div>
+          <ul class="rm-steps-list" id="rm-steps-list">
+            <li class="rm-step-item active" data-step="0"><span class="rm-step-dot"></span><span data-i18n="step0">Unknown Business</span></li>
+            <li class="rm-step-item" data-step="1"><span class="rm-step-dot"></span><span data-i18n="step1">Diagnose</span></li>
+            <li class="rm-step-item" data-step="2"><span class="rm-step-dot"></span><span data-i18n="step2">Strategy</span></li>
+            <li class="rm-step-item" data-step="3"><span class="rm-step-dot"></span><span data-i18n="step3">Content</span></li>
+            <li class="rm-step-item" data-step="4"><span class="rm-step-dot"></span><span data-i18n="step4">Ads Live</span></li>
+            <li class="rm-step-item" data-step="5"><span class="rm-step-dot"></span><span data-i18n="step5">Trust Builds</span></li>
+            <li class="rm-step-item" data-step="6"><span class="rm-step-dot"></span><span data-i18n="step6">Leads Flow</span></li>
+            <li class="rm-step-item" data-step="7"><span class="rm-step-dot"></span><span data-i18n="step7">Market Control</span></li>
+          </ul>
+        </div>
+        <div class="rm-road-wrap">
+          <div class="rm-road-grid"></div>
+          <svg class="rm-road-svg" viewBox="0 0 900 500" preserveAspectRatio="none">
+            <path class="road-shadow" d="M60 440 C200 320 260 400 380 300 C500 200 580 310 680 210 C760 130 840 160 880 100"/>
+            <path class="road-surface" d="M60 440 C200 320 260 400 380 300 C500 200 580 310 680 210 C760 130 840 160 880 100"/>
+            <path class="road-progress" id="road-progress-path" d="M60 440 C200 320 260 400 380 300 C500 200 580 310 680 210 C760 130 840 160 880 100"/>
+            <path class="road-dash" d="M60 440 C200 320 260 400 380 300 C500 200 580 310 680 210 C760 130 840 160 880 100"/>
+          </svg>
+          <div class="rm-node" id="rn0" style="left:6%;top:84%"><span data-i18n="step0">Start</span></div>
+          <div class="rm-node" id="rn1" style="left:20%;top:60%"><span data-i18n="step1">Diagnose</span></div>
+          <div class="rm-node" id="rn2" style="left:34%;top:54%"><span data-i18n="step2">Strategy</span></div>
+          <div class="rm-node" id="rn3" style="left:48%;top:37%"><span data-i18n="step3">Content</span></div>
+          <div class="rm-node" id="rn4" style="left:60%;top:54%"><span data-i18n="step4">Ads</span></div>
+          <div class="rm-node" id="rn5" style="left:72%;top:37%"><span data-i18n="step5">Trust</span></div>
+          <div class="rm-node" id="rn6" style="left:82%;top:24%"><span data-i18n="step6">Leads</span></div>
+          <div class="rm-node" id="rn7" style="left:93%;top:15%"><span data-i18n="step7">Control</span></div>
+          <div class="rm-traveler" id="rm-traveler"><div class="traveler-glow"></div><div class="traveler-body">KABA</div></div>
+          <div class="rm-float-stat fs1" id="fs1"><strong data-i18n="vis">Visibility</strong><span>→ On</span></div>
+          <div class="rm-float-stat fs2" id="fs2"><strong data-i18n="tru">Trust</strong><span>+ Brand Lift</span></div>
+          <div class="rm-float-stat fs3" id="fs3"><strong data-i18n="lea">Leads</strong><span>Flow Active</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="roadmap-footer reveal">
+      <h2 class="market-control" data-i18n="marketControl">This is not marketing. This is market control.</h2>
+      <div class="control-chips">
+        <span data-i18n="chip1">Strategy locked</span>
+        <span data-i18n="chip2">Content engine live</span>
+        <span data-i18n="chip3">Leads moving</span>
+        <span data-i18n="chip4">Scale mode</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WHO WE ARE -->
   <section id="about">
     <div class="about-inner">
       <div class="about-text reveal">
-        <div class="section-eyebrow"><span class="eyebrow-line"></span>Who We Are</div>
-        <h2 class="about-h">Built for Ethiopia.<br><em>Built to Win.</em></h2>
-        <p class="about-p">KABA LABS was built because Ethiopian businesses deserved better than generic agencies and random content. We combine professional video production, data-driven advertising, and modern technology — all under one roof, tailored for the Ethiopian market.</p>
-        <p class="about-p">We know how Ethiopian customers decide to buy. We know what makes a clinic owner in Addis trust a brand. We know what makes a car dealer's phone ring. We've been doing it for 60+ clients across every major industry.</p>
+        <div class="section-eyebrow"><span class="eyebrow-line"></span><span data-i18n="aboutEyebrow">Who We Are</span></div>
+        <h2 class="about-h"><span data-i18n="aboutTitle">Built for Ethiopia.</span><br><em data-i18n="aboutTitleEm">Built to Win.</em></h2>
+        <p class="about-p" data-i18n="about1">KABA LABS was built because Ethiopian businesses deserved better. We combine professional video production, data-driven advertising, and modern technology — all under one roof, tailored for the Ethiopian market.</p>
+        <p class="about-p" data-i18n="about2">We know how Ethiopian customers decide to buy. We know what makes a clinic owner in Addis trust a brand. We know what makes a car dealer's phone ring. We've proven it with 60+ clients.</p>
       </div>
       <div class="about-stats reveal rd1">
-        <div class="about-stat">
-          <span class="about-stat-num">60+</span>
-          <span class="about-stat-label">Businesses transformed</span>
-        </div>
-        <div class="about-stat">
-          <span class="about-stat-num">10+</span>
-          <span class="about-stat-label">Dental clinics as active clients</span>
-        </div>
-        <div class="about-stat">
-          <span class="about-stat-num">3</span>
-          <span class="about-stat-label">Tiers built for every budget</span>
-        </div>
-        <div class="about-stat">
-          <span class="about-stat-num">1</span>
-          <span class="about-stat-label">Goal — your business grows</span>
-        </div>
-        <div class="about-quote">
-          <p>"We don't just make content. We think about leads, sales, and trust in everything we produce."</p>
-          <span>— KABA LABS</span>
-        </div>
+        <div class="about-stat"><span class="about-stat-num">60+</span><span class="about-stat-label" data-i18n="astat1">Businesses transformed</span></div>
+        <div class="about-stat"><span class="about-stat-num">10+</span><span class="about-stat-label" data-i18n="astat2">Dental clinics as active clients</span></div>
+        <div class="about-stat"><span class="about-stat-num">3</span><span class="about-stat-label" data-i18n="astat3">Tiers built for every budget</span></div>
+        <div class="about-quote"><p data-i18n="quote">"This is not marketing. This is market control."</p><span>— KABA LABS</span></div>
       </div>
     </div>
   </section>
 
   <div class="band"></div>
 
-  <!-- 4. WORK — SCROLL CARDS -->
+  <!-- 5. WORK CARDS -->
   <section id="work">
     <div class="work-header">
-      <div class="section-eyebrow light"><span class="eyebrow-line"></span>What We Do</div>
-      <h2 class="work-title">We Handle<br><em>Everything.</em></h2>
+      <div class="section-eyebrow light"><span class="eyebrow-line"></span><span data-i18n="workEyebrow">What We Do</span></div>
+      <h2 class="work-title"><span data-i18n="workTitle">We Handle</span><br><em data-i18n="workTitleEm">Everything.</em></h2>
     </div>
     <div id="work-sticky">
       <div class="work-left">
         <div id="work-glow"></div>
         <div id="card-wrap">
-          <div class="wcard" data-i="0"><div class="cb cb1"></div><div class="ci ci1"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag">Dental & Medical</span><h3 class="card-title">10+ Clinic Clients<br>in Addis Ababa</h3></div><span class="card-num">01 / 05</span><div class="card-prog"><div class="card-prog-fill" style="width:20%"></div></div></div>
-          <div class="wcard" data-i="1"><div class="cb cb2"></div><div class="ci ci2"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag">Performance Advertising</span><h3 class="card-title">Meta · TikTok<br>Google Ads</h3></div><span class="card-num">02 / 05</span><div class="card-prog"><div class="card-prog-fill" style="width:40%"></div></div></div>
-          <div class="wcard" data-i="2"><div class="cb cb3"></div><div class="ci ci3"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag">Video Production</span><h3 class="card-title">Phone · Camera<br>Cinematic</h3></div><span class="card-num">03 / 05</span><div class="card-prog"><div class="card-prog-fill" style="width:60%"></div></div></div>
-          <div class="wcard" data-i="3"><div class="cb cb4"></div><div class="ci ci4"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag">Brand & Growth Systems</span><h3 class="card-title">Systems That<br>Scale Forever</h3></div><span class="card-num">04 / 05</span><div class="card-prog"><div class="card-prog-fill" style="width:80%"></div></div></div>
-          <div class="wcard" data-i="4"><div class="cb cb5"></div><div class="ci ci5"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag">KABA ELITE — Top Tier</span><h3 class="card-title">The Level No One<br>Can Touch</h3></div><span class="card-num">05 / 05</span><div class="card-prog"><div class="card-prog-fill" style="width:100%"></div></div></div>
+          <div class="wcard" data-i="0"><div class="cb cb1"></div><div class="ci ci1"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag" data-i18n="c1tag">Dental & Medical</span><h3 class="card-title" data-i18n="c1title">10+ Clinic Clients in Addis Ababa</h3></div><span class="card-num">01/05</span><div class="card-prog"><div class="card-prog-fill" style="width:20%"></div></div></div>
+          <div class="wcard" data-i="1"><div class="cb cb2"></div><div class="ci ci2"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag" data-i18n="c2tag">Performance Advertising</span><h3 class="card-title" data-i18n="c2title">Meta · TikTok · Google Ads</h3></div><span class="card-num">02/05</span><div class="card-prog"><div class="card-prog-fill" style="width:40%"></div></div></div>
+          <div class="wcard" data-i="2"><div class="cb cb3"></div><div class="ci ci3"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag" data-i18n="c3tag">Video Production</span><h3 class="card-title" data-i18n="c3title">Phone · Camera · Cinematic</h3></div><span class="card-num">03/05</span><div class="card-prog"><div class="card-prog-fill" style="width:60%"></div></div></div>
+          <div class="wcard" data-i="3"><div class="cb cb4"></div><div class="ci ci4"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag" data-i18n="c4tag">Brand & Growth Systems</span><h3 class="card-title" data-i18n="c4title">Systems That Scale Forever</h3></div><span class="card-num">04/05</span><div class="card-prog"><div class="card-prog-fill" style="width:80%"></div></div></div>
+          <div class="wcard" data-i="4"><div class="cb cb5"></div><div class="ci ci5"></div><div class="cgrain"></div><div class="cscan"></div><div class="cov"></div><div class="card-content"><span class="card-tag">KABA ELITE</span><h3 class="card-title" data-i18n="c5title">The Level No One Can Touch</h3></div><span class="card-num">05/05</span><div class="card-prog"><div class="card-prog-fill" style="width:100%"></div></div></div>
         </div>
-        <!-- PREV / NEXT BUTTONS -->
-        <div class="card-nav">
-          <button class="card-nav-btn" id="card-prev" aria-label="Previous">←</button>
-          <button class="card-nav-btn" id="card-next" aria-label="Next">→</button>
-        </div>
-        <div class="scroll-cue" id="scue"><div class="scroll-cue-line"></div><span>Scroll</span></div>
+        <div class="card-nav"><button class="card-nav-btn" id="card-prev">←</button><button class="card-nav-btn" id="card-next">→</button></div>
+        <div class="scroll-cue" id="scue"><div class="scroll-cue-line"></div><span data-i18n="scroll">Scroll</span></div>
       </div>
       <div class="work-right">
         <div class="wr-num" id="wr-num">01</div>
         <div class="wr-label" id="wr-label">Dental & Medical</div>
         <ul class="wr-list">
-          <li class="wr-item active" data-si="0"><div class="wr-dot"></div><span class="wr-idx">01</span><span class="wr-name">Dental & Medical</span><span class="wr-arrow">→</span></li>
-          <li class="wr-item" data-si="1"><div class="wr-dot"></div><span class="wr-idx">02</span><span class="wr-name">Performance Ads</span><span class="wr-arrow">→</span></li>
-          <li class="wr-item" data-si="2"><div class="wr-dot"></div><span class="wr-idx">03</span><span class="wr-name">Video Production</span><span class="wr-arrow">→</span></li>
-          <li class="wr-item" data-si="3"><div class="wr-dot"></div><span class="wr-idx">04</span><span class="wr-name">Brand Systems</span><span class="wr-arrow">→</span></li>
+          <li class="wr-item active" data-si="0"><div class="wr-dot"></div><span class="wr-idx">01</span><span class="wr-name" data-i18n="c1tag">Dental & Medical</span><span class="wr-arrow">→</span></li>
+          <li class="wr-item" data-si="1"><div class="wr-dot"></div><span class="wr-idx">02</span><span class="wr-name" data-i18n="c2tag">Performance Ads</span><span class="wr-arrow">→</span></li>
+          <li class="wr-item" data-si="2"><div class="wr-dot"></div><span class="wr-idx">03</span><span class="wr-name" data-i18n="c3tag">Video Production</span><span class="wr-arrow">→</span></li>
+          <li class="wr-item" data-si="3"><div class="wr-dot"></div><span class="wr-idx">04</span><span class="wr-name" data-i18n="c4tag">Brand Systems</span><span class="wr-arrow">→</span></li>
           <li class="wr-item" data-si="4"><div class="wr-dot"></div><span class="wr-idx">05</span><span class="wr-name">KABA ELITE</span><span class="wr-arrow">→</span></li>
         </ul>
       </div>
@@ -221,95 +260,109 @@
 
   <div class="section-bleed"></div>
 
-  <!-- 5. HOW IT WORKS -->
+  <!-- 6. PROBLEM SOLVER -->
+  <section id="solver">
+    <div class="solver-inner">
+      <div class="solver-left reveal">
+        <div class="section-eyebrow"><span class="eyebrow-line"></span><span data-i18n="solverEyebrow">Problem Solver</span></div>
+        <h2 class="solver-h"><span data-i18n="solverTitle">What Is Slowing Your Business</span><br><em data-i18n="solverTitleEm">Down?</em></h2>
+        <p class="solver-sub" data-i18n="solverSub">Pick your real problem. We don't sell random content — we fix the path from attention to conversion.</p>
+        <div class="solver-problems" id="solver-problems">
+          <button class="solver-problem active" data-problem="0" data-i18n="prob0">No one knows we exist</button>
+          <button class="solver-problem" data-problem="1" data-i18n="prob1">We post but get no results</button>
+          <button class="solver-problem" data-problem="2" data-i18n="prob2">We tried ads and lost money</button>
+          <button class="solver-problem" data-problem="3" data-i18n="prob3">Our content looks unprofessional</button>
+          <button class="solver-problem" data-problem="4" data-i18n="prob4">We don't know where to start</button>
+        </div>
+      </div>
+      <div class="solver-right reveal rd1">
+        <div class="solver-answer-label" data-i18n="kabaAnswer">THE KABA ANSWER</div>
+        <div class="solver-answer" id="solver-answer">
+          <h3 id="solver-answer-title">Visibility System</h3>
+          <p id="solver-answer-text">We build your entire digital presence — professional profiles, optimized content, and targeted ads that put you in front of the right people in Addis every day.</p>
+          <a class="solver-cta" href="#contact" data-i18n="solverCta">Fix This With Us →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. COMPARISON -->
+  <section id="compare">
+    <div class="compare-inner">
+      <div class="compare-header reveal">
+        <div class="section-eyebrow"><span class="eyebrow-line"></span><span data-i18n="compareEyebrow">The Difference</span></div>
+        <h2 class="compare-h"><span data-i18n="compareTitle">Most Agencies Sell Content.</span><br><em data-i18n="compareTitleEm">We Build the Machine Behind It.</em></h2>
+      </div>
+      <div class="compare-grid reveal rd1">
+        <div class="compare-col other">
+          <h3 data-i18n="col1h">Normal Agencies</h3>
+          <ul>
+            <li data-i18n="o1">Post and disappear</li>
+            <li data-i18n="o2">Focus on likes and views</li>
+            <li data-i18n="o3">Random designs, no direction</li>
+            <li data-i18n="o4">No tracking or reporting</li>
+            <li data-i18n="o5">One-size-fits-all packages</li>
+            <li data-i18n="o6">Content only, no strategy</li>
+          </ul>
+        </div>
+        <div class="compare-divider">VS</div>
+        <div class="compare-col kaba">
+          <h3 data-i18n="col2h">KABA LABS</h3>
+          <ul>
+            <li data-i18n="k1">Strategy before execution</li>
+            <li data-i18n="k2">Leads, trust, and actual sales</li>
+            <li data-i18n="k3">Brand direction and consistency</li>
+            <li data-i18n="k4">Monthly performance reports</li>
+            <li data-i18n="k5">Built around your business model</li>
+            <li data-i18n="k6">Content + ads + website + sales flow</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. HOW IT WORKS -->
   <section id="process">
     <div class="process-inner">
       <div class="process-header reveal">
-        <div class="section-eyebrow"><span class="eyebrow-line"></span>How It Works</div>
-        <h2 class="process-h">Simple Process.<br><em>Real Results.</em></h2>
-        <p class="process-sub">We handle everything. You focus on your business.</p>
+        <div class="section-eyebrow"><span class="eyebrow-line"></span><span data-i18n="processEyebrow">How It Works</span></div>
+        <h2 class="process-h"><span data-i18n="processTitle">Simple Process.</span><br><em data-i18n="processTitleEm">Real Results.</em></h2>
+        <p class="process-sub" data-i18n="processSub">We handle everything. You focus on your business.</p>
       </div>
       <div class="process-steps">
-        <div class="process-step reveal">
-          <div class="process-step-num">01</div>
-          <div class="process-step-content">
-            <h3>Free Consultation</h3>
-            <p>We spend 20 minutes understanding your business, your customers, and your goals. No commitment, no cost. We tell you exactly what we'd recommend.</p>
-          </div>
-        </div>
+        <div class="process-step reveal"><div class="process-step-num">01</div><div class="process-step-content"><h3 data-i18n="ps1h">Free Consultation</h3><p data-i18n="ps1p">20 minutes. We understand your business and tell you exactly what we'd recommend. No commitment, no cost.</p></div></div>
         <div class="process-connector reveal rd1"></div>
-        <div class="process-step reveal rd1">
-          <div class="process-step-num">02</div>
-          <div class="process-step-content">
-            <h3>We Build Your System</h3>
-            <p>We choose the right package, shoot your content, set up your ads, and build your digital presence. You approve everything before we go live.</p>
-          </div>
-        </div>
+        <div class="process-step reveal rd1"><div class="process-step-num">02</div><div class="process-step-content"><h3 data-i18n="ps2h">We Build Your System</h3><p data-i18n="ps2p">Right package, shoot your content, set up your ads, build your presence. You approve everything before we go live.</p></div></div>
         <div class="process-connector reveal rd2"></div>
-        <div class="process-step reveal rd2">
-          <div class="process-step-num">03</div>
-          <div class="process-step-content">
-            <h3>You Get Customers</h3>
-            <p>Your ads run, your content goes out, your phone rings. Every month we send you a full performance report and optimize for even better results.</p>
-          </div>
-        </div>
+        <div class="process-step reveal rd2"><div class="process-step-num">03</div><div class="process-step-content"><h3 data-i18n="ps3h">You Get Customers</h3><p data-i18n="ps3p">Ads run, content goes out, phone rings. Every month a full performance report and optimization for better results.</p></div></div>
       </div>
     </div>
   </section>
 
   <div class="band"></div>
 
-  <!-- 6. SERVICES / FINDER -->
-  <section id="services">
-    <div class="fi-wrap">
-      <div class="fi-left" id="fi-left">
-        <div class="fi-eyebrow"><span class="eyebrow-line"></span>We Listen First</div>
-        <h2 class="fi-h">What Are You<br><em>Looking For?</em></h2>
-        <p class="fi-p">Every business is different. Tell us what you need and we'll build the right solution around you.</p>
-        <div class="fi-contacts">
-          <div class="fi-contact"><div class="fi-dot"></div><span class="fi-clabel">Phone</span><a class="fi-cval" href="tel:+251913864659">+251 913 864 659</a><span class="fi-carrow">→</span></div>
-          <div class="fi-contact"><div class="fi-dot"></div><span class="fi-clabel">Email</span><a class="fi-cval" href="mailto:kabadigitals@gmail.com">kabadigitals@gmail.com</a><span class="fi-carrow">→</span></div>
-          <div class="fi-contact"><div class="fi-dot"></div><span class="fi-clabel">Instagram</span><a class="fi-cval" href="https://instagram.com/kaba_digital_marketing" target="_blank">@kaba_digital_marketing</a><span class="fi-carrow">→</span></div>
-          <div class="fi-contact"><div class="fi-dot"></div><span class="fi-clabel">Location</span><span class="fi-cval">Addis Ababa, Ethiopia</span><span class="fi-carrow">→</span></div>
-        </div>
-      </div>
-      <div class="fi-right" id="fi-right">
-        <ul class="fi-list">
-          <li class="fi-item"><button class="fi-btn" data-p="fp0"><div class="fi-btn-left"><span class="fi-prefix">→</span><span class="fi-name">More Customers</span></div><span class="fi-arrow">↗</span></button><div class="fi-panel" id="fp0"><div class="fi-panel-inner"><span class="fi-panel-tag">Get Customers Package</span><p class="fi-panel-desc">We run <strong>Meta and TikTok ads</strong> targeting your exact customer in Addis. Promo videos, SMS campaigns, monthly reports.</p><span class="fi-price">From 27,999 ETB / month</span></div></div></li>
-          <li class="fi-item"><button class="fi-btn" data-p="fp1"><div class="fi-btn-left"><span class="fi-prefix">→</span><span class="fi-name">Look Professional</span></div><span class="fi-arrow">↗</span></button><div class="fi-panel" id="fp1"><div class="fi-panel-inner"><span class="fi-panel-tag">Look Trusted Package</span><p class="fi-panel-desc">Website, social media setup, <strong>brand intro video</strong>, and a complete professional online identity.</p><span class="fi-price">One-time project</span></div></div></li>
-          <li class="fi-item"><button class="fi-btn" data-p="fp2"><div class="fi-btn-left"><span class="fi-prefix">→</span><span class="fi-name">Dominate My Market</span></div><span class="fi-arrow">↗</span></button><div class="fi-panel" id="fp2"><div class="fi-panel-inner"><span class="fi-panel-tag">Scale & Dominate — KABA ELITE</span><p class="fi-panel-desc"><strong>Full cinematic system</strong> — influencer models, Meta + TikTok + Google ads, CRM, automation, dedicated manager.</p><span class="fi-price">From 119,999 ETB / month</span></div></div></li>
-          <li class="fi-item"><button class="fi-btn" data-p="fp3"><div class="fi-btn-left"><span class="fi-prefix">→</span><span class="fi-name">Just a Website</span></div><span class="fi-arrow">↗</span></button><div class="fi-panel" id="fp3"><div class="fi-panel-inner"><span class="fi-panel-tag">Web Development</span><p class="fi-panel-desc">Fast, mobile-first websites built to <strong>convert visitors</strong> into customers. One-time fee, optional retainer.</p><span class="fi-price">Custom quote</span></div></div></li>
-          <li class="fi-item"><button class="fi-btn" data-p="fp4"><div class="fi-btn-left"><span class="fi-prefix">→</span><span class="fi-name">Not Sure Yet</span></div><span class="fi-arrow">↗</span></button><div class="fi-panel" id="fp4"><div class="fi-panel-inner"><span class="fi-panel-tag">Free Consultation</span><p class="fi-panel-desc">Call or DM us. We spend <strong>20 minutes</strong> understanding your business and tell you exactly what we'd recommend. Zero commitment.</p><span class="fi-price">100% Free</span></div></div></li>
-        </ul>
-      </div>
-    </div>
-    <div class="fi-bgt">KABA</div>
-  </section>
-
-  <div class="band"></div>
-
-  <!-- 7. PACKAGES -->
+  <!-- 9. PACKAGES -->
   <section id="packages">
     <div class="pkg-header reveal">
-      <h2 class="pkg-h">Choose Your<br><em>Level.</em></h2>
-      <p class="pkg-subtext">Three tiers. Nine packages. All built for businesses that refuse to be invisible.</p>
+      <h2 class="pkg-h"><span data-i18n="pkgTitle">Choose Your</span><br><em data-i18n="pkgTitleEm">Level.</em></h2>
+      <p class="pkg-subtext" data-i18n="pkgSub">Three tiers. Nine packages. All built for businesses that refuse to be invisible.</p>
     </div>
     <div class="pkg-grid">
-      <div class="pkg-card reveal"><span class="pkg-badge">Tier 01 — Phone Production</span><h3 class="pkg-name">KABA START</h3><p class="pkg-target">Salons · Restaurants · Boutiques · Retailers</p><div class="pkg-div"></div><ul class="pkg-list"><li>10–20 videos per month</li><li>2–6 graphics per month</li><li>Full social media management</li><li>Meta ads management</li><li>Monthly content calendar</li></ul><div class="pkg-ideal"><span class="pkg-ideal-label">Ideal for</span><span class="pkg-ideal-text">Businesses getting serious about their online presence for the first time</span></div><a class="pkg-cta" href="#contact">Get a Custom Quote</a></div>
-      <div class="pkg-card featured reveal rd1"><span class="pkg-badge">★ Tier 02 — Camera Production</span><h3 class="pkg-name">KABA PRO</h3><p class="pkg-target">Clinics · Schools · Hotels · Real Estate</p><div class="pkg-div"></div><ul class="pkg-list"><li>14–28 videos per month</li><li>4–8 graphics per month</li><li>Full social media management</li><li>Meta + TikTok ads management</li><li>Monthly performance report</li><li>Professional camera production</li></ul><div class="pkg-ideal"><span class="pkg-ideal-label">Ideal for</span><span class="pkg-ideal-text">Growing businesses ready to run serious content and lead generation campaigns</span></div><a class="pkg-cta" href="#contact">Get a Custom Quote</a></div>
-      <div class="pkg-card reveal rd2"><span class="pkg-badge">Tier 03 — Cinematic Production</span><h3 class="pkg-name">KABA ELITE</h3><p class="pkg-target">Corporates · Car Dealers · Large Clinics</p><div class="pkg-div"></div><ul class="pkg-list"><li>24–40 videos per month</li><li>6–12 graphics per month</li><li>Full social media management</li><li>Meta + TikTok + Google ads</li><li>Influencer model included</li><li>CRM & automation setup</li><li>Dedicated account manager</li></ul><div class="pkg-ideal"><span class="pkg-ideal-label">Ideal for</span><span class="pkg-ideal-text">Brands that want full market domination — strategy, content, ads, and systems all managed for you</span></div><a class="pkg-cta" href="#contact">Get a Custom Quote</a></div>
+      <div class="pkg-card reveal"><span class="pkg-badge" data-i18n="pkg1badge">Tier 01 — Phone Production</span><h3 class="pkg-name">KABA START</h3><p class="pkg-target" data-i18n="pkg1target">Salons · Restaurants · Boutiques</p><div class="pkg-div"></div><ul class="pkg-list"><li data-i18n="pkg1f1">10–20 videos per month</li><li data-i18n="pkg1f2">2–6 graphics per month</li><li data-i18n="pkg1f3">Full social media management</li><li data-i18n="pkg1f4">Meta ads management</li><li data-i18n="pkg1f5">Monthly content calendar</li></ul><div class="pkg-ideal"><span class="pkg-ideal-label" data-i18n="idealFor">Ideal for</span><span class="pkg-ideal-text" data-i18n="pkg1ideal">Businesses getting serious about their online presence for the first time</span></div><a class="pkg-cta" href="#contact" data-i18n="getQuote">Get a Custom Quote</a></div>
+      <div class="pkg-card featured reveal rd1"><span class="pkg-badge" data-i18n="pkg2badge">★ Tier 02 — Camera Production</span><h3 class="pkg-name">KABA PRO</h3><p class="pkg-target" data-i18n="pkg2target">Clinics · Schools · Real Estate</p><div class="pkg-div"></div><ul class="pkg-list"><li data-i18n="pkg2f1">14–28 videos per month</li><li data-i18n="pkg2f2">4–8 graphics per month</li><li data-i18n="pkg2f3">Full social media management</li><li data-i18n="pkg2f4">Meta + TikTok ads management</li><li data-i18n="pkg2f5">Monthly performance report</li><li data-i18n="pkg2f6">Professional camera production</li></ul><div class="pkg-ideal"><span class="pkg-ideal-label" data-i18n="idealFor">Ideal for</span><span class="pkg-ideal-text" data-i18n="pkg2ideal">Growing businesses ready to run serious content and lead generation</span></div><a class="pkg-cta" href="#contact" data-i18n="getQuote">Get a Custom Quote</a></div>
+      <div class="pkg-card reveal rd2"><span class="pkg-badge" data-i18n="pkg3badge">Tier 03 — Cinematic Production</span><h3 class="pkg-name">KABA ELITE</h3><p class="pkg-target" data-i18n="pkg3target">Corporates · Car Dealers · Clinics</p><div class="pkg-div"></div><ul class="pkg-list"><li data-i18n="pkg3f1">24–40 videos per month</li><li data-i18n="pkg3f2">6–12 graphics per month</li><li data-i18n="pkg3f3">Full social media management</li><li data-i18n="pkg3f4">Meta + TikTok + Google ads</li><li data-i18n="pkg3f5">Influencer model included</li><li data-i18n="pkg3f6">CRM & automation setup</li><li data-i18n="pkg3f7">Dedicated account manager</li></ul><div class="pkg-ideal"><span class="pkg-ideal-label" data-i18n="idealFor">Ideal for</span><span class="pkg-ideal-text" data-i18n="pkg3ideal">Brands that want full market domination — strategy, content, ads, and systems</span></div><a class="pkg-cta" href="#contact" data-i18n="getQuote">Get a Custom Quote</a></div>
     </div>
-    <div class="pkg-bottom reveal"><p class="pkg-note">Pricing is customized to your business, industry, and goals. Contact us for a free consultation and we will recommend the right package for you.</p><a class="btn-primary" href="#contact">Book Free Consultation</a></div>
+    <div class="pkg-bottom reveal"><p class="pkg-note" data-i18n="pkgNote">Pricing is customized to your business, industry, and goals. Contact us for a free consultation.</p><a class="btn-primary" href="#contact" data-i18n="bookConsult">Book Free Consultation</a></div>
   </section>
 
-  <!-- 8. CTA -->
+  <!-- 10. CTA -->
   <section id="contact">
-    <div class="cta-tag reveal">Ready to Start?</div>
-    <h2 class="cta-h reveal">One Conversation<em>Changes Everything.</em></h2>
-    <p class="cta-sub reveal">Book a free 20-minute consultation. We'll tell you exactly which package fits your business, what results to expect, and how fast we can start. No fluff. No commitment.</p>
+    <div class="cta-tag reveal" data-i18n="ctaEyebrow">Ready to Start?</div>
+    <h2 class="cta-h reveal"><span data-i18n="ctaTitle">One Conversation</span><em data-i18n="ctaTitleEm">Changes Everything.</em></h2>
+    <p class="cta-sub reveal" data-i18n="ctaSub">Book a free 20-minute consultation. We'll tell you exactly which package fits your business and what results to expect. No fluff. No commitment.</p>
     <div class="cta-btns reveal">
-      <a class="btn-primary-inv" href="tel:+251913864659">Call Now</a>
-      <a class="btn-outline-inv" href="mailto:kabadigitals@gmail.com">Send Email</a>
+      <a class="btn-primary-inv" href="tel:+251913864659" data-i18n="callNow">Call Now</a>
+      <a class="btn-outline-inv" href="mailto:kabadigitals@gmail.com" data-i18n="sendEmail">Send Email</a>
     </div>
     <p class="cta-info reveal">+251 913 864 659 &nbsp;·&nbsp; <a href="mailto:kabadigitals@gmail.com">kabadigitals@gmail.com</a> &nbsp;·&nbsp; @kaba_digital_marketing</p>
   </section>
