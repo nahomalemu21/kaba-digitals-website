@@ -181,9 +181,9 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 .showcase-progress button small{margin-right:12px;color:rgba(229,185,87,.36)}
 .showcase-progress button.on{background:rgba(229,185,87,.09);color:#f7f3e8;border-left-color:#e5b957;transform:translateX(-10px)}
 .showcase-progress button.on small{color:#e5b957}
-.growth-section{position:relative;padding:110px 0 0;margin:0;overflow:hidden}
-.sticky-growth{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;width:min(1180px,calc(100% - 32px));margin:0 auto;overflow:hidden}
-.section-intro h2{font-size:clamp(30px,4.7vw,62px);line-height:.95;max-width:920px;color:#f7f3e8}
+.growth-section{position:relative;padding:0;margin:0;overflow:hidden}
+.sticky-growth{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:space-between;width:min(1180px,calc(100% - 32px));margin:0 auto;overflow:hidden;padding:60px 0 40px}
+.section-intro{padding-top:80px}.section-intro h2{font-size:clamp(30px,4.7vw,62px);line-height:.95;max-width:920px;color:#f7f3e8}
 .section-intro p:not(.eyebrow){color:#a7a096;font-size:18px;line-height:1.65;max-width:760px}
 .road-stage{display:grid;grid-template-columns:340px 1fr;gap:22px;align-items:stretch;margin-top:18px;min-height:460px}
 .stage-panel{display:grid;gap:14px;align-content:start}
@@ -633,10 +633,10 @@ export default function App() {
               <div className="float-stat stat-3"><strong>Leads</strong><span>Flow Activated</span></div>
             </div>
           </div>
-        </div>
-        <div style={{width:'min(1180px,calc(100% - 32px))',margin:'0 auto',padding:'40px 0 80px',position:'relative',zIndex:10}}>
-          <h2 className="market-control">{t[lang].marketControl}</h2>
-          <div className="control-chips"><span>Strategy locked</span><span>Content engine live</span><span>Leads moving</span><span>Scale mode</span></div>
+          <div style={{marginTop:16}}>
+            <h2 className="market-control">{t[lang].marketControl}</h2>
+            <div className="control-chips"><span>Strategy locked</span><span>Content engine live</span><span>Leads moving</span><span>Scale mode</span></div>
+          </div>
         </div>
       </section>
 
