@@ -115,9 +115,9 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 .showcase-progress button small{margin-right:12px;color:rgba(229,185,87,.36)}
 .showcase-progress button.on{background:rgba(229,185,87,.09);color:#f7f3e8;border-left-color:#e5b957;transform:translateX(-10px)}
 .showcase-progress button.on small{color:#e5b957}
-.growth-section{height:600vh;position:relative;padding:110px 0 70px}
+.growth-section{height:500vh;position:relative;padding:110px 0 0}
 .sticky-growth{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;width:min(1180px,calc(100% - 32px));margin:0 auto;overflow:visible}
-.section-intro h2{font-size:clamp(30px,4.7vw,62px);line-height:.95;max-width:920px}
+.section-intro h2{font-size:clamp(30px,4.7vw,62px);line-height:.95;max-width:920px;color:#f7f3e8}
 .section-intro p:not(.eyebrow){color:#a7a096;font-size:18px;line-height:1.65;max-width:760px}
 .road-stage{display:grid;grid-template-columns:340px 1fr;gap:22px;align-items:stretch;margin-top:18px;min-height:460px}
 .stage-panel{display:grid;gap:14px;align-content:start}
@@ -138,12 +138,13 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 .road-shadow{stroke:rgba(0,0,0,.35);stroke-width:84;filter:blur(18px)}
 .road-surface{stroke:#121212;stroke-width:76}
 .road-centerline{stroke:#f7f3e8;stroke-width:5;stroke-dasharray:12 18;opacity:.72;animation:dashmove 1.15s linear infinite}
-.road-progress{stroke:#e5b957;stroke-width:14;stroke-dasharray:1500;stroke-dashoffset:calc(1500 - (1500 * var(--progress) / 100));filter:drop-shadow(0 0 18px rgba(229,185,87,.7));transition:stroke-dashoffset .55s cubic-bezier(.2,.8,.2,1)}
-.road-node{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:999px;background:#0b0b0b;border:1px solid rgba(255,255,255,.12);color:#a7a096;z-index:5;transition:.45s cubic-bezier(.2,.8,.2,1)}
-.road-node.active{color:#050505;background:#e5b957}
+.road-progress{stroke:url(#roadGrad);stroke-width:6;stroke-dasharray:1500;stroke-dashoffset:calc(1500 - (1500 * var(--progress) / 100));filter:drop-shadow(0 0 12px rgba(229,185,87,.9)) drop-shadow(0 0 28px rgba(229,185,87,.5));transition:stroke-dashoffset .55s cubic-bezier(.2,.8,.2,1)}
+.road-node{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:#0b0b0b;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.3);z-index:5;transition:.5s cubic-bezier(.2,.8,.2,1);font-size:13px;font-weight:700;letter-spacing:.04em;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+.road-node.active{color:#050505;background:linear-gradient(135deg,#fff0a8,#e5b957);border-color:#e5b957;box-shadow:0 0 40px rgba(229,185,87,.5),0 4px 20px rgba(0,0,0,.4);transform:translate(-50%,-50%) scale(1.12)}
+.road-node.done{color:#e5b957;border-color:rgba(229,185,87,.4);background:rgba(229,185,87,.08)}
 .node-0{left:7%;top:81%}.node-1{left:24%;top:57%}.node-2{left:39%;top:71%}.node-3{left:56%;top:40%}.node-4{left:73%;top:46%}.node-5{left:92%;top:17%}
 .traveler{position:absolute;z-index:6;width:72px;height:40px;pointer-events:none;transition:left .55s cubic-bezier(.2,.8,.2,1),top .55s cubic-bezier(.2,.8,.2,1)}
-.traveler-body{position:absolute;inset:0;border-radius:999px;background:linear-gradient(135deg,#fff0a8,#e5b957);display:grid;place-items:center;color:#050505;font-weight:950}
+.traveler-body{position:absolute;inset:0;border-radius:999px;background:linear-gradient(135deg,#fff0a8,#e5b957);display:grid;place-items:center;color:#050505;font-weight:950;box-shadow:0 0 30px rgba(229,185,87,.6),0 0 60px rgba(229,185,87,.3);animation:travelerPulse 2s ease-in-out infinite}
 .traveler-label{font-size:12px;letter-spacing:.16em}
 .brand-core{position:absolute;left:51%;top:53%;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#fff0a8,#e5b957);color:#050505;font-weight:950;box-shadow:0 0 70px rgba(229,185,87,.5);z-index:4;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
 .brand-core span{font-size:30px}.brand-core small{position:absolute;bottom:33px;font-size:11px;letter-spacing:.18em}
@@ -152,7 +153,7 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 .stat-1{left:16%;top:16%}.stat-2{right:18%;top:18%}.stat-3{right:12%;bottom:14%}
 .finish-glow{position:absolute;right:34px;bottom:30px;z-index:4;border:1px solid rgba(229,185,87,.35);background:rgba(229,185,87,.1);border-radius:999px;padding:13px 18px;color:#e5b957;font-weight:950;font-size:12px;letter-spacing:.18em}
 .market-footer{display:grid;grid-template-columns:1fr 380px;gap:22px;align-items:end;margin-top:16px}
-.market-control{margin:0;font-size:clamp(32px,6vw,74px)!important;max-width:760px}
+.market-control{margin:0;font-size:clamp(32px,6vw,74px)!important;max-width:760px;color:#f7f3e8}
 .control-chips{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .control-chips span{border:1px solid rgba(229,185,87,.24);background:rgba(229,185,87,.08);border-radius:999px;padding:12px 14px;font-size:13px;font-weight:800;text-align:center}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -195,6 +196,7 @@ footer{text-align:center;color:#a7a096;padding:30px}
 @keyframes grow{to{transform:scaleY(.72);opacity:.78}}
 @keyframes particleDrift{from{transform:translate3d(-20px,18px,0) scale(1);opacity:.5}to{transform:translate3d(34px,-22px,0) scale(1.06);opacity:.85}}
 @keyframes cordMove{to{stroke-dashoffset:-185}}
+@keyframes travelerPulse{0%,100%{box-shadow:0 0 30px rgba(229,185,87,.6),0 0 60px rgba(229,185,87,.3)}50%{box-shadow:0 0 50px rgba(229,185,87,.9),0 0 100px rgba(229,185,87,.5)}}
 @keyframes dashmove{to{stroke-dashoffset:-60}}
 @media(max-width:980px){.nav-links{display:none}.hero,.split,.compare-grid,.road-stage{grid-template-columns:1fr}.cards,.industries,.reality-grid{grid-template-columns:1fr}.showcase-head{left:24px;top:78px}.showcase-head h2{font-size:44px}.showcase-card{width:82vw;height:310px;padding-top:180px}.showcase-explain{left:24px;right:24px;bottom:24px;top:auto;transform:none;width:auto}.showcase-progress{display:none}.showcase-cord{width:130vw;left:-14vw}.section{padding:80px 0}.market-footer{grid-template-columns:1fr}.control-chips{grid-template-columns:1fr 1fr}}
 `;
@@ -375,7 +377,7 @@ export default function App() {
       </section>
 
       {/* SHOWCASE — SCROLL-LOCKED CARDS */}
-      <section id="kaba-showcase" className="showcase" style={{height:'500vh'}}>
+      <section id="kaba-showcase" className="showcase" style={{height:'400vh'}}>
         <div className="showcase-sticky">
           <div className="showcase-head">
             <p className="eyebrow"><Sparkles size={16}/>GROWTH SYSTEMS</p>
@@ -439,12 +441,18 @@ export default function App() {
             <div className="road-wrap" style={roadStyle}>
               <div className="road-bg-grid"/>
               <svg className="road" viewBox="0 0 1100 460" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="roadGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#e5b957"/>
+                    <stop offset="100%" stopColor="#fff0a8"/>
+                  </linearGradient>
+                </defs>
                 <path className="road-shadow" d="M40 380 C220 250 280 420 430 290 C570 168 660 290 770 185 C870 90 980 125 1060 70"/>
                 <path className="road-surface" d="M40 380 C220 250 280 420 430 290 C570 168 660 290 770 185 C870 90 980 125 1060 70"/>
                 <path ref={pathRef} className="road-centerline" d="M40 380 C220 250 280 420 430 290 C570 168 660 290 770 185 C870 90 980 125 1060 70"/>
                 <path className="road-progress" d="M40 380 C220 250 280 420 430 290 C570 168 660 290 770 185 C870 90 980 125 1060 70"/>
               </svg>
-              {roadmap.map((step,i) => { const Icon=step.icon; return <div key={step.title} className={`road-node node-${i} ${i<=activeIndex?'active':''}`}><Icon size={18}/><span>{step.title}</span></div>; })}
+              {roadmap.map((step,i) => { const Icon=step.icon; return <div key={step.title} className={`road-node node-${i} ${i===activeIndex?'active':i<activeIndex?'done':''}`}><Icon size={18}/><span>{step.title}</span></div>; })}
               <div className="traveler" style={{left:`${traveler.x}px`,top:`${traveler.y}px`,transform:`translate(-50%,-50%) rotate(${traveler.angle}deg)`}}>
                 <div className="traveler-body"><span className="traveler-label">KABA</span></div>
               </div>
