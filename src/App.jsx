@@ -182,7 +182,7 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 .showcase-progress button.on{background:rgba(229,185,87,.09);color:#f7f3e8;border-left-color:#e5b957;transform:translateX(-10px)}
 .showcase-progress button.on small{color:#e5b957}
 .growth-section{position:relative;padding:0;margin:0;overflow:hidden}
-.sticky-growth{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:space-between;width:min(1180px,calc(100% - 32px));margin:0 auto;overflow:hidden;padding:60px 0 40px}
+.sticky-growth{display:flex;flex-direction:column;width:min(1180px,calc(100% - 32px));margin:0 auto;overflow:visible;padding:60px 0 60px;gap:24px}
 .section-intro{padding-top:80px}.section-intro h2{font-size:clamp(30px,4.7vw,62px);line-height:.95;max-width:920px;color:#f7f3e8}
 .section-intro p:not(.eyebrow){color:#a7a096;font-size:18px;line-height:1.65;max-width:760px}
 .road-stage{display:grid;grid-template-columns:340px 1fr;gap:22px;align-items:stretch;margin-top:18px;min-height:460px}
@@ -370,13 +370,7 @@ export default function App() {
   const roadProgressRef = useRef(0);
   const pathRef = useRef(null);
   const [traveler, setTraveler] = useState({ x: 40, y: 380, angle: -18 });
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
 
-  useEffect(() => {
-    const onResize = () => setIsMobile(window.innerWidth <= 900);
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => setShowIntro(false), 3600);
@@ -541,7 +535,7 @@ export default function App() {
       </section>
 
       {/* SHOWCASE — SCROLL-LOCKED CARDS */}
-      <section id="kaba-showcase" className="showcase" style={{height: isMobile ? 'auto' : '400vh'}}>
+      <section id="kaba-showcase" className="showcase" style={{height:'400vh'}}>
         <div className="showcase-sticky">
           <div className="showcase-head">
             <p className="eyebrow"><Sparkles size={16}/>GROWTH SYSTEMS</p>
@@ -596,7 +590,7 @@ export default function App() {
 
       {/* GROWTH ROADMAP */}
       <section id="growth-system" className="growth-section" style={{height: isMobile ? 'auto' : '500vh', paddingBottom: isMobile ? 0 : 0}}>
-        <div className="sticky-growth" style={{position: isMobile ? 'relative' : 'sticky', top: isMobile ? 'unset' : 0, height: isMobile ? 'auto' : '100vh', minHeight: isMobile ? 0 : '100vh'}}>
+        <div className="sticky-growth">
           <div className="section-intro">
             <p className="eyebrow"><MousePointer2 size={16}/>SCROLL TO GROW</p>
             <h2>{t[lang].roadTitle}</h2>
