@@ -45,14 +45,14 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 .nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:90;width:min(1180px,calc(100% - 28px));display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border:1px solid rgba(255,255,255,.1);border-radius:22px;background:rgba(5,5,5,.72);backdrop-filter:blur(18px)}
 .brand{display:flex;align-items:center;min-width:190px;gap:8px;font-weight:900;letter-spacing:.05em;color:#e5b957}
 .nav-links{display:flex;gap:22px;color:#a7a096;font-size:14px}
-.nav-links a{color:#a7a096;text-decoration:none}
+.nav-links a{color:#a7a096;text-decoration:none;font-size:14px}
 .lang{display:flex;gap:4px;background:#111;border-radius:999px;padding:4px}
 .lang button{border:0;background:transparent;color:#a7a096;padding:7px 10px;border-radius:999px;font-weight:800;cursor:pointer}
 .lang .on{background:#e5b957;color:#000}
 .section{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:120px 0}
 .eyebrow{display:flex;align-items:center;gap:8px;color:#e5b957;font-size:12px;letter-spacing:.18em;font-weight:950;text-transform:uppercase}
-.hero{min-height:100vh;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:56px;padding-top:130px}
-.hero h1,.section h2{font-size:clamp(48px,8vw,112px);line-height:.88;margin:20px 0 24px;letter-spacing:-.075em}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:56px;padding-top:100px}
+.hero h1,.section h2{font-size:clamp(48px,8vw,112px);line-height:.88;margin:20px 0 24px;letter-spacing:-.075em;color:#f7f3e8}
 .lead{font-size:clamp(18px,2vw,24px);color:#d5cec1;line-height:1.55;max-width:760px}
 .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 20px;border-radius:999px;font-weight:900;cursor:pointer;text-decoration:none}
@@ -73,9 +73,9 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 .mini-grid b{background:#111;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px;text-align:center;font-size:12px}
 .reality-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
 .reality-grid article,.card,.solution,.plan,.compare-grid>div,.industry-card{border:1px solid rgba(255,255,255,.1);background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border-radius:26px;padding:24px}
-.reality-grid span{color:#e5b957;font-weight:950}.reality-grid h3{font-size:26px;line-height:1.12;margin:18px 0}
+.reality-grid span{color:#e5b957;font-weight:950}.reality-grid h3{font-size:26px;line-height:1.12;margin:18px 0;color:#f7f3e8}
 .reality-grid p,.who p,.muted{color:#a7a096;line-height:1.65}
-.intro-screen{position:fixed;inset:0;z-index:999;background:#050505;display:grid;place-items:center;overflow:hidden;animation:introExit .6s ease 3.35s forwards}
+.intro-screen{position:fixed;inset:0;z-index:999;background:#050505;display:grid;place-items:center;overflow:hidden;animation:introExit .6s ease 3.35s forwards;pointer-events:none}
 .intro-grid{position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(229,185,87,.18),transparent 28%),linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:100% 100%,70px 70px,70px 70px;opacity:.75}
 .intro-mark{position:relative;text-align:center}
 .intro-letters{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:18px}
@@ -190,7 +190,7 @@ html{scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#05
 footer{text-align:center;color:#a7a096;padding:30px}
 @keyframes letterDrop{from{opacity:0;transform:translateY(46px) scale(.9);filter:blur(10px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-@keyframes introExit{to{opacity:0;visibility:hidden;pointer-events:none}}
+@keyframes introExit{to{opacity:0;visibility:hidden;pointer-events:none;display:none}}
 @keyframes sweep{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
 @keyframes grow{to{transform:scaleY(.72);opacity:.78}}
 @keyframes particleDrift{from{transform:translate3d(-20px,18px,0) scale(1);opacity:.5}to{transform:translate3d(34px,-22px,0) scale(1.06);opacity:.85}}
@@ -311,7 +311,7 @@ export default function App() {
       <div className="noise" />
 
       {showIntro && (
-        <div className="intro-screen">
+        <div className="intro-screen" style={{position:'fixed',inset:0,zIndex:999,background:'#050505',display:'grid',placeItems:'center',overflow:'hidden'}}>
           <div className="intro-grid" />
           <div className="intro-mark">
             <div className="intro-letters">
@@ -342,7 +342,7 @@ export default function App() {
       <section className="hero section">
         <div>
           <p className="eyebrow"><Sparkles size={16}/>KABA LABS / GROWTH COMMAND CENTER</p>
-          <h1>We Don't Make Content. We Build Empires.</h1>
+          <h1 style={{color:'#f7f3e8'}}>We Don't Make Content. We Build Empires.</h1>
           <p className="lead">Kaba Labs combines video production, ads, websites, CRM, and growth systems to help Ethiopian businesses look trusted online and get more customers every month.</p>
           <div className="actions">
             <a className="btn primary" href="https://wa.me/251913864659" target="_blank" rel="noreferrer">Book 20-Min Consultation <ArrowUpRight size={18}/></a>
