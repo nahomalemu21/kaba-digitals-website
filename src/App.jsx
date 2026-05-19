@@ -36,7 +36,20 @@ const problems = [
   ['We have no clear system','Growth depends on luck. We build the machine behind attention, sales, and reporting.']
 ];
 
-const industries = ['Restaurants & Cafes','Gyms & Fitness Centers','Hotels & Guest Houses','Furniture Stores','Clinics & Wellness','Beauty Salons & Spas','Real Estate','Fashion Brands','E-commerce Stores','Schools & Training','Car Dealerships','Interior Design'];
+const industries = [
+  ['Restaurants & Cafes', 'Craving-led content → local offers → visits and orders'],
+  ['Gyms & Fitness Centers', 'Authority content → challenges → membership signups'],
+  ['Hotels & Guest Houses', 'Experience content → trust campaigns → direct bookings'],
+  ['Furniture Stores', 'Design visuals → product campaigns → showroom visits'],
+  ['Clinics & Wellness', 'Trust content → education campaigns → appointments'],
+  ['Beauty Salons & Spas', 'Transformation content → local campaigns → bookings'],
+  ['Real Estate', 'Property content → lead campaigns → qualified buyers'],
+  ['Fashion Brands', 'Style content → product campaigns → sales traffic'],
+  ['E-commerce Stores', 'Product creatives → conversion campaigns → online sales'],
+  ['Schools & Training', 'Authority content → enrollment campaigns → signups'],
+  ['Car Dealerships', 'Showcase content → demand campaigns → car inquiries'],
+  ['Interior Design', 'Portfolio content → authority positioning → project leads'],
+];
 
 const t = {
   en: {
@@ -659,7 +672,7 @@ export default function App() {
 
       <section className="section">
         <div className="section-intro"><p className="eyebrow"><Users size={16}/>INDUSTRIES</p><h2>Built for Businesses Ready to Be Seen</h2></div>
-        <div className="industries">{industries.map(x=><div className="industry-card" key={x}><strong>{x}</strong><span>Content → Campaign → Leads → Sales</span></div>)}</div>
+        <div className="industries">{industries.map(([name,desc])=><div className="industry-card" key={name}><strong>{name}</strong><span>{desc}</span></div>)}</div>
       </section>
 
       <section id="plans" className="section plans">
