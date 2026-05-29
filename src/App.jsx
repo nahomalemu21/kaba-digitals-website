@@ -277,7 +277,7 @@ body{background:#fff;overflow-x:hidden}
 .reality-card:last-child{border-right:0}
 .reality-card:hover{background:#fafaf8}
 .reality-num{font-family:'Cormorant',serif;font-size:72px;font-weight:400;
-  color:rgba(201,162,39,.2);line-height:1;margin-bottom:20px;letter-spacing:-.02em}
+  color:rgba(201,162,39,.65);line-height:1;margin-bottom:20px;letter-spacing:-.02em}
 .reality-card h3{font-family:'Cormorant',serif;font-size:22px;font-weight:600;
   line-height:1.3;margin-bottom:12px;color:#0f0f0f;letter-spacing:-.01em}
 .reality-card p{color:rgba(15,15,15,.45);line-height:1.75;font-size:14px;font-weight:400}
