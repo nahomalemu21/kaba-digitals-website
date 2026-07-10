@@ -1117,9 +1117,9 @@ export default function App() {
               <span className="contact-val">kabadigitals@gmail.com</span>
               <ArrowUpRight aria-hidden="true" />
             </a>
-            <a href="https://instagram.com/kaba_digital_marketing" target="_blank" rel="noreferrer" className="contact-row">
+            <a href="https://instagram.com/kabalabs" target="_blank" rel="noreferrer" className="contact-row">
               <span className="contact-label">Instagram</span>
-              <span className="contact-val">@kaba_digital_marketing</span>
+              <span className="contact-val">@kabalabs</span>
               <ArrowUpRight aria-hidden="true" />
             </a>
             <div className="contact-row">
