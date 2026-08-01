@@ -700,7 +700,7 @@ a.contact-row:hover .contact-val{color:var(--gold)}
    HOOKS & PARTS
    ════════════════════════════════════════════════════════════════ */
 
-function useReveal() {
+function useReveal(refreshKey) {
   useEffect(() => {
     const els = document.querySelectorAll('.reveal');
     if (!('IntersectionObserver' in window)) {
@@ -715,7 +715,7 @@ function useReveal() {
     );
     els.forEach((el) => obs.observe(el));
     return () => obs.disconnect();
-  }, []);
+  }, [refreshKey]);
 }
 
 function CountUp({ end, duration = 1900, prefix = '', delay = 2400 }) {
@@ -776,7 +776,7 @@ export default function App() {
   const cardRef = useRef(null);
   const tx = t[lang];
 
-  useReveal();
+  useReveal(lang);
 
   useEffect(() => {
     const onScroll = () => {
