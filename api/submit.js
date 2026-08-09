@@ -1,3 +1,5 @@
+const { NOTION_TOKEN } = require('../lib/bounty-notion');
+
 module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -7,7 +9,6 @@ module.exports = async function handler(req, res) {
   if (req.method !== 'POST') { res.status(405).json({ error: 'Method not allowed' }); return; }
 
   const ans = req.body;
-  const NOTION_TOKEN = 'REVOKED_NOTION_TOKEN';
   const DB_ID = '3cbe215d-00ac-42cb-95b9-cea5fcbf4aac';
 
   function txt(val) {

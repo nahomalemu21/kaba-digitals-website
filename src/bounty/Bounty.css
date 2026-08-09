@@ -90,9 +90,11 @@ nav a:hover { opacity: .55; }
 .slots { color: #92958c; font-size: 10px; }
 .campaign-identity { display: flex; align-items: center; gap: 16px; margin-top: 36px; }
 .campaign-logo { width: 48px; height: 48px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 50%; font-size: 13px; font-weight: 800; letter-spacing: -.04em; }
+.campaign-logo img { width: 100%; height: 100%; object-fit: contain; padding: 5px; border-radius: inherit; background: white; }
 .campaign-logo.akbari { background: #ff6937; color: white; }
 .campaign-logo.gizet { background: #d7ff5f; color: #171915; }
 .campaign-logo.shaba { background: #d8d0ff; color: #2e2548; }
+.campaign-logo.kaba-labs, .campaign-logo.kaba-bounty { background: #171915; color: #d7ff5f; }
 .campaign-identity p { margin: 0 0 4px; color: #8e9287; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; }
 .campaign-identity h2 { margin: 0; font-size: 23px; letter-spacing: -.04em; }
 .feature-prompt { margin: 32px 0; padding: 28px 0; border-block: 1px solid rgba(255,255,255,.12); }

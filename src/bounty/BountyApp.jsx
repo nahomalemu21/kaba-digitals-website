@@ -3,7 +3,7 @@ import "./Bounty.css";
 
 const kabaLogo = "/bounty-assets/brand/KABA_LABS_clean_proper_vector_preview.png";
 
-const campaigns = [
+const fallbackCampaigns = [
   {
     id: "akbari-planner",
     brand: "Akbari Planner",
@@ -127,14 +127,40 @@ function formatBirr(amount) {
   return new Intl.NumberFormat("en-US").format(amount) + " ETB";
 }
 
+function CampaignMark({ campaign }) {
+  return (
+    <span className={`campaign-logo ${campaign.accent || "default"}`}>
+      {campaign.logo ? <img src={campaign.logo} alt="" /> : campaign.initials}
+    </span>
+  );
+}
+
 export default function BountyApp() {
+  const [campaigns, setCampaigns] = useState(fallbackCampaigns);
   const [views, setViews] = useState(50000);
   const [selectedCampaign, setSelectedCampaign] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState("");
   const [modalStage, setModalStage] = useState("brief");
-  const earnings = Math.round((views / 1000) * 175);
+  const averageRate = campaigns.length
+    ? Math.round(campaigns.reduce((sum, campaign) => sum + Number(campaign.rate || 0), 0) / campaigns.length)
+    : 175;
+  const earnings = Math.round((views / 1000) * averageRate);
+  const featuredCampaign = campaigns.find((campaign) => campaign.featured) || campaigns[0] || fallbackCampaigns[0];
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/bounties")
+      .then((response) => response.ok ? response.json() : Promise.reject(new Error("Could not load bounties")))
+      .then((payload) => {
+        if (!cancelled && Array.isArray(payload.campaigns) && payload.campaigns.length) {
+          setCampaigns(payload.campaigns);
+        }
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = selectedCampaign ? "hidden" : "";
@@ -245,25 +271,25 @@ export default function BountyApp() {
         <aside className="hero-card" aria-label="Featured bounty">
           <div className="card-topline">
             <span className="live-pill"><i /> Live bounty</span>
-            <span className="slots">8 creator slots</span>
+            <span className="slots">{featuredCampaign.slots} creator slots</span>
           </div>
           <div className="campaign-identity">
-            <span className="campaign-logo akbari">AP</span>
+            <CampaignMark campaign={featuredCampaign} />
             <div>
               <p>Featured campaign</p>
-              <h2>Akbari Planner</h2>
+              <h2>{featuredCampaign.brand}</h2>
             </div>
           </div>
           <div className="feature-prompt">
             <span>Your creative prompt</span>
-            <strong>Show how you plan a better week.</strong>
+            <strong>{featuredCampaign.title}</strong>
             <p>Make it useful, honest, and native to your audience.</p>
           </div>
           <div className="rate-row">
-            <div><span>Creator rate</span><strong>200 ETB</strong><small>/ 1K views</small></div>
-            <div><span>Max reward</span><strong>10,000</strong><small>ETB / video</small></div>
+            <div><span>Creator rate</span><strong>{featuredCampaign.rate} ETB</strong><small>/ 1K views</small></div>
+            <div><span>Max reward</span><strong>{Number(featuredCampaign.cap).toLocaleString()}</strong><small>ETB / video</small></div>
           </div>
-          <button className="button button-light" type="button" onClick={() => openCampaign(campaigns[0])}>
+          <button className="button button-light" type="button" onClick={() => openCampaign(featuredCampaign)}>
             View this bounty <span aria-hidden="true">↗</span>
           </button>
           <p className="pilot-note">Pilot rewards are fully funded by Kaba Labs.</p>
@@ -315,7 +341,7 @@ export default function BountyApp() {
           {campaigns.map((campaign) => (
             <article className={`campaign-card ${campaign.featured ? "featured" : ""}`} key={campaign.brand}>
               <div className="campaign-card-head">
-                <span className={`campaign-logo ${campaign.accent}`}>{campaign.initials}</span>
+                <CampaignMark campaign={campaign} />
                 <span className="category-pill">{campaign.category}</span>
               </div>
               <p className="brand-name">{campaign.brand}</p>
@@ -338,7 +364,7 @@ export default function BountyApp() {
         <div className="calculator-copy">
           <p className="eyebrow light"><span /> Estimate your reward</p>
           <h2>What could your next video earn?</h2>
-          <p>Move the slider to estimate earnings at an average campaign rate of 175 ETB per 1,000 qualified views.</p>
+          <p>Move the slider to estimate earnings at an average campaign rate of {averageRate} ETB per 1,000 qualified views.</p>
         </div>
         <div className="calculator-card">
           <div className="calculator-label"><span>Expected video views</span><strong>{views.toLocaleString()}</strong></div>
@@ -399,7 +425,7 @@ export default function BountyApp() {
               <>
                 <aside className="brief-summary">
                   <div className="modal-brand-row">
-                    <span className={`campaign-logo ${selectedCampaign.accent}`}>{selectedCampaign.initials}</span>
+                    <CampaignMark campaign={selectedCampaign} />
                     <div>
                       <p>{selectedCampaign.category}</p>
                       <strong>{selectedCampaign.brand}</strong>
@@ -421,11 +447,11 @@ export default function BountyApp() {
 
                   <div className="brief-summary-actions">
                     <button className="button button-light" type="button" onClick={() => setModalStage("apply")}>Apply for this bounty <span>→</span></button>
-                    <a className="pdf-link-dark" href={selectedCampaign.pdf} download>
+                    {selectedCampaign.pdf && <a className="pdf-link-dark" href={selectedCampaign.pdf} target="_blank" rel="noreferrer">
                       <span className="pdf-icon">PDF</span>
                       <span><strong>Download full brief</strong><small>3 pages · campaign instructions</small></span>
                       <b>↓</b>
-                    </a>
+                    </a>}
                   </div>
                 </aside>
 
@@ -498,7 +524,7 @@ export default function BountyApp() {
 
                   <div className="mobile-brief-actions">
                     <button className="button button-dark" type="button" onClick={() => setModalStage("apply")}>Apply for this bounty <span>→</span></button>
-                    <a href={selectedCampaign.pdf} download>Download the full PDF brief ↓</a>
+                    {selectedCampaign.pdf && <a href={selectedCampaign.pdf} target="_blank" rel="noreferrer">Download the full PDF brief ↓</a>}
                   </div>
                 </div>
               </>
@@ -507,7 +533,7 @@ export default function BountyApp() {
                 <div className="modal-intro">
                   <button className="back-to-brief" type="button" onClick={() => setModalStage("brief")}>← Back to brief</button>
                   <div className="modal-brand-row">
-                    <span className={`campaign-logo ${selectedCampaign.accent}`}>{selectedCampaign.initials}</span>
+                    <CampaignMark campaign={selectedCampaign} />
                     <div><p>{selectedCampaign.category}</p><strong>{selectedCampaign.brand}</strong></div>
                   </div>
                   <p className="eyebrow"><span /> Creator application</p>
@@ -517,7 +543,7 @@ export default function BountyApp() {
                     <div><span>Creator rate</span><strong>{selectedCampaign.rate} ETB</strong><small>per 1,000 qualified views</small></div>
                     <div><span>Maximum reward</span><strong>{formatBirr(selectedCampaign.cap)}</strong><small>per approved video</small></div>
                   </div>
-                  <a className="application-pdf-link" href={selectedCampaign.pdf} download>Download campaign PDF ↓</a>
+                  {selectedCampaign.pdf && <a className="application-pdf-link" href={selectedCampaign.pdf} target="_blank" rel="noreferrer">Download campaign PDF ↓</a>}
                 </div>
 
                 <form className="application-form" onSubmit={submitApplication}>
