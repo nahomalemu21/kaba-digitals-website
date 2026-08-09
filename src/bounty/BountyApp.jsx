@@ -5,6 +5,49 @@ const kabaLogo = "/bounty-assets/brand/KABA_LABS_clean_proper_vector_preview.png
 
 const fallbackCampaigns = [
   {
+    id: "kaba-labs",
+    slug: "kaba-labs",
+    brand: "Kaba Labs",
+    category: "Marketing",
+    title: "Show what real business growth support looks like",
+    description:
+      "Create a clear, original video showing how Kaba Labs diagnoses business problems and builds the right growth system.",
+    rate: 200,
+    cap: 10000,
+    slots: 8,
+    window: 14,
+    payoutDay: "Friday",
+    accent: "kaba-labs",
+    initials: "KL",
+    featured: true,
+    logo: kabaLogo,
+    pdf: "/bounty-assets/briefs/kaba-labs-creator-brief.pdf",
+    objective:
+      "Help Ethiopian business owners understand that Kaba Labs is an accountable growth partner, not only a content-production agency.",
+    audience: "Ethiopian founders, business owners, and managers who need stronger marketing and sales systems.",
+    message: "Kaba Labs diagnoses the real bottleneck, prioritizes the right work, and stays accountable for execution.",
+    angles: [
+      "Explain why more content does not always fix a business.",
+      "Show the difference between buying deliverables and hiring a growth partner.",
+      "Break down one common business-growth bottleneck.",
+    ],
+    hooks: [
+      "Eight videos cannot fix the wrong business problem.",
+      "Your ads may not be the real reason sales are slow.",
+      "This is what a real outsourced growth team should do.",
+    ],
+    must: [
+      "Say Kaba Labs clearly.",
+      "Explain diagnosis before deliverables.",
+      "Use original examples and your own presentation style.",
+    ],
+    avoid: [
+      "Guaranteed revenue claims.",
+      "Invented client results.",
+      "Purchased views, copied scripts, or paid boosting.",
+    ],
+  },
+  {
     id: "akbari-planner",
     brand: "Akbari Planner",
     category: "Productivity",
@@ -16,7 +59,7 @@ const fallbackCampaigns = [
     slots: 8,
     accent: "akbari",
     initials: "AP",
-    featured: true,
+    featured: false,
     pdf: "/bounty-assets/briefs/akbari-planner-creator-brief.pdf",
     objective:
       "Make Akbari feel like a practical tool that helps real people plan their week, protect their time, and follow through on priorities.",
@@ -127,6 +170,18 @@ function formatBirr(amount) {
   return new Intl.NumberFormat("en-US").format(amount) + " ETB";
 }
 
+const campaignOrder = ["kaba-labs", "kaba-bounty", "akbari-planner", "gizet", "shaba-closet"];
+
+function orderCampaigns(items) {
+  return [...items].sort((left, right) => {
+    const leftKey = left.slug || left.companySlug || left.id;
+    const rightKey = right.slug || right.companySlug || right.id;
+    const leftIndex = campaignOrder.indexOf(leftKey);
+    const rightIndex = campaignOrder.indexOf(rightKey);
+    return (leftIndex < 0 ? campaignOrder.length : leftIndex) - (rightIndex < 0 ? campaignOrder.length : rightIndex);
+  });
+}
+
 function CampaignMark({ campaign }) {
   return (
     <span className={`campaign-logo ${campaign.accent || "default"}`}>
@@ -143,11 +198,15 @@ export default function BountyApp() {
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState("");
   const [modalStage, setModalStage] = useState("brief");
-  const averageRate = campaigns.length
-    ? Math.round(campaigns.reduce((sum, campaign) => sum + Number(campaign.rate || 0), 0) / campaigns.length)
+  const orderedCampaigns = orderCampaigns(campaigns);
+  const averageRate = orderedCampaigns.length
+    ? Math.round(orderedCampaigns.reduce((sum, campaign) => sum + Number(campaign.rate || 0), 0) / orderedCampaigns.length)
     : 175;
   const earnings = Math.round((views / 1000) * averageRate);
-  const featuredCampaign = campaigns.find((campaign) => campaign.featured) || campaigns[0] || fallbackCampaigns[0];
+  const featuredCampaign = orderedCampaigns.find((campaign) => (campaign.slug || campaign.companySlug) === "kaba-labs")
+    || orderedCampaigns.find((campaign) => campaign.featured)
+    || orderedCampaigns[0]
+    || fallbackCampaigns[0];
 
   useEffect(() => {
     let cancelled = false;
@@ -155,7 +214,7 @@ export default function BountyApp() {
       .then((response) => response.ok ? response.json() : Promise.reject(new Error("Could not load bounties")))
       .then((payload) => {
         if (!cancelled && Array.isArray(payload.campaigns) && payload.campaigns.length) {
-          setCampaigns(payload.campaigns);
+          setCampaigns(orderCampaigns(payload.campaigns));
         }
       })
       .catch(() => {});
@@ -183,6 +242,11 @@ export default function BountyApp() {
 
   function closeCampaign() {
     if (!submitting) setSelectedCampaign(null);
+  }
+
+  function applyToCampaign(campaign) {
+    openCampaign(campaign);
+    setModalStage("apply");
   }
 
   async function submitApplication(event) {
@@ -229,85 +293,63 @@ export default function BountyApp() {
           </span>
         </a>
         <nav aria-label="Primary navigation">
-          <a href="#campaigns">Bounties</a>
+          <a href="#campaigns">Open campaigns</a>
           <a href="#how-it-works">How it works</a>
-          <a href="#brands">For brands</a>
+          <a href="#brands">For businesses</a>
         </nav>
         <a className="header-cta" href="#campaigns">
-          Find a bounty <span aria-hidden="true">↗</span>
+          View campaigns <span aria-hidden="true">→</span>
         </a>
       </header>
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <p className="eyebrow"><span /> Ethiopia&apos;s creator reward network</p>
-          <h1>Turn your <em>attention</em> into income.</h1>
+          <div className="featured-kicker">
+            <span className="live-dot" />
+            <strong>Featured bounty</strong>
+            <span>Kaba Labs</span>
+          </div>
+          <p className="hero-category">Marketing · 8 creator slots</p>
+          <h1>{featuredCampaign.title}</h1>
           <p className="hero-lede">
-            Choose a brand. Make a video in your own style. Get paid for every
-            qualified view—without needing a huge following or a brand deal.
+            {featuredCampaign.description}
           </p>
           <div className="hero-actions">
-            <a className="button button-dark" href="#campaigns">
-              Browse live bounties <span aria-hidden="true">→</span>
-            </a>
-            <a className="text-link" href="#how-it-works">See how it works</a>
+            <button className="button button-dark" type="button" onClick={() => openCampaign(featuredCampaign)}>
+              View campaign brief <span aria-hidden="true">→</span>
+            </button>
+            <button className="text-link" type="button" onClick={() => applyToCampaign(featuredCampaign)}>Apply now</button>
           </div>
-          <dl className="hero-stats">
-            <div>
-              <dt>150–200 ETB</dt>
-              <dd>per 1,000 qualified views</dd>
-            </div>
-            <div>
-              <dt>14 days</dt>
-              <dd>earning window per video</dd>
-            </div>
-            <div>
-              <dt>Every Friday</dt>
-              <dd>verified creator payouts</dd>
-            </div>
-          </dl>
         </div>
 
-        <aside className="hero-card" aria-label="Featured bounty">
-          <div className="card-topline">
-            <span className="live-pill"><i /> Live bounty</span>
-            <span className="slots">{featuredCampaign.slots} creator slots</span>
-          </div>
-          <div className="campaign-identity">
+        <aside className="featured-summary" aria-label="Kaba Labs bounty payment information">
+          <div className="featured-brand">
             <CampaignMark campaign={featuredCampaign} />
             <div>
-              <p>Featured campaign</p>
+              <p>Campaign by</p>
               <h2>{featuredCampaign.brand}</h2>
             </div>
           </div>
-          <div className="feature-prompt">
-            <span>Your creative prompt</span>
-            <strong>{featuredCampaign.title}</strong>
-            <p>Make it useful, honest, and native to your audience.</p>
+          <div className="featured-metrics">
+            <div><span>Creator rate</span><strong>{featuredCampaign.rate} ETB</strong><small>per 1,000 qualified views</small></div>
+            <div><span>Maximum payout</span><strong>{formatBirr(featuredCampaign.cap)}</strong><small>per approved video</small></div>
+            <div><span>View window</span><strong>{featuredCampaign.window || 14} days</strong><small>from publication</small></div>
+            <div><span>Payout</span><strong>{featuredCampaign.payoutDay || "Friday"}</strong><small>after verification</small></div>
           </div>
-          <div className="rate-row">
-            <div><span>Creator rate</span><strong>{featuredCampaign.rate} ETB</strong><small>/ 1K views</small></div>
-            <div><span>Max reward</span><strong>{Number(featuredCampaign.cap).toLocaleString()}</strong><small>ETB / video</small></div>
-          </div>
-          <button className="button button-light" type="button" onClick={() => openCampaign(featuredCampaign)}>
-            View this bounty <span aria-hidden="true">↗</span>
-          </button>
-          <p className="pilot-note">Pilot rewards are fully funded by Kaba Labs.</p>
+          <p className="funding-note"><b>Funding:</b> This pilot bounty is paid directly by Kaba Labs.</p>
         </aside>
       </section>
 
-      <section className="trust-strip" aria-label="Pilot brands">
-        <span>Launching with</span>
-        <strong>AKBARI</strong>
-        <strong>GIZET</strong>
-        <strong>SHABA CLOSET</strong>
-        <span className="made-in">Built for Ethiopian creators</span>
+      <section className="program-intro" aria-label="About Kaba Bounty">
+        <p>Kaba Bounty</p>
+        <h2>Open campaign briefs for Ethiopian creators.</h2>
+        <p>Choose a campaign, apply with your creator profile, get approval before publishing, and earn from verified organic views.</p>
       </section>
 
       <section className="section how" id="how-it-works">
         <div className="section-heading">
-          <p className="eyebrow"><span /> Simple by design</p>
-          <h2>Your content.<br />Your upside.</h2>
+          <p className="eyebrow"><span /> Process</p>
+          <h2>How a bounty works</h2>
         </div>
         <div className="steps">
           <article>
@@ -317,13 +359,13 @@ export default function BountyApp() {
           </article>
           <article>
             <span className="step-number">02</span>
-            <h3>Create and publish</h3>
-            <p>Submit your draft, get approved, then publish it on your TikTok account.</p>
+            <h3>Apply and get approved</h3>
+            <p>Send your creator profile. Kaba Labs confirms your slot and the final direction.</p>
           </article>
           <article>
             <span className="step-number">03</span>
-            <h3>Views become earnings</h3>
-            <p>Your qualified views are counted for 14 days and paid after verification.</p>
+            <h3>Create, publish and earn</h3>
+            <p>Get the draft approved, publish it, and receive payment after your qualified views are verified.</p>
           </article>
         </div>
       </section>
@@ -332,14 +374,14 @@ export default function BountyApp() {
         <div className="campaigns-header">
           <div>
             <p className="eyebrow"><span /> Open now</p>
-            <h2>Live bounties</h2>
+            <h2>Open campaigns</h2>
           </div>
-          <p>Start with a campaign that feels natural to your voice. Original ideas win.</p>
+          <p>Every campaign has its own rate, maximum payout and approval rules. Read the full brief before applying.</p>
         </div>
 
         <div className="campaign-grid">
-          {campaigns.map((campaign) => (
-            <article className={`campaign-card ${campaign.featured ? "featured" : ""}`} key={campaign.brand}>
+          {orderedCampaigns.map((campaign) => (
+            <article className={`campaign-card ${campaign.id === featuredCampaign.id ? "featured" : ""}`} key={campaign.id || campaign.brand}>
               <div className="campaign-card-head">
                 <CampaignMark campaign={campaign} />
                 <span className="category-pill">{campaign.category}</span>
@@ -353,7 +395,7 @@ export default function BountyApp() {
               </div>
               <div className="campaign-card-footer">
                 <span><i /> {campaign.slots} slots open</span>
-                <button type="button" aria-label={`View ${campaign.brand} bounty`} onClick={() => openCampaign(campaign)}>View bounty <b>↗</b></button>
+                <button type="button" aria-label={`View ${campaign.brand} bounty`} onClick={() => openCampaign(campaign)}>View brief <b>→</b></button>
               </div>
             </article>
           ))}
