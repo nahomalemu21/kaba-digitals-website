@@ -11,44 +11,44 @@ import {
 
 const services = [
   {
-    icon: Globe2, num: '01', title: 'Websites That Sell',
-    body: 'A website should not just exist. We build fast, premium websites that explain your offer, show proof, collect leads, and connect customers straight to WhatsApp or booking.',
-    tags: ['Business websites', 'Landing pages', 'Lead forms', 'WhatsApp CTA'],
+    icon: Brain, num: '01', title: 'Business Diagnosis & Strategy',
+    body: 'We start by understanding the business, the customer, the offer, and the sales process. Then we identify the real bottleneck and decide what deserves your time and budget first.',
+    tags: ['Business audit', 'Offer strategy', 'Positioning', 'Priority plan'],
   },
   {
     icon: Camera, num: '02', title: 'Video Production',
-    body: 'Nice videos are not enough. Kaba creates content that explains the business, builds desire, answers doubts, and gives customers a reason to act now.',
-    tags: ['Video & reels', 'Hooks', 'Product shoots', 'Campaign visuals'],
+    body: 'We create videos, photos, and campaign visuals only when they serve a clear business objective. Every piece is built to earn attention, answer doubts, and move customers toward action.',
+    tags: ['Sales content', 'Video & reels', 'Product shoots', 'Campaign creative'],
   },
   {
-    icon: Megaphone, num: '03', title: 'Paid Ads',
-    body: 'Stop wasting money boosting posts. We build campaign angles, targeting, creative testing, retargeting, and lead flows so every birr of ad spend has a purpose.',
-    tags: ['Meta Ads', 'TikTok Ads', 'Retargeting', 'Lead funnels'],
+    icon: Megaphone, num: '03', title: 'Performance Marketing',
+    body: 'We plan, launch, test, and improve paid campaigns around the right offer and creative. The goal is qualified leads, orders, and bookings — not boosted posts or empty reach.',
+    tags: ['Meta Ads', 'TikTok Ads', 'Creative testing', 'Retargeting'],
   },
   {
-    icon: Brain, num: '04', title: 'Brand Strategy',
-    body: 'Offer, message, audience, positioning, and creative direction — decided before money is spent on execution, so everything that follows actually lands.',
-    tags: ['Positioning', 'Offer design', 'Messaging', 'Creative direction'],
+    icon: Globe2, num: '04', title: 'Websites & Conversion Pages',
+    body: 'We build the digital destination your campaigns need: a clear offer, strong proof, focused calls to action, and a simple path from interest to inquiry or purchase.',
+    tags: ['Business websites', 'Landing pages', 'Lead forms', 'WhatsApp flows'],
   },
   {
     icon: Layers3, num: '05', title: 'CRM & Follow-Up',
-    body: 'Interested customers should never disappear. Lead tracking, follow-up structure, sales process setup, and reporting that turns attention into revenue.',
-    tags: ['Lead tracking', 'Follow-up systems', 'Sales process', 'Reporting'],
+    body: 'Marketing fails when interested customers disappear. We organize lead tracking, follow-up, sales handoff, and automation so opportunities are not lost after the first message.',
+    tags: ['Lead tracking', 'Automation', 'Sales process', 'Follow-up systems'],
   },
   {
-    icon: BarChart3, num: '06', title: 'Growth Consulting',
-    body: 'Clear diagnosis, growth direction, priorities, and execution plans for businesses that want to scale seriously — not guess their way forward.',
-    tags: ['Diagnosis', 'Growth roadmap', 'Priorities', 'Execution plans'],
+    icon: BarChart3, num: '06', title: 'Measurement & Growth Direction',
+    body: 'We review what is working, what is wasting money, and what should happen next. Kaba stays accountable after launch and keeps improving the system around real business results.',
+    tags: ['Reporting', 'Optimization', 'Growth roadmap', 'Next priorities'],
   },
 ];
 
 const steps = [
-  { icon: Radio,     num: '01', title: 'Invisible', body: 'Weak signal. Low trust. No clear reason for the market to care about you — yet.' },
-  { icon: Brain,     num: '02', title: 'Diagnose',  body: 'We scan your offer, audience, competitors, content, and sales bottlenecks.' },
-  { icon: Target,    num: '03', title: 'Position',  body: 'We shape the message so people instantly understand what you sell and why it matters.' },
-  { icon: Camera,    num: '04', title: 'Create',    body: 'Video, photo, graphics, hooks, landing pages, and campaigns built to convert.' },
-  { icon: Rocket,    num: '05', title: 'Launch',    body: 'Campaigns go live. Traffic, messages, leads, calls, and sales start moving.' },
-  { icon: LineChart, num: '06', title: 'Dominate',  body: 'We double down on what works and build repeatable growth systems.' },
+  { icon: Radio,     num: '01', title: 'Listen',     body: 'We learn how your business makes money, where customers come from, and what has already been tried.' },
+  { icon: Brain,     num: '02', title: 'Diagnose',   body: 'We find the real bottleneck across your offer, message, content, advertising, website, and sales process.' },
+  { icon: Target,    num: '03', title: 'Prioritize', body: 'We decide what will create the greatest impact first — before asking you to spend on deliverables.' },
+  { icon: Camera,    num: '04', title: 'Build',      body: 'Our team creates the strategy, content, campaigns, pages, and systems the plan actually requires.' },
+  { icon: Rocket,    num: '05', title: 'Execute',    body: 'Kaba launches and manages the work as one accountable team instead of handing you disconnected files.' },
+  { icon: LineChart, num: '06', title: 'Improve',    body: 'We track business results, learn from the market, and keep improving what matters.' },
 ];
 
 const problems = [
@@ -76,14 +76,14 @@ const industries = [
 ];
 
 const plans = [
-  ['01', 'Website Launch', 'For businesses that need a serious website: clear offer, lead form, WhatsApp flow, and a professional online presence.'],
-  ['02', 'Monthly Growth System', 'For businesses ready for monthly content, ads, website improvements, CRM, and a lead follow-up structure.'],
-  ['03', 'Kaba Elite Domination', 'For serious brands: full strategy, video production, campaigns, landing pages, CRM, reporting, and scale direction.'],
+  ['01', 'Business Growth Diagnosis', 'A focused audit of your offer, audience, marketing, website, and sales process — followed by a clear priority plan for what should happen next.'],
+  ['02', 'Monthly Growth Partnership', 'Kaba becomes your outsourced growth team: diagnosing, planning, creating, launching, and improving the work your business actually needs each month.'],
+  ['03', 'Digital Build Project', 'A focused website, landing-page, CRM, automation, or campaign-infrastructure project built around a defined business objective.'],
 ];
 
 const marqueeItems = [
-  'Websites That Sell', 'Video Production', 'Meta & TikTok Ads',
-  'Brand Strategy', 'CRM & Follow-Up', 'Growth Consulting',
+  'Business Diagnosis', 'Growth Strategy', 'Sales-Driven Content',
+  'Performance Marketing', 'Websites & CRM', 'Measurement & Improvement',
 ];
 
 const WHATSAPP = 'https://wa.me/251913864659';
@@ -91,73 +91,73 @@ const WHATSAPP = 'https://wa.me/251913864659';
 /* ── Translations ── */
 const t = {
   en: {
-    heroStatic: "We don't make content.",
-    heroRotating: ['We build empires.', 'We build trust.', 'We build demand.', 'We build systems.'],
-    heroSub: 'Kaba Labs combines video production, ads, websites, CRM, and growth systems to help Ethiopian businesses look trusted online and get more customers every month.',
-    heroCta: 'Book a 20-min consultation',
-    heroCtaSecondary: 'Explore the systems',
-    realityKicker: 'The Reality',
-    realityTitle: 'Your competitors are already winning online.',
+    heroStatic: 'You run the business.',
+    heroRotating: ['We diagnose the problem.', 'We build the right plan.', 'We execute the work.', 'We stay accountable.'],
+    heroSub: 'Kaba Labs identifies what is holding your business back, decides what will make the biggest difference, and executes the right mix of strategy, content, advertising, websites, and follow-up systems.',
+    heroCta: 'Book a business diagnosis',
+    heroCtaSecondary: 'See how Kaba works',
+    realityKicker: 'The Real Problem',
+    realityTitle: 'Eight videos cannot fix the wrong problem.',
     reality: [
-      ['They found you first on Google — and chose someone else.', 'If your business does not look trusted online, customers call your competitor instead.'],
-      ['Walk-ins and word of mouth are not enough anymore.', 'The fastest-growing businesses in Ethiopia are using consistent content, targeted ads, and follow-up.'],
-      ['You tried marketing before and it did not work.', 'Boosting posts is not advertising. Random videos are not strategy. Kaba builds the full system.'],
+      ['You were sold deliverables before anyone understood the business.', 'Paying per video or post feels productive, but content without diagnosis, positioning, distribution, and follow-up rarely changes the business.'],
+      ['The visible problem is not always the real bottleneck.', 'More content will not fix a weak offer, poor targeting, a confusing website, or a sales team that does not follow up.'],
+      ['No one took responsibility for the complete result.', 'Freelancers delivered files. Boosters spent the budget. Kaba connects the work, measures what happens, and owns the next decision with you.'],
     ],
-    servicesTitle: 'Six systems.',
-    servicesTitleAccent: 'One growth machine.',
-    servicesSub: 'Websites, content, ads, and follow-up should work together — not as random pieces.',
-    processTitle: 'From invisible',
-    processTitleAccent: 'to impossible to ignore.',
-    processSub: 'Kaba turns an unknown business into a brand with attention, trust, leads, and sales — in a deliberate sequence.',
-    contactTitle: 'What are you looking for?',
-    contactLead: 'Every business is different. Book a 20-minute consultation and tell us exactly what you need.',
-    consultBtn: 'Book a 20-minute consultation',
+    servicesTitle: 'One accountable partner.',
+    servicesTitleAccent: 'The right work for your business.',
+    servicesSub: 'You do not need to guess which service to buy. We diagnose the bottleneck, choose the right tools, and bring the specialists needed to get the job done.',
+    processTitle: 'We diagnose first.',
+    processTitleAccent: 'Then we execute.',
+    processSub: 'Every engagement follows one disciplined process so the work serves the business — not the other way around.',
+    contactTitle: 'Where is your growth stuck?',
+    contactLead: 'You do not need to choose a package of videos. Tell us what is happening in the business. We will diagnose the bottleneck and explain the right next move.',
+    consultBtn: 'Book a business diagnosis',
   },
   am: {
-    heroStatic: 'ኮንተንት አንሠራም።',
-    heroRotating: ['ኢምፓየር እንገነባለን።', 'እምነት እንገነባለን።', 'ፍላጎት እንገነባለን።', 'ስርዓት እንገነባለን።'],
-    heroSub: 'KABA LABS ቪዲዮ፣ ማስታወቂያ፣ ድረ-ገጽ፣ CRM እና የእድገት ስርዓቶችን በማጣመር የኢትዮጵያ ቢዝነሶች ታማኝ ሆነው እንዲታዩ እና ደንበኞች እንዲያገኙ ያግዛል።',
-    heroCta: '20 ደቂቃ ምክክር ያዝዙ',
-    heroCtaSecondary: 'ስርዓቶቹን ይመልከቱ',
-    realityKicker: 'እውነታው',
-    realityTitle: 'ተወዳዳሪዎችዎ አስቀድሞ በኦንላይን እያሸነፉ ነው።',
+    heroStatic: 'ቢዝነስዎን እርስዎ ያስኬዳሉ።',
+    heroRotating: ['ችግሩን እንመረምራለን።', 'ትክክለኛውን እቅድ እንገነባለን።', 'ስራውን እንፈጽማለን።', 'ለውጤቱ ኃላፊ እንሆናለን።'],
+    heroSub: 'KABA LABS የቢዝነስዎን እድገት የሚያግደውን ችግር ይለያል፣ ከፍተኛውን ውጤት የሚያመጣውን ቅድሚያ ይወስናል፣ ከዚያም ስትራቴጂ፣ ኮንተንት፣ ማስታወቂያ፣ ድረ-ገጽ እና የክትትል ስርዓትን እንፈጽማለን።',
+    heroCta: 'የቢዝነስ ምርመራ ይያዙ',
+    heroCtaSecondary: 'KABA እንዴት እንደሚሰራ',
+    realityKicker: 'ዋናው ችግር',
+    realityTitle: 'ስምንት ቪዲዮዎች የተሳሳተውን ችግር አይፈቱም።',
     reality: [
-      ['በጉግል አስቀድሞ አገኙዎት — እና ሌላ ሰው መረጡ።', 'ቢዝነስዎ በኦንላይን አስተማማኝ ካልሆነ ደንበኞች ተወዳዳሪዎን ይደውላሉ።'],
-      ['ወደ ሱቅ መምጣት እና በቃል መሰራጨት አሁን አይበቃም።', 'ፈጣን እያደጉ ያሉ ቢዝነሶች ወጥ ኮንተንት እና የታለሙ ማስታወቂያዎች ላይ ኢንቨስት እያደረጉ ነው።'],
-      ['ከዚህ ቀደም ማርኬቲንግ ሞክረው ውጤት አላገኙም።', 'ፖስት ማስተዋወቅ ማስታወቂያ አይደለም። KABA ሙሉ ስርዓቱን ይገነባል።'],
+      ['ቢዝነስዎ ሳይገባ ምን እንዲሰራ ተሽጦልዎታል።', 'በቪዲዮ ወይም በፖስት ቁጥር መክፈል ስራ የተሰራ ያስመስላል፤ ግን ያለ ምርመራ፣ አቀማመጥ፣ ስርጭት እና ክትትል ኮንተንት ብቻውን ቢዝነስን አያሳድግም።'],
+      ['የሚታየው ችግር ሁልጊዜ ዋናው ችግር አይደለም።', 'ደካማ አቅርቦትን፣ የተሳሳተ ዒላማን፣ ግራ የሚያጋባ ድረ-ገጽን ወይም ደካማ የሽያጭ ክትትልን ተጨማሪ ኮንተንት አይፈታውም።'],
+      ['ለሙሉ ውጤቱ ኃላፊነት የወሰደ አልነበረም።', 'ፍሪላንሰሮች ፋይሎችን አስረከቡ፣ ቡስተሮች በጀት አወጡ። KABA ስራዎቹን ያገናኛል፣ ውጤቱን ይለካል እና ቀጣዩን ውሳኔ ከእርስዎ ጋር ይወስዳል።'],
     ],
-    servicesTitle: 'ስድስት ስርዓቶች።',
-    servicesTitleAccent: 'አንድ የእድገት ማሽን።',
-    servicesSub: 'ድረ-ገጽ፣ ኮንተንት፣ ማስታወቂያ እና ክትትል አብረው መስራት አለባቸው።',
-    processTitle: 'ካልታየ',
-    processTitleAccent: 'ወደ የማይታለፍ ብራንድ።',
-    processSub: 'KABA ያልታወቀ ቢዝነስን ትኩረት፣ እምነት፣ ሊድ እና ሽያጭ ወዳለው ብራንድ ይቀይራል።',
-    contactTitle: 'ምን እየፈለጉ ነው?',
-    contactLead: 'እያንዳንዱ ቢዝነስ የተለየ ነው። 20 ደቂቃ ምክክር ያዝዙ።',
-    consultBtn: '20 ደቂቃ ምክክር ያዝዙ',
+    servicesTitle: 'አንድ ኃላፊነት የሚወስድ አጋር።',
+    servicesTitleAccent: 'ለቢዝነስዎ ትክክለኛው ስራ።',
+    servicesSub: 'የትኛውን አገልግሎት መግዛት እንዳለብዎ መገመት አያስፈልግዎትም። ችግሩን እንመረምራለን፣ ትክክለኛውን መሳሪያ እንመርጣለን እና ስራውን የሚፈጽም ቡድን እናመጣለን።',
+    processTitle: 'መጀመሪያ እንመረምራለን።',
+    processTitleAccent: 'ከዚያ እንፈጽማለን።',
+    processSub: 'ስራው ቢዝነሱን እንዲያገለግል እያንዳንዱ ፕሮጀክት ግልጽ ሂደት ይከተላል።',
+    contactTitle: 'የቢዝነስዎ እድገት የት ቆሟል?',
+    contactLead: 'የቪዲዮ ፓኬጅ መምረጥ አያስፈልግዎትም። በቢዝነስዎ ውስጥ ምን እየሆነ እንደሆነ ይንገሩን፤ ችግሩን መርምረን ትክክለኛውን ቀጣይ እርምጃ እናቀርባለን።',
+    consultBtn: 'የቢዝነስ ምርመራ ይያዙ',
   },
   fr: {
-    heroStatic: 'Nous ne créons pas du contenu.',
-    heroRotating: ['Nous bâtissons des empires.', 'Nous bâtissons la confiance.', 'Nous bâtissons la demande.', 'Nous bâtissons des systèmes.'],
-    heroSub: 'Kaba Labs combine production vidéo, publicités, sites web, CRM et systèmes de croissance pour aider les entreprises éthiopiennes à paraître crédibles et attirer plus de clients chaque mois.',
-    heroCta: 'Réserver 20 min de consultation',
-    heroCtaSecondary: 'Voir les systèmes',
-    realityKicker: 'La réalité',
-    realityTitle: 'Vos concurrents gagnent déjà en ligne.',
+    heroStatic: 'Vous dirigez l’entreprise.',
+    heroRotating: ['Nous diagnostiquons.', 'Nous bâtissons le bon plan.', 'Nous exécutons.', 'Nous restons responsables.'],
+    heroSub: 'Kaba Labs identifie ce qui freine votre entreprise, choisit les priorités qui auront le plus d’impact et exécute la bonne combinaison de stratégie, contenu, publicité, sites web et systèmes de suivi.',
+    heroCta: 'Réserver un diagnostic',
+    heroCtaSecondary: 'Voir notre méthode',
+    realityKicker: 'Le vrai problème',
+    realityTitle: 'Huit vidéos ne corrigent pas le mauvais problème.',
     reality: [
-      ['Ils vous ont trouvé sur Google — et ont choisi quelqu\'un d\'autre.', 'Si votre entreprise n\'est pas crédible en ligne, les clients appellent votre concurrent.'],
-      ['Les clients spontanés et le bouche-à-oreille ne suffisent plus.', 'Les entreprises qui croissent le plus vite investissent dans du contenu régulier et des publicités ciblées.'],
-      ['Vous avez essayé le marketing avant — sans résultat.', 'Booster des publications n\'est pas de la publicité. Kaba construit le système complet.'],
+      ['On vous a vendu des livrables avant de comprendre votre entreprise.', 'Payer par vidéo ou publication semble productif, mais le contenu sans diagnostic, positionnement, distribution et suivi change rarement les résultats.'],
+      ['Le problème visible n’est pas toujours le vrai blocage.', 'Plus de contenu ne corrigera pas une offre faible, un mauvais ciblage, un site confus ou une équipe commerciale qui ne relance pas.'],
+      ['Personne n’était responsable du résultat complet.', 'Les freelances ont livré des fichiers. Les boosters ont dépensé le budget. Kaba relie le travail, mesure les résultats et décide de la suite avec vous.'],
     ],
-    servicesTitle: 'Six systèmes.',
-    servicesTitleAccent: 'Une machine de croissance.',
-    servicesSub: 'Sites web, contenu, publicités et suivi doivent fonctionner ensemble.',
-    processTitle: 'D\'invisible',
-    processTitleAccent: 'à impossible à ignorer.',
-    processSub: 'Kaba transforme une entreprise inconnue en marque qui attire, convainc et vend — dans un ordre délibéré.',
-    contactTitle: 'Que cherchez-vous ?',
-    contactLead: 'Chaque entreprise est différente. Réservez 20 minutes de consultation.',
-    consultBtn: 'Réserver 20 min de consultation',
+    servicesTitle: 'Un seul partenaire responsable.',
+    servicesTitleAccent: 'Le bon travail pour votre entreprise.',
+    servicesSub: 'Vous n’avez pas à deviner quel service acheter. Nous diagnostiquons le blocage, choisissons les bons outils et réunissons les spécialistes nécessaires pour faire le travail.',
+    processTitle: 'Nous diagnostiquons d’abord.',
+    processTitleAccent: 'Puis nous exécutons.',
+    processSub: 'Chaque mission suit une méthode rigoureuse afin que le travail serve l’entreprise — et non l’inverse.',
+    contactTitle: 'Où votre croissance bloque-t-elle ?',
+    contactLead: 'Vous n’avez pas besoin de choisir un forfait de vidéos. Expliquez-nous ce qui se passe dans l’entreprise. Nous identifierons le blocage et recommanderons la bonne prochaine étape.',
+    consultBtn: 'Réserver un diagnostic',
   },
 };
 
@@ -827,8 +827,8 @@ export default function App() {
         <div className="nav-links">
           <a href="#services">Services</a>
           <a href="#process">Process</a>
-          <a href="#problems">Problems</a>
-          <a href="#packages">Packages</a>
+          <a href="#problems">Diagnosis</a>
+          <a href="#packages">Work With Us</a>
           <a href="#contact">Contact</a>
         </div>
         <div className="nav-right">
@@ -857,7 +857,7 @@ export default function App() {
           </button>
         </div>
         <div className="drawer-links">
-          {[['Services', '#services'], ['Process', '#process'], ['Problems', '#problems'], ['Packages', '#packages'], ['Contact', '#contact']].map(([label, href]) => (
+          {[['Services', '#services'], ['Process', '#process'], ['Diagnosis', '#problems'], ['Work With Us', '#packages'], ['Contact', '#contact']].map(([label, href]) => (
             <a key={href} href={href} onClick={navTo}>{label}<ArrowUpRight size={26} /></a>
           ))}
         </div>
@@ -879,7 +879,7 @@ export default function App() {
         <div className="hero-gridlines" aria-hidden="true" />
         <div className="hero-inner">
           <div className="hero-copy">
-            <p className="hero-kicker"><span className="dot" />Digital Growth Studio — Addis Ababa</p>
+            <p className="hero-kicker"><span className="dot" />Your Outsourced Growth Team — Addis Ababa</p>
             <h1 className="hero-title">
               {tx.heroStatic}
               <RotatingWord words={tx.heroRotating} />
@@ -889,14 +889,14 @@ export default function App() {
               <a className="btn-primary" href={WHATSAPP} target="_blank" rel="noreferrer">
                 {tx.heroCta} <ArrowUpRight size={15} />
               </a>
-              <a className="btn-ghost" href="#services">
+              <a className="btn-ghost" href="#process">
                 {tx.heroCtaSecondary} <ArrowRight size={15} />
               </a>
             </div>
             <div className="hero-proof">
-              <span><ShieldCheck />Strategy before execution</span>
-              <span><Zap />Built for Ethiopian businesses</span>
-              <span><Target />Leads, not likes</span>
+              <span><ShieldCheck />Diagnosis before deliverables</span>
+              <span><Zap />One accountable team</span>
+              <span><Target />Measured by business results</span>
             </div>
           </div>
           <div className="hero-visual" onMouseMove={onTilt} onMouseLeave={onTiltEnd}>
@@ -905,33 +905,33 @@ export default function App() {
             <div className="dash-card" ref={cardRef}>
               <div className="dash-top">
                 <div className="dash-dots"><span /><span /><span /></div>
-                <span className="dash-badge"><i />Live Growth Engine</span>
+                <span className="dash-badge"><i />Kaba Growth Partnership</span>
               </div>
-              <p className="dash-label">Leads This Month</p>
-              <div className="dash-metric"><CountUp end={248} prefix="+" /></div>
-              <p className="dash-sub">Attention → Trust → Sales</p>
+              <p className="dash-label">One team owns the work</p>
+              <div className="dash-metric">One Team</div>
+              <p className="dash-sub">Diagnose → Prioritize → Execute</p>
               <div className="dash-bars" aria-hidden="true"><i /><i /><i /><i /><i /><i /><i /></div>
               <div className="dash-row">
-                <div><strong>4.2×</strong><span>ROAS</span></div>
-                <div><strong>62%</strong><span>Follow-up</span></div>
-                <div><strong>24/7</strong><span>Lead capture</span></div>
+                <div><strong>01</strong><span>Diagnose</span></div>
+                <div><strong>02</strong><span>Build</span></div>
+                <div><strong>03</strong><span>Improve</span></div>
               </div>
             </div>
             <div className="chip chip-1">
               <span className="chip-icon"><MessageCircle /></span>
-              <div><strong>New WhatsApp lead</strong><span>2 minutes ago</span></div>
+              <div><strong>Bottleneck identified</strong><span>Diagnosis complete</span></div>
             </div>
             <div className="chip chip-2">
               <span className="chip-icon"><TrendingUp /></span>
-              <div><strong>Campaign scaling</strong><span>ROAS holding ↑</span></div>
+              <div><strong>Priority decided</strong><span>Budget has a purpose</span></div>
             </div>
             <div className="chip chip-3">
               <span className="chip-icon"><CheckCircle2 /></span>
-              <div><strong>Order confirmed</strong><span>COD verified</span></div>
+              <div><strong>Execution moving</strong><span>One accountable team</span></div>
             </div>
             <div className="chip chip-4">
               <span className="chip-icon"><CalendarCheck /></span>
-              <div><strong>Booking +1</strong><span>From Instagram</span></div>
+              <div><strong>Results reviewed</strong><span>Next move is clear</span></div>
             </div>
           </div>
         </div>
@@ -960,7 +960,7 @@ export default function App() {
 
       {/* SERVICES — sticky stack */}
       <section id="services" className="section">
-        <p className="eyebrow reveal"><span className="eyebrow-rule" />What Kaba Builds</p>
+        <p className="eyebrow reveal"><span className="eyebrow-rule" />Your Growth Team</p>
         <h2 className="section-title reveal d1">{tx.servicesTitle} <em>{tx.servicesTitleAccent}</em></h2>
         <p className="section-sub reveal d2">{tx.servicesSub}</p>
         <div className="stack-wrap">
@@ -1001,7 +1001,7 @@ export default function App() {
             ))}
           </div>
           <div className="process-tail reveal">
-            <p className="process-quote">This is not marketing. <em>This is market control.</em></p>
+            <p className="process-quote">The right work, in the right order. <em>One accountable team.</em></p>
             <a className="consult-btn" style={{ margin: 0 }} href={WHATSAPP} target="_blank" rel="noreferrer">
               {tx.heroCta} <ArrowUpRight size={15} />
             </a>
@@ -1012,9 +1012,9 @@ export default function App() {
       {/* PROBLEM SOLVER */}
       <section id="problems" className="section split">
         <div>
-          <p className="eyebrow reveal"><span className="eyebrow-rule" />Problem Solver</p>
-          <h2 className="section-title reveal d1">What is slowing your business down?</h2>
-          <p className="section-sub reveal d2">Pick the real problem. Kaba does not sell random posts — we fix the path from attention to conversion.</p>
+          <p className="eyebrow reveal"><span className="eyebrow-rule" />Start With the Problem</p>
+          <h2 className="section-title reveal d1">You do not need to know which service to buy.</h2>
+          <p className="section-sub reveal d2">Tell us what is not working. Kaba diagnoses the real cause and recommends the work that deserves your budget.</p>
           <div className="problem-list reveal d2">
             {problems.map((p, i) => (
               <button
@@ -1028,11 +1028,11 @@ export default function App() {
           </div>
         </div>
         <div className="solution-panel reveal d2">
-          <span className="solution-label">The Kaba Answer</span>
+          <span className="solution-label">Our Diagnosis</span>
           <h3>{problems[activeProblem][0]}</h3>
           <p>{problems[activeProblem][1]}</p>
           <a className="solution-cta" href={WHATSAPP} target="_blank" rel="noreferrer">
-            Fix this with Kaba <ArrowUpRight size={13} />
+            Diagnose this with Kaba <ArrowUpRight size={13} />
           </a>
         </div>
       </section>
@@ -1040,17 +1040,17 @@ export default function App() {
       {/* COMPARE */}
       <section className="section">
         <p className="eyebrow reveal"><span className="eyebrow-rule" />Why Kaba</p>
-        <h2 className="section-title reveal d1">Most agencies sell content. <em>We build the machine behind it.</em></h2>
+        <h2 className="section-title reveal d1">Some agencies sell deliverables. <em>Kaba takes responsibility for the growth work.</em></h2>
         <div className="compare-grid reveal d2">
           <div className="compare-col">
-            <div className="compare-head"><h3>Normal Agencies</h3></div>
-            {['Post and disappear', 'Focus on likes', 'Random designs', 'No tracking', 'One-size-fits-all', 'Content only'].map((x) => (
+            <div className="compare-head"><h3>Deliverable Sellers</h3></div>
+            {['Ask how many videos you want', 'Charge per post or file', 'Use the same package for everyone', 'Deliver and disappear', 'Separate content from sales', 'Leave you to connect the pieces'].map((x) => (
               <div key={x} className="compare-item">{x}</div>
             ))}
           </div>
           <div className="compare-col kaba">
             <div className="compare-head"><h3>Kaba Labs</h3></div>
-            {['Strategy before execution', 'Leads, trust, and sales', 'Brand direction and consistency', 'Lead and campaign systems', 'Built around your model', 'Content + ads + website + sales flow'].map((x) => (
+            {['Diagnose before proposing', 'Prioritize the highest-impact work', 'Build around your business model', 'Connect strategy, content, ads, and sales', 'Measure what happens after launch', 'Stay accountable for the next decision'].map((x) => (
               <div key={x} className="compare-item"><ShieldCheck aria-hidden="true" />{x}</div>
             ))}
           </div>
@@ -1061,7 +1061,7 @@ export default function App() {
       <section className="industries-section">
         <div className="industries-head">
           <p className="eyebrow reveal"><span className="eyebrow-rule" />Industries</p>
-          <h2 className="section-title reveal d1">Built for businesses <em>ready to be seen.</em></h2>
+          <h2 className="section-title reveal d1">Built for businesses <em>ready to grow with intention.</em></h2>
         </div>
         <div className="ind-marquee" aria-hidden="true">
           <div className="ind-track">
@@ -1081,8 +1081,8 @@ export default function App() {
 
       {/* PLANS */}
       <section id="packages" className="section" style={{ paddingTop: 0 }}>
-        <p className="eyebrow reveal"><span className="eyebrow-rule" />Packages</p>
-        <h2 className="section-title reveal d1">Choose the package that <em>fits your growth stage.</em></h2>
+        <p className="eyebrow reveal"><span className="eyebrow-rule" />Ways to Work With Kaba</p>
+        <h2 className="section-title reveal d1">Start with the level of support <em>your business needs.</em></h2>
         <div className="plans reveal d2">
           {plans.map(([num, title, desc]) => (
             <article className="plan" key={title}>
@@ -1091,7 +1091,7 @@ export default function App() {
                 <h3>{title}</h3>
                 <p>{desc}</p>
               </div>
-              <a href="#contact" className="plan-cta">Apply for this plan <ArrowUpRight size={14} /></a>
+              <a href="#contact" className="plan-cta">Discuss this engagement <ArrowUpRight size={14} /></a>
             </article>
           ))}
         </div>
@@ -1100,7 +1100,7 @@ export default function App() {
       {/* CONTACT */}
       <section id="contact" className="contact-section">
         <div className="contact-inner">
-          <p className="contact-kicker"><i />We Listen First</p>
+          <p className="contact-kicker"><i />Diagnosis Before Deliverables</p>
           <h2 className="contact-title reveal">{tx.contactTitle.replace('?', '').replace(' ?', '')}<em>?</em></h2>
           <p className="contact-lead reveal d1">{tx.contactLead}</p>
           <a className="consult-btn reveal d2" href={WHATSAPP} target="_blank" rel="noreferrer">
@@ -1129,7 +1129,7 @@ export default function App() {
           </div>
           <footer className="footer">
             <span className="brand">KABA <em>LABS</em></span>
-            <p>Less Effort · More Growth</p>
+            <p>Diagnose · Prioritize · Execute</p>
           </footer>
         </div>
       </section>
